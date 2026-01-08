@@ -57,25 +57,39 @@ export async function getLandingPage(slug: string = 'home') {
 export async function saveSection(pageId: string, key: string, content: any, order: number = 0) {
     const supabase = await createClient();
 
-    // Check if section exists
-    const { data: existing } = await supabase
+    // 1. Check for existing sections with this key
+    const { data: existingSections, error: fetchError } = await supabase
         .from('landing_sections')
         .select('id')
         .eq('page_id', pageId)
         .eq('key', key)
-        .single();
+        .order('created_at', { ascending: false }); // Get newest first
 
-    if (existing) {
-        const { error } = await supabase
+    if (fetchError) throw new Error(fetchError.message);
+
+    if (existingSections && existingSections.length > 0) {
+        // Update the most recent one
+        const mainId = existingSections[0].id;
+
+        const { error: updateError } = await supabase
             .from('landing_sections')
             .update({ content, "order": order, updated_at: new Date().toISOString() })
-            .eq('id', existing.id);
-        if (error) throw new Error(error.message);
+            .eq('id', mainId);
+
+        if (updateError) throw new Error(updateError.message);
+
+        // Cleanup duplicates if any
+        if (existingSections.length > 1) {
+            const idsToDelete = existingSections.slice(1).map(s => s.id);
+            await supabase.from('landing_sections').delete().in('id', idsToDelete);
+        }
     } else {
-        const { error } = await supabase
+        // Insert new
+        const { error: insertError } = await supabase
             .from('landing_sections')
             .insert({ page_id: pageId, key, content, "order": order });
-        if (error) throw new Error(error.message);
+
+        if (insertError) throw new Error(insertError.message);
     }
 
     revalidatePath('/dashboard/admin/landing');
@@ -149,4 +163,32 @@ export async function getPublishedContent(slug: string = 'home') {
     });
 
     return contentMap;
+}
+
+export async function uploadAsset(formData: FormData) {
+    const supabase = await createClient();
+    const file = formData.get('file') as File;
+
+    if (!file) {
+        throw new Error('No file provided');
+    }
+
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+    const filePath = `${fileName}`;
+
+    const { error: uploadError, data } = await supabase.storage
+        .from('landing-assets')
+        .upload(filePath, file);
+
+    if (uploadError) {
+        throw new Error(uploadError.message);
+    }
+
+    // Get public URL
+    const { data: { publicUrl } } = supabase.storage
+        .from('landing-assets')
+        .getPublicUrl(filePath);
+
+    return publicUrl;
 }

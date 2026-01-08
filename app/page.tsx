@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { getPublishedContent } from "./dashboard/admin/landing/actions";
 import { defaultContent } from "@/lib/defaults";
+import { themes } from "@/lib/themes";
+import { hexToHsl } from "@/lib/utils-colors";
 
 export default async function Home() {
   // Fetch dynamic content
@@ -27,7 +29,9 @@ export default async function Home() {
   const content = {
     hero: { ...defaultContent.hero, ...dbContent?.hero },
     services: { ...defaultContent.services, ...dbContent?.services },
-    contact: { ...defaultContent.contact, ...dbContent?.contact }
+    contact: { ...defaultContent.contact, ...dbContent?.contact },
+    branding: { ...defaultContent.branding, ...dbContent?.branding },
+    footer: { ...defaultContent.footer, ...dbContent?.footer }
   };
 
   return (
@@ -36,10 +40,25 @@ export default async function Home() {
       <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="bg-primary/10 p-2 rounded-xl">
-              <HeartPulse className="h-6 w-6 text-primary" />
-            </div>
-            <span className="text-xl font-bold text-gray-900 tracking-tight">GestionVet</span>
+
+            {content.branding.logoUrl ? (
+              <div className="relative h-10 w-auto">
+                {/* Using regular img for external Supabase URLs to avoid Next.js config hassle for now */}
+                <img
+                  src={content.branding.logoUrl}
+                  alt={content.branding.logoText}
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <div className="bg-primary/10 p-2 rounded-xl">
+                  <HeartPulse className="h-6 w-6 text-primary" />
+                </div>
+                <span className="text-xl font-bold text-gray-900 tracking-tight">{content.branding.logoText}</span>
+              </div>
+            )}
+
           </div>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -68,9 +87,9 @@ export default async function Home() {
         <section className="relative py-20 md:py-32 overflow-hidden bg-white">
           <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30"></div>
           <div className="container relative mx-auto px-4 md:px-6 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 text-violet-700 text-sm font-medium border border-violet-100 mb-8">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20 mb-8">
+              <span className="relative flex h-2 w-2 mr-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               Abierto Hoy hasta las {content.contact.hours.split("pm")[0]?.split("-")[1] || "8:00 PM"}
@@ -128,15 +147,15 @@ export default async function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: Stethoscope, title: "Consulta General", desc: "Evaluaciones completas para diagnóstico y tratamiento oportuno.", color: "text-blue-600", bg: "bg-blue-50" },
-                { icon: Syringe, title: "Vacunación", desc: "Protocolos de inmunización personalizados para perros y gatos.", color: "text-violet-600", bg: "bg-violet-50" },
-                { icon: Microscope, title: "Laboratorio Clínico", desc: "Análisis de sangre, orina y citologías con resultados inmediatos.", color: "text-purple-600", bg: "bg-purple-50" },
-                { icon: Activity, title: "Cirugía y Quirófano", desc: "Procedimientos de tejidos blandos y ortopedia con monitoreo avanzado.", color: "text-emerald-600", bg: "bg-emerald-50" },
-                { icon: Dog, title: "Hospitalización", desc: "Áreas confortables y separadas para recuperación bajo supervisión médica.", color: "text-orange-600", bg: "bg-orange-50" },
-                { icon: Scissors, title: "Estética y Spa", desc: "Baños medicados, corte de pelo y limpieza dental.", color: "text-pink-600", bg: "bg-pink-50" },
+                { icon: Stethoscope, title: "Consulta General", desc: "Evaluaciones completas para diagnóstico y tratamiento oportuno." },
+                { icon: Syringe, title: "Vacunación", desc: "Protocolos de inmunización personalizados para perros y gatos." },
+                { icon: Microscope, title: "Laboratorio Clínico", desc: "Análisis de sangre, orina y citologías con resultados inmediatos." },
+                { icon: Activity, title: "Cirugía y Quirófano", desc: "Procedimientos de tejidos blandos y ortopedia con monitoreo avanzado." },
+                { icon: Dog, title: "Hospitalización", desc: "Áreas confortables y separadas para recuperación bajo supervisión médica." },
+                { icon: Scissors, title: "Estética y Spa", desc: "Baños medicados, corte de pelo y limpieza dental." },
               ].map((feature, idx) => (
                 <div key={idx} className="group p-8 bg-white rounded-3xl border border-gray-200 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${feature.bg} ${feature.color} transition-transform group-hover:scale-110`}>
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-primary/10 text-primary transition-transform group-hover:scale-110`}>
                     <feature.icon className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
@@ -153,7 +172,7 @@ export default async function Home() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <span className="text-primary font-bold tracking-wide uppercase text-sm">Nuestra Diferencia</span>
-                <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-5xl mb-6">¿Por qué elegir GestionVet?</h2>
+                <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-5xl mb-6">¿Por qué elegir {content.branding.logoText}?</h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   Entendemos que tu mascota es un miembro más de la familia. Por eso nos esforzamos en ofrecer un servicio que combine excelencia médica con verdadera empatía.
                 </p>
@@ -162,10 +181,10 @@ export default async function Home() {
                   {[
                     { icon: Users, title: "Equipo Apasionado", desc: "Veterinarios y auxiliares que aman lo que hacen." },
                     { icon: ShieldCheck, title: "Instalaciones Seguras", desc: "Espacios diseñados para minimizar el estrés de tu mascota." },
-                    { icon: Clock, title: "Agenda Flexible", desc: "Citas disponibles fines de semana y sistema de reserva online." },
+                    { icon: Clock, title: "Agenda Flexible", desc: "Citas disponíveis fines de semana y sistema de reserva online." },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4 items-start">
-                      <div className="mt-1 bg-violet-50 p-2 rounded-lg">
+                      <div className="mt-1 bg-primary/10 p-2 rounded-lg">
                         <item.icon className="w-5 h-5 text-primary" />
                       </div>
                       <div>
@@ -178,9 +197,8 @@ export default async function Home() {
               </div>
 
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-violet-100 to-fuchsia-100 rounded-3xl blur-2xl opacity-50"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-violet-100 rounded-3xl blur-2xl opacity-50"></div>
                 <div className="relative aspect-square bg-slate-100 rounded-3xl overflow-hidden border border-slate-200 flex items-center justify-center">
-                  {/* Placeholder for Clinic Image - Using an Icon for now, assuming no image asset available */}
                   <div className="text-center p-8">
                     <HeartPulse className="w-32 h-32 text-primary/20 mx-auto mb-4" />
                     <p className="text-muted-foreground">Imagen de la Clínica</p>
@@ -244,8 +262,8 @@ export default async function Home() {
         <section className="py-20 bg-slate-50 border-t border-gray-200">
           <div className="container mx-auto px-4 md:px-6">
             <div className="bg-gray-900 rounded-[2.5rem] p-12 md:p-20 text-center text-white shadow-2xl overflow-hidden relative">
-              <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-violet-500 rounded-full blur-[100px] opacity-20"></div>
-              <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-fuchsia-500 rounded-full blur-[100px] opacity-20"></div>
+              <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-primary/30 rounded-full blur-[100px] opacity-20"></div>
+              <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-primary/30 rounded-full blur-[100px] opacity-20"></div>
 
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Tu mascota en las mejores manos</h2>
@@ -273,16 +291,28 @@ export default async function Home() {
       <footer className="bg-white py-12 text-sm text-gray-500 border-t border-gray-100">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="bg-violet-100 p-2 rounded-lg">
-              <HeartPulse className="h-5 w-5 text-primary" />
-            </div>
-            <span className="text-lg font-bold text-gray-900">GestionVet</span>
+            {content.branding.logoUrl ? (
+              <div className="relative h-8 w-auto">
+                <img
+                  src={content.branding.logoUrl}
+                  alt={content.branding.logoText}
+                  className="h-8 w-auto object-contain"
+                />
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <div className="bg-primary/10 p-2 rounded-lg">
+                  <HeartPulse className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-lg font-bold text-gray-900">{content.branding.logoText}</span>
+              </div>
+            )}
           </div>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-primary transition-colors">Aviso de Privacidad</Link>
             <Link href="#" className="hover:text-primary transition-colors">Términos de Servicio</Link>
           </div>
-          <p>© 2024 GestionVet Clínica Veterinaria.</p>
+          <p>{content.footer.copyright}</p>
         </div>
       </footer>
     </div>

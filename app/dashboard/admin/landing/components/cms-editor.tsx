@@ -1,9 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,20 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Save, Globe, Eye } from "lucide-react";
-import { saveSection, publishLanding, type LandingSection } from "../actions";
-
-const heroSchema = z.object({
-    title: z.string().min(1),
-    subtitle: z.string(),
-    cta_primary: z.string(),
-    cta_secondary: z.string(),
-});
-
-const servicesSchema = z.object({
-    title: z.string(),
-    subtitle: z.string(),
-});
+import { Save, Globe, Eye, Upload, Image as ImageIcon } from "lucide-react";
+import { saveSection, publishLanding, uploadAsset, type LandingSection } from "../actions";
 
 type CMSEditorProps = {
     pageId: string;
@@ -33,25 +18,27 @@ type CMSEditorProps = {
 
 export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
     const [loading, setLoading] = useState(false);
+    const [uploading, setUploading] = useState(false);
 
     // Helpers to get content safely
     const getSectionContent = (key: string) => initialSections.find(s => s.key === key)?.content || {};
 
-    // Forms
-    // In a full app, these would be separate sub-components to handle complexity
-    // For MVP, we manage state here or utilize RHF for each section
+    const [data, setData] = useState({
+        hero: getSectionContent('hero'),
+        services: getSectionContent('services'),
+        contact: getSectionContent('contact'),
+        branding: getSectionContent('branding'),
+        footer: getSectionContent('footer'),
+    });
 
-    // --- Hero State ---
-    const [heroData, setHeroData] = useState(getSectionContent('hero'));
-    // --- Services State ---
-    const [servicesData, setServicesData] = useState(getSectionContent('services'));
-    // --- Contact/Footer State ---
-    const [contactData, setContactData] = useState(getSectionContent('contact'));
+    const updateSection = (section: keyof typeof data, newData: any) => {
+        setData(prev => ({ ...prev, [section]: newData }));
+    };
 
-    const handleSave = async (key: string, data: any) => {
+    const handleSave = async (key: string, sectionData: any) => {
         setLoading(true);
         try {
-            await saveSection(pageId, key, data);
+            await saveSection(pageId, key, sectionData);
             toast.success(`Sección ${key} guardada`);
         } catch (error) {
             toast.error("Error al guardar");
@@ -69,6 +56,25 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
             toast.error("Error al publicar");
         } finally {
             setLoading(false);
+        }
+    };
+
+    const handleLogoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!e.target.files?.[0]) return;
+        setUploading(true);
+
+        try {
+            const formData = new FormData();
+            formData.append('file', e.target.files[0]);
+
+            const publicUrl = await uploadAsset(formData);
+            updateSection('branding', { ...data.branding, logoUrl: publicUrl });
+            toast.success("Logo subido correctamente");
+        } catch (error: any) {
+            console.error(error);
+            toast.error(error instanceof Error ? error.message : "Error al subir imagen");
+        } finally {
+            setUploading(false);
         }
     };
 
@@ -90,12 +96,106 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
             </div>
 
             <Tabs defaultValue="hero" className="w-full">
-                <TabsList className="grid w-full grid-cols-4 lg:w-[600px]">
+                <TabsList className="grid w-full grid-cols-6 lg:w-[800px]">
+                    <TabsTrigger value="branding">Marca</TabsTrigger>
                     <TabsTrigger value="hero">Hero</TabsTrigger>
                     <TabsTrigger value="services">Servicios</TabsTrigger>
                     <TabsTrigger value="contact">Contacto</TabsTrigger>
-                    <TabsTrigger value="features">Features</TabsTrigger>
+                    <TabsTrigger value="footer">Footer</TabsTrigger>
+                    <TabsTrigger value="features">Otros</TabsTrigger>
                 </TabsList>
+
+                {/* BRANDING EDITOR */}
+                <TabsContent value="branding">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Identidad de Marca</CardTitle>
+                            <CardDescription>Personaliza completamente la apariencia de tu sitio.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-6">
+
+                            {/* Logo Upload */}
+                            <div className="grid gap-2">
+                                <Label>Logotipo</Label>
+                                <div className="flex items-start gap-4">
+                                    <div className="h-24 w-24 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center bg-gray-50 overflow-hidden relative">
+                                        {data.branding?.logoUrl ? (
+                                            <img src={data.branding.logoUrl} alt="Logo" className="w-full h-full object-contain" />
+                                        ) : (
+                                            <ImageIcon className="text-gray-400 w-8 h-8" />
+                                        )}
+                                    </div>
+                                    <div className="space-y-2">
+                                        <div className="relative">
+                                            <Input
+                                                type="file"
+                                                className="hidden"
+                                                id="logo-upload"
+                                                accept="image/*"
+                                                onChange={handleLogoUpload}
+                                                disabled={uploading}
+                                            />
+                                            <Button variant="outline" size="sm" onClick={() => document.getElementById('logo-upload')?.click()} disabled={uploading}>
+                                                <Upload className="w-4 h-4 mr-2" />
+                                                {uploading ? "Subiendo..." : "Subir Imagen"}
+                                            </Button>
+                                        </div>
+                                        <div className="text-xs text-muted-foreground">
+                                            Recomendado: 200x200px PNG transparente.
+                                            <div className="mt-1">
+                                                <Label className="text-xs font-normal">Texto del Logo (Alternativo):</Label>
+                                                <Input
+                                                    className="h-8 mt-1 w-48"
+                                                    value={data.branding?.logoText || ''}
+                                                    onChange={(e) => updateSection('branding', { ...data.branding, logoText: e.target.value })}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Colors */}
+                            <div className="grid gap-4">
+                                <Label>Color Primario</Label>
+                                <div className="flex flex-wrap gap-3 items-center">
+                                    {/* Presets */}
+                                    {['violet', 'emerald', 'blue', 'rose', 'orange', 'cyan'].map((color) => (
+                                        <div
+                                            key={color}
+                                            onClick={() => updateSection('branding', { ...data.branding, primaryColor: color })}
+                                            className={`w-10 h-10 rounded-full cursor-pointer border-2 transition-transform hover:scale-110 flex items-center justify-center ${data.branding?.primaryColor === color ? 'border-gray-900 ring-2 ring-offset-2 ring-gray-300' : 'border-transparent'}`}
+                                            title={color}
+                                        >
+                                            <div className={`w-full h-full rounded-full`} style={{ backgroundColor: `var(--color-${color}-500, ${color === 'violet' ? '#8b5cf6' : color === 'emerald' ? '#10b981' : color === 'blue' ? '#3b82f6' : color === 'rose' ? '#f43f5e' : color === 'orange' ? '#f97316' : '#06b6d4'})` }}></div>
+                                        </div>
+                                    ))}
+
+                                    <div className="w-px h-8 bg-gray-200 mx-2"></div>
+
+                                    {/* Custom Color Picker */}
+                                    <div className="flex items-center gap-2">
+                                        <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200 shadow-sm transition-transform hover:scale-110">
+                                            <Input
+                                                type="color"
+                                                className="absolute inset-0 w-20 h-20 -top-5 -left-5 p-0 border-none cursor-pointer"
+                                                value={data.branding?.primaryColor?.startsWith('#') ? data.branding.primaryColor : '#000000'}
+                                                onChange={(e) => updateSection('branding', { ...data.branding, primaryColor: e.target.value })}
+                                            />
+                                        </div>
+                                        <span className="text-xs text-muted-foreground uppercase font-mono">
+                                            {data.branding?.primaryColor?.startsWith('#') ? data.branding.primaryColor : 'Custom'}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <Button onClick={() => handleSave('branding', data.branding)} disabled={loading}>
+                                <Save className="w-4 h-4 mr-2" /> Guardar Marca
+                            </Button>
+                        </CardContent>
+                    </Card>
+                </TabsContent>
 
                 {/* HERO EDITOR */}
                 <TabsContent value="hero">
@@ -108,16 +208,16 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
                             <div className="grid gap-2">
                                 <Label>Título Principal</Label>
                                 <Input
-                                    value={heroData.title || ''}
-                                    onChange={(e) => setHeroData({ ...heroData, title: e.target.value })}
+                                    value={data.hero?.title || ''}
+                                    onChange={(e) => updateSection('hero', { ...data.hero, title: e.target.value })}
                                     placeholder="Ej: Cuidado Veterinario de Excelencia"
                                 />
                             </div>
                             <div className="grid gap-2">
                                 <Label>Subtítulo</Label>
                                 <Textarea
-                                    value={heroData.subtitle || ''}
-                                    onChange={(e) => setHeroData({ ...heroData, subtitle: e.target.value })}
+                                    value={data.hero?.subtitle || ''}
+                                    onChange={(e) => updateSection('hero', { ...data.hero, subtitle: e.target.value })}
                                     placeholder="Descripción corta..."
                                 />
                             </div>
@@ -125,19 +225,19 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
                                 <div className="grid gap-2">
                                     <Label>Texto Botón Primario</Label>
                                     <Input
-                                        value={heroData.cta_primary || ''}
-                                        onChange={(e) => setHeroData({ ...heroData, cta_primary: e.target.value })}
+                                        value={data.hero?.cta_primary || ''}
+                                        onChange={(e) => updateSection('hero', { ...data.hero, cta_primary: e.target.value })}
                                     />
                                 </div>
                                 <div className="grid gap-2">
                                     <Label>Texto Botón Secundario</Label>
                                     <Input
-                                        value={heroData.cta_secondary || ''}
-                                        onChange={(e) => setHeroData({ ...heroData, cta_secondary: e.target.value })}
+                                        value={data.hero?.cta_secondary || ''}
+                                        onChange={(e) => updateSection('hero', { ...data.hero, cta_secondary: e.target.value })}
                                     />
                                 </div>
                             </div>
-                            <Button onClick={() => handleSave('hero', heroData)} disabled={loading}>
+                            <Button onClick={() => handleSave('hero', data.hero)} disabled={loading}>
                                 <Save className="w-4 h-4 mr-2" /> Guardar Hero
                             </Button>
                         </CardContent>
@@ -154,18 +254,18 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
                             <div className="grid gap-2">
                                 <Label>Título de Sección</Label>
                                 <Input
-                                    value={servicesData.title || ''}
-                                    onChange={(e) => setServicesData({ ...servicesData, title: e.target.value })}
+                                    value={data.services?.title || ''}
+                                    onChange={(e) => updateSection('services', { ...data.services, title: e.target.value })}
                                 />
                             </div>
                             <div className="grid gap-2">
                                 <Label>Descripción</Label>
                                 <Textarea
-                                    value={servicesData.subtitle || ''}
-                                    onChange={(e) => setServicesData({ ...servicesData, subtitle: e.target.value })}
+                                    value={data.services?.subtitle || ''}
+                                    onChange={(e) => updateSection('services', { ...data.services, subtitle: e.target.value })}
                                 />
                             </div>
-                            <Button onClick={() => handleSave('services', servicesData)} disabled={loading}>
+                            <Button onClick={() => handleSave('services', data.services)} disabled={loading}>
                                 <Save className="w-4 h-4 mr-2" /> Guardar Servicios
                             </Button>
                         </CardContent>
@@ -182,26 +282,69 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
                             <div className="grid gap-2">
                                 <Label>Dirección</Label>
                                 <Input
-                                    value={contactData.address || ''}
-                                    onChange={(e) => setContactData({ ...contactData, address: e.target.value })}
+                                    value={data.contact?.address || ''}
+                                    onChange={(e) => updateSection('contact', { ...data.contact, address: e.target.value })}
                                 />
                             </div>
                             <div className="grid gap-2">
                                 <Label>Teléfono</Label>
                                 <Input
-                                    value={contactData.phone || ''}
-                                    onChange={(e) => setContactData({ ...contactData, phone: e.target.value })}
+                                    value={data.contact?.phone || ''}
+                                    onChange={(e) => updateSection('contact', { ...data.contact, phone: e.target.value })}
                                 />
                             </div>
                             <div className="grid gap-2">
                                 <Label>Horario</Label>
+                                <Textarea
+                                    value={data.contact?.hours || ''}
+                                    onChange={(e) => updateSection('contact', { ...data.contact, hours: e.target.value })}
+                                    placeholder="Ej: Lun-Vie: 9am - 8pm"
+                                />
+                                <p className="text-xs text-muted-foreground">Este horario se muestra también en el banner superior.</p>
+                            </div>
+                            <Button onClick={() => handleSave('contact', data.contact)} disabled={loading}>
+                                <Save className="w-4 h-4 mr-2" /> Guardar Contacto
+                            </Button>
+                        </CardContent>
+                    </Card>
+                </TabsContent>
+
+                {/* FOOTER EDITOR */}
+                <TabsContent value="footer">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Pie de Página (Footer)</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            <div className="grid gap-2">
+                                <Label>Texto Copyright</Label>
                                 <Input
-                                    value={contactData.hours || ''}
-                                    onChange={(e) => setContactData({ ...contactData, hours: e.target.value })}
+                                    value={data.footer?.copyright || ''}
+                                    onChange={(e) => updateSection('footer', { ...data.footer, copyright: e.target.value })}
                                 />
                             </div>
-                            <Button onClick={() => handleSave('contact', contactData)} disabled={loading}>
-                                <Save className="w-4 h-4 mr-2" /> Guardar Contacto
+                            <div className="grid gap-2">
+                                <Label>Links de Redes Sociales</Label>
+                                <div className="grid grid-cols-3 gap-2">
+                                    <Input
+                                        placeholder="Facebook URL"
+                                        value={data.footer?.social?.facebook || ''}
+                                        onChange={(e) => updateSection('footer', { ...data.footer, social: { ...data.footer.social, facebook: e.target.value } })}
+                                    />
+                                    <Input
+                                        placeholder="Instagram URL"
+                                        value={data.footer?.social?.instagram || ''}
+                                        onChange={(e) => updateSection('footer', { ...data.footer, social: { ...data.footer.social, instagram: e.target.value } })}
+                                    />
+                                    <Input
+                                        placeholder="Twitter/X URL"
+                                        value={data.footer?.social?.twitter || ''}
+                                        onChange={(e) => updateSection('footer', { ...data.footer, social: { ...data.footer.social, twitter: e.target.value } })}
+                                    />
+                                </div>
+                            </div>
+                            <Button onClick={() => handleSave('footer', data.footer)} disabled={loading}>
+                                <Save className="w-4 h-4 mr-2" /> Guardar Footer
                             </Button>
                         </CardContent>
                     </Card>

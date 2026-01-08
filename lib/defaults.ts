@@ -13,5 +13,22 @@ export const defaultContent = {
         address: "Av. Principal 123, Colonia Centro",
         phone: "(555) 123-4567",
         hours: "Lun-Vie: 9am - 8pm | Sab: 9am - 3pm"
+    },
+    branding: {
+        primaryColor: "violet", // 'violet' | 'emerald' | 'blue' | 'rose'
+        logoText: "GestionVet",
+        logoUrl: "" // Optional URL overrides Icon
+    },
+    footer: {
+        copyright: "© 2024 GestionVet Clínica Veterinaria.",
+        links: [
+            { label: "Aviso de Privacidad", href: "#" },
+            { label: "Términos de Servicio", href: "#" }
+        ],
+        social: {
+            facebook: "",
+            instagram: "",
+            twitter: ""
+        }
     }
 };
