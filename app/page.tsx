@@ -71,7 +71,8 @@ export default async function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              Abierto Hoy hasta las {content.contact.hours.split("pm")[0]?.split("-")[1] || "8:00 PM"}
+              {/* Simply display the hours string or a safe "Abierto" message to avoid parsing crashes */}
+              Abierto Hoy: {content.contact.hours ? content.contact.hours.split("|")[0] : "Consultar Horario"}
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6 max-w-4xl mx-auto whitespace-pre-line">
               {content.hero.title}
@@ -270,22 +271,7 @@ export default async function Home() {
       <footer className="bg-white py-12 text-sm text-gray-500 border-t border-gray-100">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            {content.branding.logoUrl ? (
-              <div className="relative h-8 w-auto">
-                <img
-                  src={content.branding.logoUrl}
-                  alt={content.branding.logoText}
-                  className="h-8 w-auto object-contain"
-                />
-              </div>
-            ) : (
-              <div className="flex items-center gap-2">
-                <div className="bg-primary/10 p-2 rounded-lg">
-                  <HeartPulse className="h-5 w-5 text-primary" />
-                </div>
-                <span className="text-lg font-bold text-gray-900">{content.branding.logoText}</span>
-              </div>
-            )}
+            <SiteBranding />
           </div>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-primary transition-colors">Aviso de Privacidad</Link>
