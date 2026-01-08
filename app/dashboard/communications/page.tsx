@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 
 export default async function CommunicationsPage() {
     const comms = await getCommunications();
@@ -45,12 +46,15 @@ export default async function CommunicationsPage() {
                         ) : (
                             comms?.map((c) => (
                                 <TableRow key={c.id}>
-                                    <TableCell>{format(new Date(c.sent_at), "MMM d, HH:mm")}</TableCell>
+                                    <TableCell>{format(new Date(c.sent_at), "MMM d, HH:mm", { locale: es })}</TableCell>
                                     <TableCell>
                                         <Badge variant="outline">
                                             {c.type === 'email' && <Mail className="h-3 w-3 mr-1 inline" />}
                                             {c.type === 'phone_call' && <Phone className="h-3 w-3 mr-1 inline" />}
-                                            {c.type}
+                                            {c.type === 'email' ? 'Correo' :
+                                                c.type === 'phone_call' ? 'Llamada' :
+                                                    c.type === 'sms' ? 'SMS' :
+                                                        c.type === 'notification' ? 'Notificación' : c.type}
                                         </Badge>
                                     </TableCell>
                                     <TableCell>{c.clients?.first_name} {c.clients?.last_name}</TableCell>

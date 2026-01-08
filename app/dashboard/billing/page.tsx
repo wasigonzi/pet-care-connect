@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 
 export default async function BillingPage() {
     const invoices = await getInvoices();
@@ -62,10 +63,10 @@ export default async function BillingPage() {
                                         </div>
                                     </TableCell>
                                     <TableCell>
-                                        {format(new Date(inv.created_at), "MMM d, yyyy")}
+                                        {format(new Date(inv.created_at), "MMM d, yyyy", { locale: es })}
                                     </TableCell>
                                     <TableCell>
-                                        {format(new Date(inv.due_date), "MMM d, yyyy")}
+                                        {format(new Date(inv.due_date), "MMM d, yyyy", { locale: es })}
                                     </TableCell>
                                     <TableCell className="font-medium">
                                         ${inv.total_amount.toFixed(2)}
@@ -79,7 +80,8 @@ export default async function BillingPage() {
                                             {inv.status === 'paid' ? 'Pagado' :
                                                 inv.status === 'overdue' ? 'Vencido' :
                                                     inv.status === 'draft' ? 'Borrador' :
-                                                        inv.status}
+                                                        inv.status === 'issued' ? 'Emitida' :
+                                                            inv.status}
                                         </Badge>
                                     </TableCell>
                                     <TableCell className="text-right">

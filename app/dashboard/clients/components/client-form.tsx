@@ -52,13 +52,13 @@ export function ClientForm() {
             // @ts-ignore
             const result = await createClientAction(null, formData);
             if (result.error) {
-                toast.error("Failed to create client");
+                toast.error("Error al crear cliente");
             } else {
-                toast.success("Client created successfully");
+                toast.success("Cliente creado exitosamente");
                 router.push("/dashboard/clients");
             }
         } catch (error) {
-            toast.error("Something went wrong");
+            toast.error("Algo salió mal");
         }
     }
 
@@ -71,9 +71,9 @@ export function ClientForm() {
                         name="first_name"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>First Name</FormLabel>
+                                <FormLabel>Nombre</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="John" {...field} />
+                                    <Input placeholder="Juan" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -84,9 +84,9 @@ export function ClientForm() {
                         name="last_name"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Last Name</FormLabel>
+                                <FormLabel>Apellido</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Doe" {...field} />
+                                    <Input placeholder="Pérez" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -100,7 +100,7 @@ export function ClientForm() {
                         <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                                <Input placeholder="john@example.com" type="email" {...field} />
+                                <Input placeholder="juan@ejemplo.com" type="email" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -111,7 +111,7 @@ export function ClientForm() {
                     name="phone"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Phone</FormLabel>
+                            <FormLabel>Teléfono</FormLabel>
                             <FormControl>
                                 <Input placeholder="+1 234 567 890" {...field} />
                             </FormControl>
@@ -125,9 +125,9 @@ export function ClientForm() {
                         name="address"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Address</FormLabel>
+                                <FormLabel>Dirección</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="123 Main St" {...field} />
+                                    <Input placeholder="Calle Principal 123" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -138,9 +138,9 @@ export function ClientForm() {
                         name="city"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>City</FormLabel>
+                                <FormLabel>Ciudad</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="New York" {...field} />
+                                    <Input placeholder="Ciudad de México" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -149,9 +149,9 @@ export function ClientForm() {
                 </div>
                 <div className="flex justify-end gap-4">
                     <Button type="button" variant="outline" onClick={() => router.back()}>
-                        Cancel
+                        Cancelar
                     </Button>
-                    <Button type="submit">Create Client</Button>
+                    <Button type="submit">Crear Cliente</Button>
                 </div>
             </form>
         </Form>

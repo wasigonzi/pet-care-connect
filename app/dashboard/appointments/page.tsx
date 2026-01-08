@@ -4,6 +4,7 @@ import { Plus, Calendar as CalendarIcon, Clock } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { startOfWeek, endOfWeek, addDays, format, isSameDay } from "date-fns";
+import { es } from "date-fns/locale";
 
 export default async function AppointmentsPage({
     searchParams,
@@ -47,8 +48,8 @@ export default async function AppointmentsPage({
                 {days.map((currentDay, i) => (
                     <Card key={i} className={`min-h-[200px] ${isSameDay(currentDay, new Date()) ? 'border-primary' : ''}`}>
                         <CardHeader className="p-4 pb-2">
-                            <CardTitle className="text-sm font-medium text-muted-foreground text-center">
-                                {format(currentDay, "EEE, MMM d")}
+                            <CardTitle className="text-sm font-medium text-muted-foreground text-center capitalize">
+                                {format(currentDay, "EEE, MMM d", { locale: es })}
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="p-2 space-y-2">
@@ -66,7 +67,14 @@ export default async function AppointmentsPage({
                                         </div>
                                         <div className="font-medium truncate">{apt.patients?.name}</div>
                                         <div className="text-muted-foreground truncate">{apt.clients?.last_name}</div>
-                                        <div className="mt-1 text-[10px] uppercase tracking-wide text-primary/80">{apt.appointment_type}</div>
+                                        <div className="mt-1 text-[10px] uppercase tracking-wide text-primary/80">
+                                            {apt.appointment_type === 'Consultation' && 'Consulta'}
+                                            {apt.appointment_type === 'Vaccination' && 'Vacunación'}
+                                            {apt.appointment_type === 'Surgery' && 'Cirugía'}
+                                            {apt.appointment_type === 'Follow-up' && 'Seguimiento'}
+                                            {apt.appointment_type === 'Grooming' && 'Peluquería'}
+                                            {!['Consultation', 'Vaccination', 'Surgery', 'Follow-up', 'Grooming'].includes(apt.appointment_type) && apt.appointment_type}
+                                        </div>
                                     </div>
                                 ))}
                         </CardContent>

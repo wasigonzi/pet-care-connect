@@ -30,14 +30,14 @@ import {
 import { Plus, Trash2, Package } from "lucide-react";
 
 const formSchema = z.object({
-    client_id: z.string().min(1, "Client is required"),
-    valid_until: z.string().min(1, "Date is required"),
+    client_id: z.string().min(1, "El cliente es requerido"),
+    valid_until: z.string().min(1, "La fecha es requerida"),
     notes: z.string().optional(),
     items: z.array(z.object({
-        description: z.string().min(1, "Required"),
+        description: z.string().min(1, "Requerido"),
         quantity: z.coerce.number().min(1),
         unit_price: z.coerce.number().min(0),
-    })).min(1, "Add at least one item"),
+    })).min(1, "Agregar al menos un ítem"),
 });
 
 export function EstimateForm() {

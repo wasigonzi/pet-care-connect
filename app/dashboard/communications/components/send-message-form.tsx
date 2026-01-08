@@ -1,6 +1,7 @@
 "use client";
 
-import { sendCommunicationAction, getTemplates } from "../actions";
+import { sendCommunicationAction } from "../actions";
+import { getTemplates } from "@/app/dashboard/templates/actions";
 import { getClients } from "@/app/dashboard/clients/actions";
 import { Button } from "@/components/ui/button";
 import {
@@ -80,9 +81,9 @@ export function SendMessageForm() {
         const result = await sendCommunicationAction(null, formData);
 
         if (result?.error) {
-            toast.error(typeof result.error === 'string' ? result.error : "Failed to send message");
+            toast.error(typeof result.error === 'string' ? result.error : "Error al enviar mensaje");
         } else {
-            toast.success("Message sent successfully");
+            toast.success("Mensaje enviado exitosamente");
             router.push("/dashboard/communications");
         }
     }
@@ -92,11 +93,11 @@ export function SendMessageForm() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                     <FormItem>
-                        <FormLabel>Load Template (Optional)</FormLabel>
+                        <FormLabel>Cargar Plantilla (Opcional)</FormLabel>
                         <Select onValueChange={handleTemplateSelect}>
                             <FormControl>
                                 <SelectTrigger>
-                                    <SelectValue placeholder="Select a template" />
+                                    <SelectValue placeholder="Seleccionar una plantilla" />
                                 </SelectTrigger>
                             </FormControl>
                             <SelectContent>
@@ -116,11 +117,11 @@ export function SendMessageForm() {
                         name="client_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Client</FormLabel>
+                                <FormLabel>Cliente</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select client" />
+                                            <SelectValue placeholder="Seleccionar cliente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -140,17 +141,17 @@ export function SendMessageForm() {
                         name="type"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Type</FormLabel>
+                                <FormLabel>Tipo</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Type" />
+                                            <SelectValue placeholder="Tipo" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        <SelectItem value="email">Email</SelectItem>
+                                        <SelectItem value="email">Correo</SelectItem>
                                         <SelectItem value="sms">SMS</SelectItem>
-                                        <SelectItem value="notification">Notification</SelectItem>
+                                        <SelectItem value="notification">Notificación</SelectItem>
                                     </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -165,9 +166,9 @@ export function SendMessageForm() {
                         name="subject"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Subject</FormLabel>
+                                <FormLabel>Asunto</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Subject line" {...field} />
+                                    <Input placeholder="Línea de asunto" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -180,9 +181,9 @@ export function SendMessageForm() {
                     name="content"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Message Content</FormLabel>
+                            <FormLabel>Contenido del Mensaje</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Type your message here..." className="min-h-[150px]" {...field} />
+                                <Textarea placeholder="Escribe tu mensaje aquí..." className="min-h-[150px]" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -191,9 +192,9 @@ export function SendMessageForm() {
 
                 <div className="flex justify-end gap-4">
                     <Button type="button" variant="outline" onClick={() => router.back()}>
-                        Cancel
+                        Cancelar
                     </Button>
-                    <Button type="submit">Send Message</Button>
+                    <Button type="submit">Enviar Mensaje</Button>
                 </div>
             </form>
         </Form>

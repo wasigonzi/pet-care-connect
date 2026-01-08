@@ -32,8 +32,8 @@ import { Syringe } from "lucide-react";
 const formSchema = z.object({
     client_id: z.string().uuid(),
     patient_id: z.string().uuid(),
-    vaccine_name: z.string().min(1, "Vaccine name is required"),
-    administered_at: z.string().min(1, "Date is required"),
+    vaccine_name: z.string().min(1, "El nombre de la vacuna es requerido"),
+    administered_at: z.string().min(1, "La fecha es requerida"),
     next_due_at: z.string().optional(),
 });
 

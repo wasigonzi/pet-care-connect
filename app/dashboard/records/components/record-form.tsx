@@ -179,7 +179,7 @@ export function RecordForm() {
                             name="subjective"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Subjetivo (Subjective)</FormLabel>
+                                    <FormLabel>Subjetivo</FormLabel>
                                     <FormControl>
                                         <Textarea placeholder="Reporte del dueño..." className="min-h-[100px]" {...field} />
                                     </FormControl>
@@ -192,7 +192,7 @@ export function RecordForm() {
                             name="objective"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Objetivo (Objective)</FormLabel>
+                                    <FormLabel>Objetivo</FormLabel>
                                     <FormControl>
                                         <Textarea placeholder="Signos vitales, hallazgos..." className="min-h-[100px]" {...field} />
                                     </FormControl>
@@ -205,7 +205,7 @@ export function RecordForm() {
                             name="assessment"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Evaluación (Assessment)</FormLabel>
+                                    <FormLabel>Evaluación</FormLabel>
                                     <FormControl>
                                         <Textarea placeholder="Análisis..." className="min-h-[100px]" {...field} />
                                     </FormControl>

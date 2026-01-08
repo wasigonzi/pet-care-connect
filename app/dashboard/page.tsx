@@ -7,7 +7,7 @@ export default async function DashboardPage() {
 
     return (
         <div className="flex flex-col gap-4 p-8 pt-6">
-            <h1 className="text-3xl font-bold tracking-tight">Tablero</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Panel de Control</h1>
             <p className="text-muted-foreground">Bienvenido a su Sistema de Gestión Veterinaria.</p>
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -18,7 +18,7 @@ export default async function DashboardPage() {
                     </CardHeader>
                     <CardContent>
                         <div className="text-2xl font-bold">${metrics.revenue.toLocaleString('es-MX', { minimumFractionDigits: 2 })}</div>
-                        <p className="text-xs text-muted-foreground">Recaudado de por vida</p>
+                        <p className="text-xs text-muted-foreground">Total histórico</p>
                     </CardContent>
                 </Card>
                 <Card>

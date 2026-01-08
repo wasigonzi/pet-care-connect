@@ -58,9 +58,9 @@ export function InventoryForm() {
         const result = await createInventoryItemAction(null, formData);
 
         if (result?.error) {
-            toast.error(typeof result.error === 'string' ? result.error : "Failed to add item");
+            toast.error(typeof result.error === 'string' ? result.error : "Error al agregar ítem");
         } else {
-            toast.success("Inventory item added successfully");
+            toast.success("Ítem de inventario agregado exitosamente");
             router.push("/dashboard/inventory");
         }
     }
@@ -74,9 +74,9 @@ export function InventoryForm() {
                         name="name"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Item Name</FormLabel>
+                                <FormLabel>Nombre del Ítem</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="e.g. Amoxicillin 500mg" {...field} />
+                                    <Input placeholder="ej. Amoxicilina 500mg" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -87,19 +87,19 @@ export function InventoryForm() {
                         name="category"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Category</FormLabel>
+                                <FormLabel>Categoría</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select category" />
+                                            <SelectValue placeholder="Seleccionar categoría" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        <SelectItem value="Medication">Medication</SelectItem>
-                                        <SelectItem value="Consumable">Consumable</SelectItem>
-                                        <SelectItem value="Equipment">Equipment</SelectItem>
-                                        <SelectItem value="Food">Food</SelectItem>
-                                        <SelectItem value="Other">Other</SelectItem>
+                                        <SelectItem value="Medication">Medicamento</SelectItem>
+                                        <SelectItem value="Consumable">Consumible</SelectItem>
+                                        <SelectItem value="Equipment">Equipo</SelectItem>
+                                        <SelectItem value="Food">Alimento</SelectItem>
+                                        <SelectItem value="Other">Otro</SelectItem>
                                     </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -114,7 +114,7 @@ export function InventoryForm() {
                         name="sku"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>SKU / Barcode</FormLabel>
+                                <FormLabel>SKU / Código de Barras</FormLabel>
                                 <FormControl>
                                     <Input placeholder="SKU-123456" {...field} />
                                 </FormControl>
@@ -127,7 +127,7 @@ export function InventoryForm() {
                         name="quantity"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Quantity</FormLabel>
+                                <FormLabel>Cantidad</FormLabel>
                                 <FormControl>
                                     <Input type="number" {...field} />
                                 </FormControl>
@@ -140,19 +140,19 @@ export function InventoryForm() {
                         name="unit"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Unit</FormLabel>
+                                <FormLabel>Unidad</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select unit" />
+                                            <SelectValue placeholder="Seleccionar unidad" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        <SelectItem value="pcs">Pieces</SelectItem>
-                                        <SelectItem value="ml">Milliliters (ml)</SelectItem>
-                                        <SelectItem value="mg">Milligrams (mg)</SelectItem>
-                                        <SelectItem value="kg">Kilograms (kg)</SelectItem>
-                                        <SelectItem value="box">Box</SelectItem>
+                                        <SelectItem value="pcs">Piezas</SelectItem>
+                                        <SelectItem value="ml">Mililitros (ml)</SelectItem>
+                                        <SelectItem value="mg">Miligramos (mg)</SelectItem>
+                                        <SelectItem value="kg">Kilogramos (kg)</SelectItem>
+                                        <SelectItem value="box">Caja</SelectItem>
                                     </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -167,7 +167,7 @@ export function InventoryForm() {
                         name="cost_price"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Cost Price</FormLabel>
+                                <FormLabel>Precio Costo</FormLabel>
                                 <FormControl>
                                     <Input type="number" step="0.01" prefix="$" {...field} />
                                 </FormControl>
@@ -180,7 +180,7 @@ export function InventoryForm() {
                         name="selling_price"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Selling Price</FormLabel>
+                                <FormLabel>Precio Venta</FormLabel>
                                 <FormControl>
                                     <Input type="number" step="0.01" prefix="$" {...field} />
                                 </FormControl>
@@ -193,7 +193,7 @@ export function InventoryForm() {
                         name="reorder_level"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Reorder Level</FormLabel>
+                                <FormLabel>Nivel de Reorden</FormLabel>
                                 <FormControl>
                                     <Input type="number" {...field} />
                                 </FormControl>
@@ -208,7 +208,7 @@ export function InventoryForm() {
                     name="expiry_date"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Expiry Date (Optional)</FormLabel>
+                            <FormLabel>Fecha de Caducidad (Opcional)</FormLabel>
                             <FormControl>
                                 <Input type="date" {...field} />
                             </FormControl>
@@ -219,9 +219,9 @@ export function InventoryForm() {
 
                 <div className="flex justify-end gap-4">
                     <Button type="button" variant="outline" onClick={() => router.back()}>
-                        Cancel
+                        Cancelar
                     </Button>
-                    <Button type="submit">Add Item</Button>
+                    <Button type="submit">Agregar Ítem</Button>
                 </div>
             </form>
         </Form>

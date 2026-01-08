@@ -29,8 +29,8 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
-    client_id: z.string().uuid(),
-    patient_id: z.string().uuid(),
+    client_id: z.string({ required_error: "El cliente es requerido" }).uuid(),
+    patient_id: z.string({ required_error: "El paciente es requerido" }).uuid(),
     date: z.string().min(1, "La fecha es requerida"),
     start_time: z.string().min(1, "La hora de inicio es requerida"),
     duration: z.string(), // "15", "30", "60"

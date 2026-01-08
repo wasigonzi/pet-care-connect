@@ -62,7 +62,7 @@ export function StaffClient({ data }: StaffClientProps) {
                                         </Avatar>
                                         <div className="flex flex-col">
                                             <span className="font-medium">
-                                                {user.full_name || "Unknown"}
+                                                {user.full_name || "Desconocido"}
                                             </span>
                                             <span className="text-xs text-muted-foreground">
                                                 {user.email}

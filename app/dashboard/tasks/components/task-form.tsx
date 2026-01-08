@@ -53,9 +53,9 @@ export function TaskForm() {
         const result = await createTaskAction(null, formData);
 
         if (result?.error) {
-            toast.error(typeof result.error === 'string' ? result.error : "Failed to create task");
+            toast.error(typeof result.error === 'string' ? result.error : "Error al crear tarea");
         } else {
-            toast.success("Task created successfully");
+            toast.success("Tarea creada exitosamente");
             router.push("/dashboard/tasks");
         }
     }
@@ -68,9 +68,9 @@ export function TaskForm() {
                     name="title"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Task Title</FormLabel>
+                            <FormLabel>Título de la Tarea</FormLabel>
                             <FormControl>
-                                <Input placeholder="e.g. Call supplier regarding order #123" {...field} />
+                                <Input placeholder="ej. Llamar proveedor..." {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -83,18 +83,18 @@ export function TaskForm() {
                         name="priority"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Priority</FormLabel>
+                                <FormLabel>Prioridad</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Priority" />
+                                            <SelectValue placeholder="Seleccionar prioridad" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        <SelectItem value="low">Low</SelectItem>
-                                        <SelectItem value="medium">Medium</SelectItem>
-                                        <SelectItem value="high">High</SelectItem>
-                                        <SelectItem value="urgent">Urgent</SelectItem>
+                                        <SelectItem value="low">Baja</SelectItem>
+                                        <SelectItem value="medium">Media</SelectItem>
+                                        <SelectItem value="high">Alta</SelectItem>
+                                        <SelectItem value="urgent">Urgente</SelectItem>
                                     </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -106,7 +106,7 @@ export function TaskForm() {
                         name="due_date"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Due Date</FormLabel>
+                                <FormLabel>Fecha Límite</FormLabel>
                                 <FormControl>
                                     <Input type="date" {...field} />
                                 </FormControl>
@@ -121,9 +121,9 @@ export function TaskForm() {
                     name="description"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Description</FormLabel>
+                            <FormLabel>Descripción</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Details..." {...field} />
+                                <Textarea placeholder="Detalles..." {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -132,9 +132,9 @@ export function TaskForm() {
 
                 <div className="flex justify-end gap-4">
                     <Button type="button" variant="outline" onClick={() => router.back()}>
-                        Cancel
+                        Cancelar
                     </Button>
-                    <Button type="submit">Create Task</Button>
+                    <Button type="submit">Crear Tarea</Button>
                 </div>
             </form>
         </Form>

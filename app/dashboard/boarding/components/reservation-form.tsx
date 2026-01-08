@@ -84,9 +84,9 @@ export function ReservationForm() {
         const result = await createReservationAction(null, formData);
 
         if (result?.error) {
-            toast.error(typeof result.error === 'string' ? result.error : "Failed to create reservation");
+            toast.error(typeof result.error === 'string' ? result.error : "Error al crear reservación");
         } else {
-            toast.success("Reservation created successfully");
+            toast.success("Reservación creada exitosamente");
             router.push("/dashboard/boarding");
         }
     }
@@ -100,11 +100,11 @@ export function ReservationForm() {
                         name="client_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Client</FormLabel>
+                                <FormLabel>Cliente</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select client" />
+                                            <SelectValue placeholder="Seleccionar cliente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -124,7 +124,7 @@ export function ReservationForm() {
                         name="patient_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Patient</FormLabel>
+                                <FormLabel>Paciente</FormLabel>
                                 <Select
                                     onValueChange={field.onChange}
                                     defaultValue={field.value}
@@ -132,7 +132,7 @@ export function ReservationForm() {
                                 >
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select patient" />
+                                            <SelectValue placeholder="Seleccionar paciente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -154,11 +154,11 @@ export function ReservationForm() {
                     name="unit_id"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Unit</FormLabel>
+                            <FormLabel>Unidad</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
                                     <SelectTrigger>
-                                        <SelectValue placeholder="Select a unit/room" />
+                                        <SelectValue placeholder="Seleccionar unidad/habitación" />
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
@@ -180,7 +180,7 @@ export function ReservationForm() {
                         name="start_date"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Check-in Date</FormLabel>
+                                <FormLabel>Fecha de Entrada</FormLabel>
                                 <FormControl>
                                     <Input type="date" {...field} />
                                 </FormControl>
@@ -193,7 +193,7 @@ export function ReservationForm() {
                         name="end_date"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Check-out Date</FormLabel>
+                                <FormLabel>Fecha de Salida</FormLabel>
                                 <FormControl>
                                     <Input type="date" {...field} />
                                 </FormControl>
@@ -208,9 +208,9 @@ export function ReservationForm() {
                     name="notes"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Special Instructions</FormLabel>
+                            <FormLabel>Instrucciones Especiales</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Feeding, Meds, etc..." {...field} />
+                                <Textarea placeholder="Alimentación, Medicamentos, etc..." {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -219,9 +219,9 @@ export function ReservationForm() {
 
                 <div className="flex justify-end gap-4">
                     <Button type="button" variant="outline" onClick={() => router.back()}>
-                        Cancel
+                        Cancelar
                     </Button>
-                    <Button type="submit">Book Reservation</Button>
+                    <Button type="submit">Agendar Reservación</Button>
                 </div>
             </form>
         </Form>

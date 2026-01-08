@@ -63,7 +63,7 @@ export async function createAppointmentAction(prevState: any, formData: FormData
     // @ts-ignore
     if (conflicts && conflicts.length > 0) {
         // In a real app we might allow overlapping but warn
-        return { error: "Appointment conflict detected for this time slot." };
+        return { error: "Conflicto de cita detectado en este horario." };
     }
 
     const { error } = await supabase.from("appointments").insert(validated.data);

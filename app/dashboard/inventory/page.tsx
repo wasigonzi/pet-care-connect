@@ -57,7 +57,13 @@ export default async function InventoryPage() {
                                                 {item.name}
                                             </div>
                                         </TableCell>
-                                        <TableCell>{item.category}</TableCell>
+                                        <TableCell>
+                                            {item.category === 'Medication' ? 'Medicamento' :
+                                                item.category === 'Consumable' ? 'Consumible' :
+                                                    item.category === 'Equipment' ? 'Equipo' :
+                                                        item.category === 'Food' ? 'Alimento' :
+                                                            item.category === 'Other' ? 'Otro' : item.category}
+                                        </TableCell>
                                         <TableCell>
                                             {item.quantity} {item.unit}
                                         </TableCell>

@@ -55,7 +55,7 @@ export function InvoiceForm() {
         defaultValues: {
             status: "draft",
             due_date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0], // 7 days from now
-            items: [{ description: "Consultation Fee", quantity: 1, unit_price: 50 }],
+            items: [{ description: "Consulta Veterinaria", quantity: 1, unit_price: 50 }],
         },
     });
 
@@ -98,9 +98,9 @@ export function InvoiceForm() {
         const result = await createInvoiceAction(null, formData);
 
         if (result?.error) {
-            toast.error(typeof result.error === 'string' ? result.error : "Failed to create invoice");
+            toast.error(typeof result.error === 'string' ? result.error : "Error al crear factura");
         } else {
-            toast.success("Invoice created successfully");
+            toast.success("Factura creada exitosamente");
             router.push("/dashboard/billing");
         }
     }
@@ -114,11 +114,11 @@ export function InvoiceForm() {
                         name="client_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Client</FormLabel>
+                                <FormLabel>Cliente</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select client" />
+                                            <SelectValue placeholder="Seleccionar cliente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -139,17 +139,17 @@ export function InvoiceForm() {
                             name="status"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Status</FormLabel>
+                                    <FormLabel>Estado</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Status" />
+                                                <SelectValue placeholder="Estado" />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="draft">Draft</SelectItem>
-                                            <SelectItem value="issued">Issued</SelectItem>
-                                            <SelectItem value="paid">Paid</SelectItem>
+                                            <SelectItem value="draft">Borrador</SelectItem>
+                                            <SelectItem value="issued">Emitida</SelectItem>
+                                            <SelectItem value="paid">Pagada</SelectItem>
                                         </SelectContent>
                                     </Select>
                                     <FormMessage />
@@ -161,7 +161,7 @@ export function InvoiceForm() {
                             name="due_date"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Due Date</FormLabel>
+                                    <FormLabel>Fecha de Vencimiento</FormLabel>
                                     <FormControl>
                                         <Input type="date" {...field} />
                                     </FormControl>
@@ -174,17 +174,17 @@ export function InvoiceForm() {
 
                 <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-medium">Items</h3>
+                        <h3 className="text-lg font-medium">Ítems</h3>
                         <Button type="button" variant="outline" size="sm" onClick={() => append({ description: "", quantity: 1, unit_price: 0 })}>
-                            <Plus className="mr-2 h-4 w-4" /> Add Item
+                            <Plus className="mr-2 h-4 w-4" /> Agregar Ítem
                         </Button>
                     </div>
 
                     <div className="space-y-2">
                         <div className="grid grid-cols-12 gap-2 text-sm font-medium text-muted-foreground">
-                            <div className="col-span-6">Description</div>
-                            <div className="col-span-2">Qty</div>
-                            <div className="col-span-2">Price</div>
+                            <div className="col-span-6">Descripción</div>
+                            <div className="col-span-2">Cant</div>
+                            <div className="col-span-2">Precio</div>
                             <div className="col-span-1">Total</div>
                             <div className="col-span-1"></div>
                         </div>
@@ -194,7 +194,7 @@ export function InvoiceForm() {
                                     <FormField
                                         control={form.control}
                                         name={`items.${index}.description`}
-                                        render={({ field }) => <Input {...field} placeholder="Item description" />}
+                                        render={({ field }) => <Input {...field} placeholder="Descripción del ítem" />}
                                     />
                                 </div>
                                 <div className="col-span-2">
@@ -235,9 +235,9 @@ export function InvoiceForm() {
                     name="notes"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Notes</FormLabel>
+                            <FormLabel>Notas</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Payment instructions..." {...field} />
+                                <Textarea placeholder="Instrucciones de pago..." {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -246,9 +246,9 @@ export function InvoiceForm() {
 
                 <div className="flex justify-end gap-4">
                     <Button type="button" variant="outline" onClick={() => router.back()}>
-                        Cancel
+                        Cancelar
                     </Button>
-                    <Button type="submit">Create Invoice</Button>
+                    <Button type="submit">Crear Factura</Button>
                 </div>
             </form>
         </Form>
