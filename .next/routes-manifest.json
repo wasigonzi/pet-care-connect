@@ -74,6 +74,12 @@
       "namedRegex": "^/dashboard/appointments/new(?:/)?$"
     },
     {
+      "page": "/dashboard/audit",
+      "regex": "^/dashboard/audit(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/audit(?:/)?$"
+    },
+    {
       "page": "/dashboard/billing",
       "regex": "^/dashboard/billing(?:/)?$",
       "routeKeys": {},
@@ -122,6 +128,12 @@
       "namedRegex": "^/dashboard/communications/new(?:/)?$"
     },
     {
+      "page": "/dashboard/estimates",
+      "regex": "^/dashboard/estimates(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/estimates(?:/)?$"
+    },
+    {
       "page": "/dashboard/inventory",
       "regex": "^/dashboard/inventory(?:/)?$",
       "routeKeys": {},
@@ -132,6 +144,12 @@
       "regex": "^/dashboard/inventory/new(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/dashboard/inventory/new(?:/)?$"
+    },
+    {
+      "page": "/dashboard/permissions",
+      "regex": "^/dashboard/permissions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/permissions(?:/)?$"
     },
     {
       "page": "/dashboard/records",
@@ -146,10 +164,34 @@
       "namedRegex": "^/dashboard/records/new(?:/)?$"
     },
     {
+      "page": "/dashboard/reminders",
+      "regex": "^/dashboard/reminders(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/reminders(?:/)?$"
+    },
+    {
+      "page": "/dashboard/reports",
+      "regex": "^/dashboard/reports(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/reports(?:/)?$"
+    },
+    {
       "page": "/dashboard/settings",
       "regex": "^/dashboard/settings(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/dashboard/settings(?:/)?$"
+    },
+    {
+      "page": "/dashboard/staff",
+      "regex": "^/dashboard/staff(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/staff(?:/)?$"
+    },
+    {
+      "page": "/dashboard/suppliers",
+      "regex": "^/dashboard/suppliers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/suppliers(?:/)?$"
     },
     {
       "page": "/dashboard/tasks",
@@ -164,6 +206,18 @@
       "namedRegex": "^/dashboard/tasks/new(?:/)?$"
     },
     {
+      "page": "/dashboard/templates",
+      "regex": "^/dashboard/templates(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/templates(?:/)?$"
+    },
+    {
+      "page": "/dashboard/time-tracking",
+      "regex": "^/dashboard/time\\-tracking(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/time\\-tracking(?:/)?$"
+    },
+    {
       "page": "/dashboard/vaccinations",
       "regex": "^/dashboard/vaccinations(?:/)?$",
       "routeKeys": {},
@@ -174,6 +228,12 @@
       "regex": "^/dashboard/vaccinations/new(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/dashboard/vaccinations/new(?:/)?$"
+    },
+    {
+      "page": "/dashboard/wellness-plans",
+      "regex": "^/dashboard/wellness\\-plans(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/wellness\\-plans(?:/)?$"
     },
     {
       "page": "/login",
