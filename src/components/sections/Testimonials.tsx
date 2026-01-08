@@ -3,26 +3,26 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Dra. María García",
-    role: "Veterinaria, Clínica Pet Care",
+    name: "María González",
+    role: "Dueña de Max (Golden Retriever)",
     content:
-      "VetClinic ha transformado completamente la gestión de nuestra clínica. La agenda y los recordatorios automáticos nos ahorran horas cada semana.",
+      "Excelente atención para mi perrito. El Dr. López es muy profesional y cariñoso con los animales. Siempre nos sentimos en buenas manos.",
     avatar: "MG",
     rating: 5,
   },
   {
-    name: "Dr. Carlos Rodríguez",
-    role: "Director, Hospital Veterinario Central",
+    name: "Carlos Fernández",
+    role: "Dueño de Luna (Gata Persa)",
     content:
-      "El sistema multi-clínica es excepcional. Ahora administro 3 sucursales desde un solo lugar con visibilidad total del negocio.",
-    avatar: "CR",
+      "Llevan años cuidando a mi gatita Luna. El equipo es increíble y las instalaciones son muy modernas. 100% recomendado.",
+    avatar: "CF",
     rating: 5,
   },
   {
-    name: "Dra. Ana Martínez",
-    role: "Fundadora, VetLife",
+    name: "Ana Martínez",
+    role: "Dueña de Rocky (Bulldog Francés)",
     content:
-      "La atención al cliente es increíble. Siempre responden rápido y el sistema nunca nos ha fallado. Totalmente recomendado.",
+      "Operaron a Rocky de emergencia y lo salvaron. Estaremos eternamente agradecidos. Atención 24/7 de verdad.",
     avatar: "AM",
     rating: 5,
   },
@@ -47,7 +47,7 @@ export const Testimonials = () => {
             Lo que dicen nuestros clientes
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Veterinarios de todo el país confían en VetClinic para su práctica diaria
+            La satisfacción de las familias que confían en nosotros es nuestra mayor recompensa
           </p>
         </motion.div>
 

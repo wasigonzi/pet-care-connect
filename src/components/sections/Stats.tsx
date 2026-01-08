@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "500+", label: "Clínicas Activas" },
-  { value: "50K+", label: "Pacientes Gestionados" },
-  { value: "99.9%", label: "Uptime Garantizado" },
-  { value: "4.9/5", label: "Satisfacción" },
+  { value: "15+", label: "Años de Experiencia" },
+  { value: "8,000+", label: "Mascotas Atendidas" },
+  { value: "5", label: "Veterinarios Especialistas" },
+  { value: "4.9/5", label: "Satisfacción de Clientes" },
 ];
 
 export const Stats = () => {
