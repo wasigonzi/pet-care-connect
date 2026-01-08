@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/sylex/Downloads/pet-care-connect/app/dashboard/settings/page.tsx"],"sourcesContent":["export default function SettingsPage() {\r\n    return (\r\n        <div className=\"flex items-center justify-center h-[50vh] flex-col gap-2\">\r\n            <h2 className=\"text-2xl font-bold\">Settings & Administration</h2>\r\n            <p className=\"text-muted-foreground\">Module under construction.</p>\r\n        </div>\r\n    );\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACI,8OAAC;QAAI,WAAU;;0BACX,8OAAC;gBAAG,WAAU;0BAAqB;;;;;;0BACnC,8OAAC;gBAAE,WAAU;0BAAwB;;;;;;;;;;;;AAGjD"}}]
-}

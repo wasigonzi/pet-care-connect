@@ -17,10 +17,10 @@ export default async function DashboardLayout({
     }
 
     return (
-        <div className="flex min-h-screen flex-col">
-            <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-6">
-                <div className="flex items-center gap-2 font-semibold">
-                    <span className="">Pet Care Connect</span>
+        <div className="flex min-h-screen flex-col bg-muted/20">
+            <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/80 backdrop-blur-md px-6 shadow-sm">
+                <div className="flex items-center gap-2 font-bold text-xl tracking-tight text-primary">
+                    <span className="">GestionVet</span>
                 </div>
                 <div className="ml-auto flex items-center gap-4">
                     <UserNav />

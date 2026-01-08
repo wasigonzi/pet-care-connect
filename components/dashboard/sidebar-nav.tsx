@@ -190,13 +190,13 @@ export function SidebarNav() {
                                     key={itemIndex}
                                     href={item.href}
                                     className={cn(
-                                        "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-emerald-50 hover:text-emerald-600 transition-colors",
+                                        "group flex items-center rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                                         pathname === item.href
-                                            ? "bg-emerald-100 text-emerald-700"
-                                            : "text-gray-600"
+                                            ? "bg-primary/10 text-primary shadow-sm"
+                                            : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                                     )}
                                 >
-                                    <Icon className={cn("mr-3 h-4 w-4", pathname === item.href ? "text-emerald-700" : "text-gray-500 group-hover:text-emerald-600")} />
+                                    <Icon className={cn("mr-3 h-4 w-4 transition-colors", pathname === item.href ? "text-primary" : "text-muted-foreground group-hover:text-primary")} />
                                     <span>{item.title}</span>
                                 </Link>
                             );
