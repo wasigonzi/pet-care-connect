@@ -1,0 +1,50 @@
+{
+  "node": {
+    "001a1e3f406683e04c6e57f991b238ff0ee7a575fe": {
+      "workers": {
+        "app/dashboard/tasks/page": {
+          "moduleId": 96105,
+          "async": false,
+          "exportedName": "getTasks",
+          "filename": "app/dashboard/tasks/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/tasks/page": "rsc"
+      },
+      "exportedName": "getTasks",
+      "filename": "app/dashboard/tasks/actions.ts"
+    },
+    "60249a616f0c3c5857ec2f2e69afdebdf5215f8b83": {
+      "workers": {
+        "app/dashboard/tasks/page": {
+          "moduleId": 96105,
+          "async": false,
+          "exportedName": "createTaskAction",
+          "filename": "app/dashboard/tasks/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/tasks/page": "rsc"
+      },
+      "exportedName": "createTaskAction",
+      "filename": "app/dashboard/tasks/actions.ts"
+    },
+    "60b6aab52a40956d26072bc36807ed181ffe82a197": {
+      "workers": {
+        "app/dashboard/tasks/page": {
+          "moduleId": 96105,
+          "async": false,
+          "exportedName": "updateTaskStatusAction",
+          "filename": "app/dashboard/tasks/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/tasks/page": "action-browser"
+      },
+      "exportedName": "updateTaskStatusAction",
+      "filename": "app/dashboard/tasks/actions.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,35 @@
+{
+  "node": {
+    "0045b3ff0b13036bab5c1129e9492786d6a1a33c86": {
+      "workers": {
+        "app/dashboard/vaccinations/page": {
+          "moduleId": 12141,
+          "async": false,
+          "exportedName": "getVaccinations",
+          "filename": "app/dashboard/vaccinations/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/vaccinations/page": "rsc"
+      },
+      "exportedName": "getVaccinations",
+      "filename": "app/dashboard/vaccinations/actions.ts"
+    },
+    "60d9778bbaae58a16e92f122e1cc8bb1b09d740526": {
+      "workers": {
+        "app/dashboard/vaccinations/page": {
+          "moduleId": 12141,
+          "async": false,
+          "exportedName": "createVaccinationAction",
+          "filename": "app/dashboard/vaccinations/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/vaccinations/page": "rsc"
+      },
+      "exportedName": "createVaccinationAction",
+      "filename": "app/dashboard/vaccinations/actions.ts"
+    }
+  },
+  "edge": {}
+}

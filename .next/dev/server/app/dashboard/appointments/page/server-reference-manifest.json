@@ -1,0 +1,35 @@
+{
+  "node": {
+    "60781ec1b31b6114081c584e83522e577c607fc544": {
+      "workers": {
+        "app/dashboard/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/appointments/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createAppointmentAction",
+          "filename": "app/dashboard/appointments/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/appointments/page": "rsc"
+      },
+      "exportedName": "createAppointmentAction",
+      "filename": "app/dashboard/appointments/actions.ts"
+    },
+    "60f9940f307e59a6156e4075a7f242cd7cb0e5d8a7": {
+      "workers": {
+        "app/dashboard/appointments/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/appointments/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/appointments/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAppointments",
+          "filename": "app/dashboard/appointments/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/appointments/page": "rsc"
+      },
+      "exportedName": "getAppointments",
+      "filename": "app/dashboard/appointments/actions.ts"
+    }
+  },
+  "edge": {}
+}

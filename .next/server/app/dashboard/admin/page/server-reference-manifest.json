@@ -1,0 +1,65 @@
+{
+  "node": {
+    "00686f9e6ea400c22c23e5b67a9706dac3f9d40ca2": {
+      "workers": {
+        "app/dashboard/admin/page": {
+          "moduleId": 53424,
+          "async": false,
+          "exportedName": "clockInAction",
+          "filename": "app/dashboard/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/admin/page": "action-browser"
+      },
+      "exportedName": "clockInAction",
+      "filename": "app/dashboard/admin/actions.ts"
+    },
+    "006c9b5edfb2ffce64caefeadcaf2319f4dbfffb35": {
+      "workers": {
+        "app/dashboard/admin/page": {
+          "moduleId": 53424,
+          "async": false,
+          "exportedName": "getLastEntry",
+          "filename": "app/dashboard/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/admin/page": "rsc"
+      },
+      "exportedName": "getLastEntry",
+      "filename": "app/dashboard/admin/actions.ts"
+    },
+    "00ec9834708f8af1b407d65dd9bb593f27259f3c70": {
+      "workers": {
+        "app/dashboard/admin/page": {
+          "moduleId": 53424,
+          "async": false,
+          "exportedName": "getTimeEntries",
+          "filename": "app/dashboard/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/admin/page": "rsc"
+      },
+      "exportedName": "getTimeEntries",
+      "filename": "app/dashboard/admin/actions.ts"
+    },
+    "404f990ade7f2f080cd07429657512b03e983a71a5": {
+      "workers": {
+        "app/dashboard/admin/page": {
+          "moduleId": 53424,
+          "async": false,
+          "exportedName": "clockOutAction",
+          "filename": "app/dashboard/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/admin/page": "action-browser"
+      },
+      "exportedName": "clockOutAction",
+      "filename": "app/dashboard/admin/actions.ts"
+    }
+  },
+  "edge": {}
+}

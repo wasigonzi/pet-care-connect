@@ -1,0 +1,50 @@
+{
+  "node": {
+    "60781ec1b31b6114081c584e83522e577c607fc544": {
+      "workers": {
+        "app/dashboard/appointments/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/appointments/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/appointments/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/clients/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/dashboard/patients/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createAppointmentAction",
+          "filename": "app/dashboard/appointments/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/appointments/new/page": "action-browser"
+      },
+      "exportedName": "createAppointmentAction",
+      "filename": "app/dashboard/appointments/actions.ts"
+    },
+    "40d0d472624612d55c68bf6385f185d6c1027dd376": {
+      "workers": {
+        "app/dashboard/appointments/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/appointments/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/appointments/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/clients/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/dashboard/patients/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getClients",
+          "filename": "app/dashboard/clients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/appointments/new/page": "action-browser"
+      },
+      "exportedName": "getClients",
+      "filename": "app/dashboard/clients/actions.ts"
+    },
+    "400e6d04e3f002824db3fe39ecf6a358f45fdb1120": {
+      "workers": {
+        "app/dashboard/appointments/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/appointments/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/appointments/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/clients/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/dashboard/patients/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getPatientsByClientId",
+          "filename": "app/dashboard/patients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/appointments/new/page": "action-browser"
+      },
+      "exportedName": "getPatientsByClientId",
+      "filename": "app/dashboard/patients/actions.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,50 @@
+{
+  "node": {
+    "00a5e7852eee2cc972091d3d03c8698170dfff7eee": {
+      "workers": {
+        "app/dashboard/boarding/page": {
+          "moduleId": 36428,
+          "async": false,
+          "exportedName": "getUnits",
+          "filename": "app/dashboard/boarding/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/boarding/page": "rsc"
+      },
+      "exportedName": "getUnits",
+      "filename": "app/dashboard/boarding/actions.ts"
+    },
+    "00b35fa7edf66fb9b1d778cb7853f0a9457f0d993f": {
+      "workers": {
+        "app/dashboard/boarding/page": {
+          "moduleId": 36428,
+          "async": false,
+          "exportedName": "getReservations",
+          "filename": "app/dashboard/boarding/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/boarding/page": "rsc"
+      },
+      "exportedName": "getReservations",
+      "filename": "app/dashboard/boarding/actions.ts"
+    },
+    "60e79340d6dad22af4228d469aad45a388f43acb07": {
+      "workers": {
+        "app/dashboard/boarding/page": {
+          "moduleId": 36428,
+          "async": false,
+          "exportedName": "createReservationAction",
+          "filename": "app/dashboard/boarding/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/boarding/page": "rsc"
+      },
+      "exportedName": "createReservationAction",
+      "filename": "app/dashboard/boarding/actions.ts"
+    }
+  },
+  "edge": {}
+}

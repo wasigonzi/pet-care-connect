@@ -1,0 +1,35 @@
+{
+  "node": {
+    "00774115e316fcecc1bb0dee3194cf951d0a52c196": {
+      "workers": {
+        "app/dashboard/billing/page": {
+          "moduleId": 6785,
+          "async": false,
+          "exportedName": "getInvoices",
+          "filename": "app/dashboard/billing/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/billing/page": "rsc"
+      },
+      "exportedName": "getInvoices",
+      "filename": "app/dashboard/billing/actions.ts"
+    },
+    "6022b688c89cd713076176a32e54a926cdce5d8792": {
+      "workers": {
+        "app/dashboard/billing/page": {
+          "moduleId": 6785,
+          "async": false,
+          "exportedName": "createInvoiceAction",
+          "filename": "app/dashboard/billing/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/billing/page": "rsc"
+      },
+      "exportedName": "createInvoiceAction",
+      "filename": "app/dashboard/billing/actions.ts"
+    }
+  },
+  "edge": {}
+}

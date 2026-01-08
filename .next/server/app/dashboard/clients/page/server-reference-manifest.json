@@ -1,0 +1,35 @@
+{
+  "node": {
+    "40e32780b665c303f9b77ae2b8c1db4ef8e8734a74": {
+      "workers": {
+        "app/dashboard/clients/page": {
+          "moduleId": 77740,
+          "async": false,
+          "exportedName": "getClients",
+          "filename": "app/dashboard/clients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/clients/page": "rsc"
+      },
+      "exportedName": "getClients",
+      "filename": "app/dashboard/clients/actions.ts"
+    },
+    "6030608ace88edcb6ca83231c5f69798c8750d376b": {
+      "workers": {
+        "app/dashboard/clients/page": {
+          "moduleId": 77740,
+          "async": false,
+          "exportedName": "createClientAction",
+          "filename": "app/dashboard/clients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/clients/page": "rsc"
+      },
+      "exportedName": "createClientAction",
+      "filename": "app/dashboard/clients/actions.ts"
+    }
+  },
+  "edge": {}
+}

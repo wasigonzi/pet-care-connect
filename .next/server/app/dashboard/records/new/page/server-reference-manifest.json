@@ -1,0 +1,50 @@
+{
+  "node": {
+    "60b55b0bb02ed52c21425818a6649782a31a9a102d": {
+      "workers": {
+        "app/dashboard/records/new/page": {
+          "moduleId": 75391,
+          "async": false,
+          "exportedName": "createRecordAction",
+          "filename": "app/dashboard/records/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/records/new/page": "action-browser"
+      },
+      "exportedName": "createRecordAction",
+      "filename": "app/dashboard/records/actions.ts"
+    },
+    "40e32780b665c303f9b77ae2b8c1db4ef8e8734a74": {
+      "workers": {
+        "app/dashboard/records/new/page": {
+          "moduleId": 75391,
+          "async": false,
+          "exportedName": "getClients",
+          "filename": "app/dashboard/clients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/records/new/page": "action-browser"
+      },
+      "exportedName": "getClients",
+      "filename": "app/dashboard/clients/actions.ts"
+    },
+    "409b82f1d1bf8dd02c099fc087f6947dcb479badd6": {
+      "workers": {
+        "app/dashboard/records/new/page": {
+          "moduleId": 75391,
+          "async": false,
+          "exportedName": "getPatientsByClientId",
+          "filename": "app/dashboard/patients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/records/new/page": "action-browser"
+      },
+      "exportedName": "getPatientsByClientId",
+      "filename": "app/dashboard/patients/actions.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,35 @@
+{
+  "node": {
+    "00147267cdf03348c8a663b36ad308fe3929a667f6": {
+      "workers": {
+        "app/dashboard/billing/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/billing/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getInvoices",
+          "filename": "app/dashboard/billing/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/billing/page": "rsc"
+      },
+      "exportedName": "getInvoices",
+      "filename": "app/dashboard/billing/actions.ts"
+    },
+    "6066530b9f3e00fcf7804c60dffccc02db1ce93e91": {
+      "workers": {
+        "app/dashboard/billing/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/billing/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/billing/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createInvoiceAction",
+          "filename": "app/dashboard/billing/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/billing/page": "rsc"
+      },
+      "exportedName": "createInvoiceAction",
+      "filename": "app/dashboard/billing/actions.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[15469,["/_next/static/chunks/48de2f4652fb1676.js","/_next/static/chunks/c58fc7715267ef7e.js","/_next/static/chunks/b28d8beccec8a66b.js"],"LoginForm"]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7340adf74ff47ec0.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"OtZ0rQh2CJzC55cgdsQBM","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"flex min-h-screen w-full items-center justify-center bg-muted/40 p-4","children":["$","div",null,{"className":"w-full max-w-sm space-y-4","children":[["$","div",null,{"className":"flex flex-col space-y-2 text-center","children":[["$","h1",null,{"className":"text-2xl font-semibold tracking-tight","children":"Pet Care Connect"}],["$","p",null,{"className":"text-sm text-muted-foreground","children":"Enter your credentials to access the platform"}]]}],["$","$L2",null,{}]]}]}],[["$","script","script-0",{"src":"/_next/static/chunks/c58fc7715267ef7e.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/b28d8beccec8a66b.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

@@ -1,0 +1,50 @@
+{
+  "node": {
+    "60ca3c6183c655b1c7586394a0e5df67fc4c4c080e": {
+      "workers": {
+        "app/dashboard/communications/new/page": {
+          "moduleId": 14819,
+          "async": false,
+          "exportedName": "sendCommunicationAction",
+          "filename": "app/dashboard/communications/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/communications/new/page": "action-browser"
+      },
+      "exportedName": "sendCommunicationAction",
+      "filename": "app/dashboard/communications/actions.ts"
+    },
+    "00f71fa90296b9448b5157838cd8f9c267c17bc33f": {
+      "workers": {
+        "app/dashboard/communications/new/page": {
+          "moduleId": 14819,
+          "async": false,
+          "exportedName": "getTemplates",
+          "filename": "app/dashboard/communications/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/communications/new/page": "action-browser"
+      },
+      "exportedName": "getTemplates",
+      "filename": "app/dashboard/communications/actions.ts"
+    },
+    "40e32780b665c303f9b77ae2b8c1db4ef8e8734a74": {
+      "workers": {
+        "app/dashboard/communications/new/page": {
+          "moduleId": 14819,
+          "async": false,
+          "exportedName": "getClients",
+          "filename": "app/dashboard/clients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/communications/new/page": "action-browser"
+      },
+      "exportedName": "getClients",
+      "filename": "app/dashboard/clients/actions.ts"
+    }
+  },
+  "edge": {}
+}

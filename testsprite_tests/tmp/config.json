@@ -1,0 +1,18 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000",
+  "loginUser": "admin@petcare.com",
+  "loginPassword": "password",
+  "executionArgs": {
+    "projectName": "pet-care-connect",
+    "projectPath": "c:\\Users\\sylex\\Downloads\\pet-care-connect",
+    "testIds": [],
+    "additionalInstruction": "",
+    "envs": {
+      "API_KEY": "sk-user-kBht8fqS9eHVOwRiFvcms1V_i3Lk4At6IbC9PoBV2lcigY9MDXs1USoVfhAPWXKcK-z1xN93OctwW7KILMubhrQSxT9Q8Z7JsYcUwg-A70BDpGsVavoASPJq01V4YvInWMI"
+    }
+  },
+  "proxy": "http://15a1b7d5-448f-41fa-960e-9f50cef8df02:6m3D2wmsMf8d6VpsHTNbdYuA8DiimR6a@tun.testsprite.com:8080"
+}

@@ -1,0 +1,626 @@
+[
+  {
+    "id": "TC001",
+    "title": "User Authentication Success",
+    "description": "Verify that users can login successfully with valid credentials and access the dashboard with appropriate role-based permissions.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to login page."
+      },
+      {
+        "type": "action",
+        "description": "Input valid username and password."
+      },
+      {
+        "type": "action",
+        "description": "Complete multi-factor authentication if enabled."
+      },
+      {
+        "type": "action",
+        "description": "Click login button."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify user is redirected to dashboard."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify dashboard content is displayed according to user's role permissions."
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "User Authentication Failure - Invalid Credentials",
+    "description": "Verify system denies access and displays appropriate error on login attempt with invalid credentials.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to login page."
+      },
+      {
+        "type": "action",
+        "description": "Input invalid username or password."
+      },
+      {
+        "type": "action",
+        "description": "Click login button."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify login is denied and error message is displayed."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no dashboard or protected content is accessible."
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Dashboard Module Accessibility by Role",
+    "description": "Verify that all dashboard modules (25+) are accessible or restricted correctly based on different user roles.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Login as clinic staff with limited role."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify only authorized modules are accessible."
+      },
+      {
+        "type": "action",
+        "description": "Logout and login as practice manager."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify expanded set of modules accessible."
+      },
+      {
+        "type": "action",
+        "description": "Logout and login as admin user."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all dashboard modules are accessible."
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Client and Patient CRUD Operations",
+    "description": "Verify creating, reading, updating and deleting client owners and their patients including multi-pet households with detailed medical histories.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Clients module."
+      },
+      {
+        "type": "action",
+        "description": "Create a new client owner with valid data."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify client is listed and details are correct."
+      },
+      {
+        "type": "action",
+        "description": "Add multiple patient records for the client."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify patient list shows all pets with correct details."
+      },
+      {
+        "type": "action",
+        "description": "Update patient medical history including vaccination status."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify medical history changes are saved and displayed."
+      },
+      {
+        "type": "action",
+        "description": "Delete a patient record."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify patient is removed from the list."
+      },
+      {
+        "type": "action",
+        "description": "Delete the client owner record."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify client and all associated patients are deleted."
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Appointment Scheduling with Conflict Detection and Recurrence",
+    "description": "Verify appointment creation, editing, conflict detection, recurring booking and automated reminders.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open Appointments module."
+      },
+      {
+        "type": "action",
+        "description": "Create an appointment at a selected date/time."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify appointment appears correctly on calendar."
+      },
+      {
+        "type": "action",
+        "description": "Attempt to schedule another appointment for the same resource and time."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify system detects conflict and prevents double booking."
+      },
+      {
+        "type": "action",
+        "description": "Create a recurring appointment series."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all recurring instances appear on calendar."
+      },
+      {
+        "type": "action",
+        "description": "Edit or cancel a single instance of recurring appointments."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify calendar and appointment data are updated correctly."
+      },
+      {
+        "type": "action",
+        "description": "Verify automated reminders are sent in expected timeframe by email/SMS."
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Clinical Records SOAP Note Entry and Prescription Tracking",
+    "description": "Verify creation and editing of clinical records following SOAP format, including prescriptions and diagnostic results.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open Clinical Records module."
+      },
+      {
+        "type": "action",
+        "description": "Create a new clinical record using SOAP note structure."
+      },
+      {
+        "type": "action",
+        "description": "Add prescription details and attach diagnostic results."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the record saves successfully and displays all entered data correctly."
+      },
+      {
+        "type": "action",
+        "description": "Edit SOAP note entries and update prescriptions."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify changes are saved and reflected accurately."
+      },
+      {
+        "type": "action",
+        "description": "Test clinical record search and retrieval."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify correct clinical records are returned based on patient and date filters."
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Inventory and Vaccination Stock Tracking with Alerts",
+    "description": "Verify inventory item CRUD, stock level tracking, low stock alerts, vaccination record and protocol management.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Inventory module."
+      },
+      {
+        "type": "action",
+        "description": "Add new inventory item with quantity and expiration."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify item appears in inventory list with correct details."
+      },
+      {
+        "type": "action",
+        "description": "Reduce stock level to below configured threshold."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify low stock alert notification is triggered and visible."
+      },
+      {
+        "type": "action",
+        "description": "Navigate to Vaccinations module."
+      },
+      {
+        "type": "action",
+        "description": "Add vaccination records for patients including protocols."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify vaccination data is accurately stored and accessible."
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Billing and Invoice Generation with Payment Processing",
+    "description": "Verify invoice creation, multiple payment methods processing, insurance claim integration, and financial reporting.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open Billing module."
+      },
+      {
+        "type": "action",
+        "description": "Create a new invoice with multiple billed items and services."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify invoice total and itemization are accurate."
+      },
+      {
+        "type": "action",
+        "description": "Process payment with credit card."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify payment is recorded and invoice updates to paid status."
+      },
+      {
+        "type": "action",
+        "description": "Submit insurance claim for eligible invoice."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify insurance claim processing and status update."
+      },
+      {
+        "type": "action",
+        "description": "Generate financial reports covering revenue and outstanding invoices."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify report data accuracy and completeness."
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Communications Center - Email and SMS Messaging with Templates",
+    "description": "Verify sending messages via email and SMS using templates, logging all client interactions, and maintaining message history for audit.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open Communications module."
+      },
+      {
+        "type": "action",
+        "description": "Select client and prepare message using email template."
+      },
+      {
+        "type": "action",
+        "description": "Send email message and verify delivery status."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify message log contains the sent email with correct details."
+      },
+      {
+        "type": "action",
+        "description": "Prepare SMS message using template."
+      },
+      {
+        "type": "action",
+        "description": "Send SMS to client and verify delivery."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify SMS message log records the communication."
+      },
+      {
+        "type": "action",
+        "description": "Search message history by client and date."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify message history returns all relevant messages."
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Boarding and Hospitalization Reservation Management",
+    "description": "Verify reservation creation, check-in/check-out processes, medical monitoring integration, and billing association for boarding patients.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Boarding module."
+      },
+      {
+        "type": "action",
+        "description": "Create reservation for boarding including patient and date range."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify reservation details saved and status is 'Reserved'."
+      },
+      {
+        "type": "action",
+        "description": "Perform patient check-in."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify status updates to 'Checked-in'."
+      },
+      {
+        "type": "action",
+        "description": "Log daily medical monitoring entries."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify medical data is linked to reservation."
+      },
+      {
+        "type": "action",
+        "description": "Perform patient check-out."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify status updates to 'Checked-out' and reservation closes."
+      },
+      {
+        "type": "action",
+        "description": "Verify boarding charges are added to billing system."
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Task and Reminder Management",
+    "description": "Verify creating, assigning, updating, and tracking tasks with priorities, statuses, automated reminders, and team collaboration.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open Tasks module."
+      },
+      {
+        "type": "action",
+        "description": "Create a new task with high priority and assign to team member."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify task is listed with correct details and assigned user."
+      },
+      {
+        "type": "action",
+        "description": "Update task status to 'In Progress' then 'Completed'."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify status updates persist and notifications are triggered."
+      },
+      {
+        "type": "action",
+        "description": "Configure automated reminder for task due date."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify reminder notifications are sent to assigned user at appropriate time."
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Staff Time Tracking and Attendance Reporting",
+    "description": "Verify clock in/out, break tracking, overtime calculation, and accurate generation of attendance reports integrated with payroll.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Login as staff user."
+      },
+      {
+        "type": "action",
+        "description": "Use time tracking tool to clock in at start of shift."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify clock-in time is recorded."
+      },
+      {
+        "type": "action",
+        "description": "Record breaks and clock out at end of shift."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify break durations and clock-out time are recorded."
+      },
+      {
+        "type": "action",
+        "description": "Calculate overtime if shift exceeds scheduled hours."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify overtime hours are correctly computed."
+      },
+      {
+        "type": "action",
+        "description": "Generate attendance report for staff for specified period."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify report includes accurate work hours, breaks, and overtime."
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Performance Benchmark Testing",
+    "description": "Verify that page loads are under 2 seconds and API responses under 500ms under typical load conditions.",
+    "category": "performance",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Simulate typical user load on dashboard and modules."
+      },
+      {
+        "type": "action",
+        "description": "Measure page load times across key modules."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all page loads are below 2 seconds."
+      },
+      {
+        "type": "action",
+        "description": "Measure API response times for critical backend calls."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all API responses return within 500 milliseconds."
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Security Compliance and Data Encryption",
+    "description": "Verify encryption of sensitive data in storage and transit, audit logging of critical actions, and enforcement of HIPAA-ready practices.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Inspect data at rest for encryption on sensitive fields."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify sensitive data is encrypted in database."
+      },
+      {
+        "type": "action",
+        "description": "Capture traffic during authentication and data transmission."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify data is transmitted securely with encryption (e.g., TLS)."
+      },
+      {
+        "type": "action",
+        "description": "Perform sensitive actions such as patient record deletions."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify audit logs capture user, action, and timestamp securely."
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Accessibility Validation Against WCAG 2.1 AA",
+    "description": "Verify application UI meets accessibility standards including keyboard navigation and screen reader support.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate the entire application using keyboard only."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all interactive elements are reachable and usable without mouse."
+      },
+      {
+        "type": "action",
+        "description": "Use screen reader to navigate pages."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all meaningful content and controls are announced properly."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify sufficient color contrast and alternative text on images."
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Integration Testing of Multi-Module Workflows",
+    "description": "Verify seamless data flow and functional integration across modules such as client management, appointments, clinical records, billing and communications.",
+    "category": "integration",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Create client and add patient information."
+      },
+      {
+        "type": "action",
+        "description": "Schedule appointment for patient."
+      },
+      {
+        "type": "action",
+        "description": "Create clinical record after appointment completion."
+      },
+      {
+        "type": "action",
+        "description": "Generate invoice for services rendered during appointment."
+      },
+      {
+        "type": "action",
+        "description": "Send follow-up communication via email or SMS to client regarding billing and care instructions."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify data consistency across all modules and successful completion of end-to-end workflow."
+      }
+    ]
+  }
+]

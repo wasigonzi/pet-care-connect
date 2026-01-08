@@ -1,0 +1,20 @@
+{
+  "node": {
+    "60249a616f0c3c5857ec2f2e69afdebdf5215f8b83": {
+      "workers": {
+        "app/dashboard/tasks/new/page": {
+          "moduleId": 43875,
+          "async": false,
+          "exportedName": "createTaskAction",
+          "filename": "app/dashboard/tasks/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/tasks/new/page": "action-browser"
+      },
+      "exportedName": "createTaskAction",
+      "filename": "app/dashboard/tasks/actions.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,50 @@
+{
+  "node": {
+    "60a72047f621da72fdf8a73d5f32e08604d5578402": {
+      "workers": {
+        "app/dashboard/appointments/new/page": {
+          "moduleId": 11564,
+          "async": false,
+          "exportedName": "createAppointmentAction",
+          "filename": "app/dashboard/appointments/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/appointments/new/page": "action-browser"
+      },
+      "exportedName": "createAppointmentAction",
+      "filename": "app/dashboard/appointments/actions.ts"
+    },
+    "40e32780b665c303f9b77ae2b8c1db4ef8e8734a74": {
+      "workers": {
+        "app/dashboard/appointments/new/page": {
+          "moduleId": 11564,
+          "async": false,
+          "exportedName": "getClients",
+          "filename": "app/dashboard/clients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/appointments/new/page": "action-browser"
+      },
+      "exportedName": "getClients",
+      "filename": "app/dashboard/clients/actions.ts"
+    },
+    "409b82f1d1bf8dd02c099fc087f6947dcb479badd6": {
+      "workers": {
+        "app/dashboard/appointments/new/page": {
+          "moduleId": 11564,
+          "async": false,
+          "exportedName": "getPatientsByClientId",
+          "filename": "app/dashboard/patients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/appointments/new/page": "action-browser"
+      },
+      "exportedName": "getPatientsByClientId",
+      "filename": "app/dashboard/patients/actions.ts"
+    }
+  },
+  "edge": {}
+}

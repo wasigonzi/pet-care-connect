@@ -1,0 +1,35 @@
+{
+  "node": {
+    "00083e31facda3a702f7bd09a90de912ff10ccb0eb": {
+      "workers": {
+        "app/dashboard/inventory/page": {
+          "moduleId": 45845,
+          "async": false,
+          "exportedName": "getInventory",
+          "filename": "app/dashboard/inventory/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/inventory/page": "rsc"
+      },
+      "exportedName": "getInventory",
+      "filename": "app/dashboard/inventory/actions.ts"
+    },
+    "6000c9828da4f4cd4a5f82a7a20bb43d14f6f2dbed": {
+      "workers": {
+        "app/dashboard/inventory/page": {
+          "moduleId": 45845,
+          "async": false,
+          "exportedName": "createInventoryItemAction",
+          "filename": "app/dashboard/inventory/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/inventory/page": "rsc"
+      },
+      "exportedName": "createInventoryItemAction",
+      "filename": "app/dashboard/inventory/actions.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,20 @@
+{
+  "node": {
+    "6084d9e33b4c6fa874ef3bc7878c75aef4d5cbac19": {
+      "workers": {
+        "app/dashboard/clients/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/clients/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/clients/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createClientAction",
+          "filename": "app/dashboard/clients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/clients/new/page": "action-browser"
+      },
+      "exportedName": "createClientAction",
+      "filename": "app/dashboard/clients/actions.ts"
+    }
+  },
+  "edge": {}
+}

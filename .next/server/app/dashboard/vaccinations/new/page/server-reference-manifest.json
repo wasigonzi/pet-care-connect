@@ -1,0 +1,50 @@
+{
+  "node": {
+    "60d9778bbaae58a16e92f122e1cc8bb1b09d740526": {
+      "workers": {
+        "app/dashboard/vaccinations/new/page": {
+          "moduleId": 97300,
+          "async": false,
+          "exportedName": "createVaccinationAction",
+          "filename": "app/dashboard/vaccinations/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/vaccinations/new/page": "action-browser"
+      },
+      "exportedName": "createVaccinationAction",
+      "filename": "app/dashboard/vaccinations/actions.ts"
+    },
+    "40e32780b665c303f9b77ae2b8c1db4ef8e8734a74": {
+      "workers": {
+        "app/dashboard/vaccinations/new/page": {
+          "moduleId": 97300,
+          "async": false,
+          "exportedName": "getClients",
+          "filename": "app/dashboard/clients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/vaccinations/new/page": "action-browser"
+      },
+      "exportedName": "getClients",
+      "filename": "app/dashboard/clients/actions.ts"
+    },
+    "409b82f1d1bf8dd02c099fc087f6947dcb479badd6": {
+      "workers": {
+        "app/dashboard/vaccinations/new/page": {
+          "moduleId": 97300,
+          "async": false,
+          "exportedName": "getPatientsByClientId",
+          "filename": "app/dashboard/patients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/vaccinations/new/page": "action-browser"
+      },
+      "exportedName": "getPatientsByClientId",
+      "filename": "app/dashboard/patients/actions.ts"
+    }
+  },
+  "edge": {}
+}

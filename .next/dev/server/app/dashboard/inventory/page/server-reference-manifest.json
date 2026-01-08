@@ -1,0 +1,35 @@
+{
+  "node": {
+    "003468fb9efe2a28a82e037853c85de51ff9fad3fd": {
+      "workers": {
+        "app/dashboard/inventory/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/inventory/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/inventory/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getInventory",
+          "filename": "app/dashboard/inventory/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/inventory/page": "rsc"
+      },
+      "exportedName": "getInventory",
+      "filename": "app/dashboard/inventory/actions.ts"
+    },
+    "60806490efc5a5eafe608b31fd7811202cf4226a67": {
+      "workers": {
+        "app/dashboard/inventory/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/inventory/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/inventory/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createInventoryItemAction",
+          "filename": "app/dashboard/inventory/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/inventory/page": "rsc"
+      },
+      "exportedName": "createInventoryItemAction",
+      "filename": "app/dashboard/inventory/actions.ts"
+    }
+  },
+  "edge": {}
+}

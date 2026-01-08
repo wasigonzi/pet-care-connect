@@ -1,0 +1,65 @@
+{
+  "node": {
+    "0079f74461c9d35b2686d45219cde280ae3da09c92": {
+      "workers": {
+        "app/dashboard/communications/page": {
+          "moduleId": 15744,
+          "async": false,
+          "exportedName": "getLogs",
+          "filename": "app/dashboard/communications/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/communications/page": "rsc"
+      },
+      "exportedName": "getLogs",
+      "filename": "app/dashboard/communications/actions.ts"
+    },
+    "00f71fa90296b9448b5157838cd8f9c267c17bc33f": {
+      "workers": {
+        "app/dashboard/communications/page": {
+          "moduleId": 15744,
+          "async": false,
+          "exportedName": "getTemplates",
+          "filename": "app/dashboard/communications/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/communications/page": "rsc"
+      },
+      "exportedName": "getTemplates",
+      "filename": "app/dashboard/communications/actions.ts"
+    },
+    "606596bb2c55b9b6feb2f6d261ee77f247dc6cd15d": {
+      "workers": {
+        "app/dashboard/communications/page": {
+          "moduleId": 15744,
+          "async": false,
+          "exportedName": "createTemplateAction",
+          "filename": "app/dashboard/communications/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/communications/page": "rsc"
+      },
+      "exportedName": "createTemplateAction",
+      "filename": "app/dashboard/communications/actions.ts"
+    },
+    "60ca3c6183c655b1c7586394a0e5df67fc4c4c080e": {
+      "workers": {
+        "app/dashboard/communications/page": {
+          "moduleId": 15744,
+          "async": false,
+          "exportedName": "sendCommunicationAction",
+          "filename": "app/dashboard/communications/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/communications/page": "rsc"
+      },
+      "exportedName": "sendCommunicationAction",
+      "filename": "app/dashboard/communications/actions.ts"
+    }
+  },
+  "edge": {}
+}

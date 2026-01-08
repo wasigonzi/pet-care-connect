@@ -1,0 +1,126 @@
+{
+    "tech_stack": [
+        "TypeScript",
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Supabase",
+        "Shadcn UI",
+        "Playwright"
+    ],
+    "features": [
+        {
+            "name": "Authentication",
+            "description": "User login and session management with Supabase Auth.",
+            "files": [
+                "app/login/page.tsx",
+                "app/login/actions.ts",
+                "components/auth/login-form.tsx",
+                "middleware.ts"
+            ]
+        },
+        {
+            "name": "Dashboard Shell",
+            "description": "Main layout, sidebar navigation, and user header.",
+            "files": [
+                "app/dashboard/layout.tsx",
+                "app/dashboard/page.tsx",
+                "components/dashboard/sidebar-nav.tsx",
+                "components/dashboard/user-nav.tsx"
+            ]
+        },
+        {
+            "name": "Clients & Patients",
+            "description": "CRUD operations for Client owners and their Patients.",
+            "files": [
+                "app/dashboard/clients/page.tsx",
+                "app/dashboard/clients/actions.ts",
+                "app/dashboard/clients/[id]/page.tsx",
+                "components/dashboard/clients/components/client-form.tsx",
+                "components/dashboard/clients/components/patient-list.tsx"
+            ]
+        },
+        {
+            "name": "Appointments",
+            "description": "Appointment scheduling and conflict detection.",
+            "files": [
+                "app/dashboard/appointments/page.tsx",
+                "app/dashboard/appointments/actions.ts",
+                "components/dashboard/appointments/components/new-appointment-form.tsx"
+            ]
+        },
+        {
+            "name": "Clinical Records",
+            "description": "SOAP notes and medical record management.",
+            "files": [
+                "app/dashboard/records/page.tsx",
+                "app/dashboard/records/actions.ts",
+                "components/dashboard/records/components/record-form.tsx"
+            ]
+        },
+        {
+            "name": "Vaccinations",
+            "description": "Vaccination tracking and records.",
+            "files": [
+                "app/dashboard/vaccinations/page.tsx",
+                "app/dashboard/vaccinations/actions.ts",
+                "components/dashboard/vaccinations/components/vaccination-form.tsx"
+            ]
+        },
+        {
+            "name": "Inventory",
+            "description": "Inventory item tracking.",
+            "files": [
+                "app/dashboard/inventory/page.tsx",
+                "app/dashboard/inventory/actions.ts",
+                "components/dashboard/inventory/components/inventory-form.tsx"
+            ]
+        },
+        {
+            "name": "Billing",
+            "description": "Invoicing and billing management.",
+            "files": [
+                "app/dashboard/billing/page.tsx",
+                "app/dashboard/billing/actions.ts",
+                "components/dashboard/billing/components/invoice-form.tsx"
+            ]
+        },
+        {
+            "name": "Communications",
+            "description": "Message logs and templates (Email/SMS).",
+            "files": [
+                "app/dashboard/communications/page.tsx",
+                "app/dashboard/communications/actions.ts",
+                "components/dashboard/communications/components/send-message-form.tsx"
+            ]
+        },
+        {
+            "name": "Boarding",
+            "description": "Boarding reservation management.",
+            "files": [
+                "app/dashboard/boarding/page.tsx",
+                "app/dashboard/boarding/actions.ts",
+                "components/dashboard/boarding/components/reservation-form.tsx"
+            ]
+        },
+        {
+            "name": "Tasks",
+            "description": "Task management and reminders.",
+            "files": [
+                "app/dashboard/tasks/page.tsx",
+                "app/dashboard/tasks/actions.ts",
+                "app/dashboard/tasks/components/task-list.tsx",
+                "app/dashboard/tasks/components/task-form.tsx"
+            ]
+        },
+        {
+            "name": "Admin & Time Tracking",
+            "description": "Staff time tracking and basic admin functions.",
+            "files": [
+                "app/dashboard/admin/page.tsx",
+                "app/dashboard/admin/actions.ts",
+                "app/dashboard/admin/components/clock-in-button.tsx"
+            ]
+        }
+    ]
+}
