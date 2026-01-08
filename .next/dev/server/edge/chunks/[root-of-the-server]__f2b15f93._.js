@@ -32,7 +32,7 @@ async function middleware(request) {
             headers: request.headers
         }
     });
-    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$ssr$2f$dist$2f$module$2f$createServerClient$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["createServerClient"])(("TURBOPACK compile-time value", "https://zevlllpqcbaeqnzzoajc.supabase.co"), ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpldmxsbHBxY2JhZXFuenpvYWpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc4NzYyOTIsImV4cCI6MjA4MzQ1MjI5Mn0.IDiOI-tFNxq5_wSZN2UfPSVqouI1kQR8I3s8VL0CTqY"), {
+    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$ssr$2f$dist$2f$module$2f$createServerClient$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["createServerClient"])(("TURBOPACK compile-time value", "https://placeholder.supabase.co"), ("TURBOPACK compile-time value", "placeholder-key"), {
         cookies: {
             getAll () {
                 return request.cookies.getAll();
