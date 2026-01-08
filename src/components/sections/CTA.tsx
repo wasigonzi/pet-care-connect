@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { Phone, Calendar } from "lucide-react";
 
 export const CTA = () => {
   return (
@@ -25,29 +25,30 @@ export const CTA = () => {
               transition={{ delay: 0.2, type: "spring" }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-primary-foreground text-sm font-medium mb-6"
             >
-              <Sparkles className="w-4 h-4" />
-              Comienza hoy sin costo
+              <span className="text-xl">🐾</span>
+              Urgencias 24/7 disponibles
             </motion.div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 max-w-3xl mx-auto">
-              ¿Listo para transformar tu clínica veterinaria?
+              Tu mascota merece la mejor atención
             </h2>
 
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              Únete a más de 500 clínicas que ya confían en VetClinic para gestionar su día a día.
+              Agenda tu cita hoy y dale a tu compañero el cuidado que se merece. ¡Estamos aquí para ayudarte!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="xl">
-                Comenzar Prueba Gratis
-                <ArrowRight className="w-5 h-5" />
+                <Calendar className="w-5 h-5" />
+                Agendar Cita
               </Button>
               <Button
                 variant="heroOutline"
                 size="xl"
                 className="border-primary-foreground/30 text-primary-foreground hover:bg-white/10 hover:border-primary-foreground/50"
               >
-                Agendar Demo
+                <Phone className="w-5 h-5" />
+                Llamar Ahora
               </Button>
             </div>
           </div>

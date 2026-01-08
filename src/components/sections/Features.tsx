@@ -1,62 +1,62 @@
 import { motion } from "framer-motion";
 import {
-  Users,
-  Calendar,
-  FileText,
-  Package,
-  CreditCard,
-  Shield,
-  Bell,
-  Building2,
+  Stethoscope,
+  Syringe,
+  Scissors,
+  HeartPulse,
+  Microscope,
+  Clock,
+  ShieldCheck,
+  Truck,
 } from "lucide-react";
 
-const features = [
+const services = [
   {
-    icon: Users,
-    title: "Clientes y Pacientes",
-    description: "Gestiona fichas de propietarios y mascotas con historial completo",
+    icon: Stethoscope,
+    title: "Consulta General",
+    description: "Exámenes completos y diagnósticos precisos para tu mascota",
     color: "from-primary to-primary/70",
   },
   {
-    icon: Calendar,
-    title: "Agenda de Citas",
-    description: "Calendario visual con recordatorios automáticos",
+    icon: Syringe,
+    title: "Vacunación",
+    description: "Programa completo de vacunas y desparasitación",
     color: "from-accent to-accent/70",
   },
   {
-    icon: FileText,
-    title: "Historial Clínico",
-    description: "Registros médicos estructurados con plantillas personalizables",
+    icon: Scissors,
+    title: "Cirugía",
+    description: "Procedimientos quirúrgicos con tecnología moderna",
     color: "from-primary to-primary/70",
   },
   {
-    icon: Package,
-    title: "Inventario",
-    description: "Control de stock, medicamentos y alertas de vencimiento",
+    icon: HeartPulse,
+    title: "Urgencias 24/7",
+    description: "Atención de emergencias las 24 horas del día",
     color: "from-accent to-accent/70",
   },
   {
-    icon: CreditCard,
-    title: "Facturación",
-    description: "Genera facturas, controla pagos y exporta reportes",
+    icon: Microscope,
+    title: "Laboratorio",
+    description: "Análisis clínicos y resultados rápidos",
     color: "from-primary to-primary/70",
   },
   {
-    icon: Shield,
-    title: "Seguridad",
-    description: "Datos protegidos con roles y permisos granulares",
+    icon: Clock,
+    title: "Hospitalización",
+    description: "Cuidado intensivo y monitoreo constante",
     color: "from-accent to-accent/70",
   },
   {
-    icon: Bell,
-    title: "Recordatorios",
-    description: "Notificaciones automáticas de vacunas y citas",
+    icon: ShieldCheck,
+    title: "Estética",
+    description: "Baño, peluquería y cuidado del pelaje",
     color: "from-primary to-primary/70",
   },
   {
-    icon: Building2,
-    title: "Multi-clínica",
-    description: "Administra múltiples sucursales desde una cuenta",
+    icon: Truck,
+    title: "Tienda",
+    description: "Alimentos, medicamentos y accesorios",
     color: "from-accent to-accent/70",
   },
 ];
@@ -82,7 +82,7 @@ const itemVariants = {
 
 export const Features = () => {
   return (
-    <section id="features" className="py-20 md:py-32 relative">
+    <section id="services" className="py-20 md:py-32 relative">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl" />
@@ -98,17 +98,17 @@ export const Features = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-secondary text-sm font-medium text-secondary-foreground mb-4">
-            Características
+            Nuestros Servicios
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Todo lo que necesitas
+            Cuidado integral para tu mascota
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Una plataforma completa diseñada específicamente para clínicas veterinarias
+            Ofrecemos servicios veterinarios completos con profesionales especializados y equipos de última generación
           </p>
         </motion.div>
 
-        {/* Features Grid */}
+        {/* Services Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -116,23 +116,23 @@ export const Features = () => {
           viewport={{ once: true }}
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {features.map((feature) => (
+          {services.map((service) => (
             <motion.div
-              key={feature.title}
+              key={service.title}
               variants={itemVariants}
               className="group"
             >
               <div className="h-full p-6 rounded-2xl bg-card border border-border/50 shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1">
                 <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
                 >
-                  <feature.icon className="w-7 h-7 text-primary-foreground" />
+                  <service.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  {feature.title}
+                  {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  {feature.description}
+                  {service.description}
                 </p>
               </div>
             </motion.div>

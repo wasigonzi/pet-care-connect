@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Phone, Clock, MapPin } from "lucide-react";
 import heroPets from "@/assets/hero-pets.jpg";
 
-const benefits = [
-  "Sin tarjeta de crédito",
-  "14 días de prueba gratis",
-  "Soporte 24/7",
+const info = [
+  { icon: Phone, text: "+54 9 1234 567890" },
+  { icon: Clock, text: "Lun-Sáb: 9:00 - 20:00" },
+  { icon: MapPin, text: "Av. Principal 1234, Buenos Aires" },
 ];
 
 export const Hero = () => {
@@ -35,34 +35,35 @@ export const Hero = () => {
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse-soft" />
               <span className="text-sm font-medium text-secondary-foreground">
-                +500 clínicas confían en nosotros
+                Cuidamos a tu mascota como familia
               </span>
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              Sistema de Gestión para{" "}
-              <span className="text-gradient-primary">Clínicas Veterinarias</span>
+              Tu{" "}
+              <span className="text-gradient-primary">Clínica Veterinaria</span>{" "}
+              de Confianza
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
-              Administra tu clínica veterinaria de forma eficiente. Gestiona pacientes, citas, historial clínico, facturación e inventario en una sola plataforma.
+              Brindamos atención médica integral para tus mascotas con profesionales dedicados y tecnología de vanguardia. ¡Tu compañero merece lo mejor!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <Button variant="hero" size="xl">
-                Comenzar Gratis
+                Agendar Cita
                 <ArrowRight className="w-5 h-5" />
               </Button>
               <Button variant="heroOutline" size="xl">
-                Ya tengo cuenta
+                Llamar Ahora
               </Button>
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  {benefit}
+            <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
+              {info.map((item) => (
+                <div key={item.text} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <item.icon className="w-4 h-4 text-primary" />
+                  {item.text}
                 </div>
               ))}
             </div>
@@ -96,11 +97,11 @@ export const Hero = () => {
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-xl bg-gradient-warm flex items-center justify-center">
-                      <span className="text-2xl">🐕</span>
+                      <span className="text-2xl">🏥</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground">+10,000 pacientes</p>
-                      <p className="text-sm text-muted-foreground">Gestionados este mes</p>
+                      <p className="font-semibold text-foreground">+15 años de experiencia</p>
+                      <p className="text-sm text-muted-foreground">Cuidando a tus mascotas</p>
                     </div>
                   </div>
                 </motion.div>

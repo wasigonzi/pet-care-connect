@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, PawPrint } from "lucide-react";
 
 const navLinks = [
-  { label: "Características", href: "#features" },
-  { label: "Precios", href: "#pricing" },
+  { label: "Servicios", href: "#services" },
+  { label: "Equipo", href: "#team" },
   { label: "Testimonios", href: "#testimonials" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 export const Navbar = () => {
@@ -45,10 +46,10 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Button variant="ghost" size="sm">
-              Iniciar Sesión
+              Urgencias: 24/7
             </Button>
             <Button variant="hero" size="sm">
-              Comenzar Gratis
+              Agendar Cita
             </Button>
           </div>
 
@@ -86,9 +87,9 @@ export const Navbar = () => {
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
                 <Button variant="ghost" className="justify-start">
-                  Iniciar Sesión
+                  Urgencias: 24/7
                 </Button>
-                <Button variant="hero">Comenzar Gratis</Button>
+                <Button variant="hero">Agendar Cita</Button>
               </div>
             </div>
           </motion.div>
