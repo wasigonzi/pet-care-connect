@@ -18,8 +18,7 @@ import {
 } from "lucide-react";
 import { getPublishedContent } from "./dashboard/admin/landing/actions";
 import { defaultContent } from "@/lib/defaults";
-import { themes } from "@/lib/themes";
-import { hexToHsl } from "@/lib/utils-colors";
+import { SiteBranding } from "@/components/site-branding";
 
 export default async function Home() {
   // Fetch dynamic content
@@ -39,27 +38,7 @@ export default async function Home() {
       {/* Navigation */}
       <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-
-            {content.branding.logoUrl ? (
-              <div className="relative h-10 w-auto">
-                {/* Using regular img for external Supabase URLs to avoid Next.js config hassle for now */}
-                <img
-                  src={content.branding.logoUrl}
-                  alt={content.branding.logoText}
-                  className="h-10 w-auto object-contain"
-                />
-              </div>
-            ) : (
-              <div className="flex items-center gap-2">
-                <div className="bg-primary/10 p-2 rounded-xl">
-                  <HeartPulse className="h-6 w-6 text-primary" />
-                </div>
-                <span className="text-xl font-bold text-gray-900 tracking-tight">{content.branding.logoText}</span>
-              </div>
-            )}
-
-          </div>
+          <SiteBranding />
 
           <nav className="hidden lg:flex items-center gap-8">
             <Link href="#services" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Servicios</Link>

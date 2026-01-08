@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 import { SidebarNav } from "@/components/dashboard/sidebar-nav";
 import { UserNav } from "@/components/dashboard/user-nav";
 
+import { SiteBranding } from "@/components/site-branding";
+
 export default async function DashboardLayout({
     children,
 }: {
@@ -19,9 +21,7 @@ export default async function DashboardLayout({
     return (
         <div className="flex min-h-screen flex-col bg-muted/20">
             <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/80 backdrop-blur-md px-6 shadow-sm">
-                <div className="flex items-center gap-2 font-bold text-xl tracking-tight text-primary">
-                    <span className="">GestionVet</span>
-                </div>
+                <SiteBranding />
                 <div className="ml-auto flex items-center gap-4">
                     <UserNav />
                 </div>

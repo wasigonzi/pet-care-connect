@@ -5,14 +5,16 @@ export const createClient = async () => {
     const cookieStore = await cookies()
 
     if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-        console.error("❌ Missing Supabase Env Vars");
+        // Stop execution immediately if env vars are missing. 
+        // This prevents cryptic failures downstream.
+        throw new Error("❌ Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY");
     } else {
-        console.log("✅ Supabase Client Initializing...");
+        // console.log("✅ Supabase Client Initializing..."); // Comment out to reduce noise
     }
 
     return createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        process.env.NEXT_PUBLIC_SUPABASE_URL,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
         {
             cookies: {
                 getAll() {

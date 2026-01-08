@@ -10,6 +10,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Save, Globe, Eye, Upload, Image as ImageIcon } from "lucide-react";
 import { saveSection, publishLanding, uploadAsset, type LandingSection } from "../actions";
+import { Switch } from "@/components/ui/switch";
+import { Slider } from "@/components/ui/slider";
 
 type CMSEditorProps = {
     pageId: string;
@@ -118,34 +120,69 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
                             <div className="grid gap-2">
                                 <Label>Logotipo</Label>
                                 <div className="flex items-start gap-4">
-                                    <div className="h-24 w-24 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center bg-gray-50 overflow-hidden relative">
+                                    <div
+                                        className="rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center bg-gray-50 overflow-hidden relative"
+                                        style={{ height: '120px', width: '200px' }}
+                                    >
                                         {data.branding?.logoUrl ? (
-                                            <img src={data.branding.logoUrl} alt="Logo" className="w-full h-full object-contain" />
+                                            <img
+                                                src={data.branding.logoUrl}
+                                                alt="Logo"
+                                                className="object-contain"
+                                                style={{ height: `${data.branding?.logoHeight || 40}px` }}
+                                            />
                                         ) : (
                                             <ImageIcon className="text-gray-400 w-8 h-8" />
                                         )}
                                     </div>
-                                    <div className="space-y-2">
-                                        <div className="relative">
-                                            <Input
-                                                type="file"
-                                                className="hidden"
-                                                id="logo-upload"
-                                                accept="image/*"
-                                                onChange={handleLogoUpload}
-                                                disabled={uploading}
-                                            />
-                                            <Button variant="outline" size="sm" onClick={() => document.getElementById('logo-upload')?.click()} disabled={uploading}>
-                                                <Upload className="w-4 h-4 mr-2" />
-                                                {uploading ? "Subiendo..." : "Subir Imagen"}
-                                            </Button>
-                                        </div>
-                                        <div className="text-xs text-muted-foreground">
-                                            Recomendado: 200x200px PNG transparente.
-                                            <div className="mt-1">
-                                                <Label className="text-xs font-normal">Texto del Logo (Alternativo):</Label>
+                                    <div className="space-y-4 flex-1">
+
+                                        <div className="flex gap-2">
+                                            <div className="relative">
                                                 <Input
-                                                    className="h-8 mt-1 w-48"
+                                                    type="file"
+                                                    className="hidden"
+                                                    id="logo-upload"
+                                                    accept="image/*"
+                                                    onChange={handleLogoUpload}
+                                                    disabled={uploading}
+                                                />
+                                                <Button variant="outline" size="sm" onClick={() => document.getElementById('logo-upload')?.click()} disabled={uploading}>
+                                                    <Upload className="w-4 h-4 mr-2" />
+                                                    {uploading ? "Subiendo..." : "Subir Imagen"}
+                                                </Button>
+                                            </div>
+                                        </div>
+
+                                        {/* Logo Configs */}
+                                        <div className="grid gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                            <div className="flex items-center justify-between">
+                                                <Label htmlFor="show-text">Mostrar Texto del Logo</Label>
+                                                <Switch
+                                                    id="show-text"
+                                                    checked={data.branding?.showLogoText || false}
+                                                    onCheckedChange={(checked) => updateSection('branding', { ...data.branding, showLogoText: checked })}
+                                                />
+                                            </div>
+
+                                            <div className="grid gap-2">
+                                                <div className="flex justify-between">
+                                                    <Label>Tamaño (Altura)</Label>
+                                                    <span className="text-xs text-muted-foreground">{data.branding?.logoHeight || 40}px</span>
+                                                </div>
+                                                <Slider
+                                                    defaultValue={[data.branding?.logoHeight || 40]}
+                                                    max={100}
+                                                    min={20}
+                                                    step={1}
+                                                    onValueChange={(vals) => updateSection('branding', { ...data.branding, logoHeight: vals[0] })}
+                                                />
+                                            </div>
+
+                                            <div className="grid gap-2">
+                                                <Label className="text-xs font-normal">Texto del Logo (Si está activado):</Label>
+                                                <Input
+                                                    className="h-8"
                                                     value={data.branding?.logoText || ''}
                                                     onChange={(e) => updateSection('branding', { ...data.branding, logoText: e.target.value })}
                                                 />
@@ -159,7 +196,6 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
                             <div className="grid gap-4">
                                 <Label>Color Primario</Label>
                                 <div className="flex flex-wrap gap-3 items-center">
-                                    {/* Presets */}
                                     {['violet', 'emerald', 'blue', 'rose', 'orange', 'cyan'].map((color) => (
                                         <div
                                             key={color}

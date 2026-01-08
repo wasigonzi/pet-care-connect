@@ -22,9 +22,14 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    // Fetch global branding
-    const dbContent = await getPublishedContent('home');
-    const branding = { ...defaultContent.branding, ...dbContent?.branding };
+    // Fetch global branding securely
+    let branding = { ...defaultContent.branding };
+    try {
+        const dbContent = await getPublishedContent('home');
+        branding = { ...branding, ...dbContent?.branding };
+    } catch (e) {
+        console.error("Layout branding fetch failed:", e);
+    }
 
     // Resolve Primary Color
     // Default to violet if something breaks
@@ -34,7 +39,12 @@ export default async function RootLayout({
         if (themes[branding.primaryColor]) {
             primaryHsl = themes[branding.primaryColor];
         } else if (branding.primaryColor.startsWith('#')) {
-            primaryHsl = hexToHsl(branding.primaryColor);
+            try {
+                primaryHsl = hexToHsl(branding.primaryColor);
+            } catch (e) {
+                console.error("Invalid hex color:", branding.primaryColor);
+                primaryHsl = themes['violet'];
+            }
         }
     }
 

@@ -137,32 +137,50 @@ export async function publishLanding(pageId: string) {
 
 // Public fetcher (cached)
 export async function getPublishedContent(slug: string = 'home') {
-    const supabase = await createClient();
+    try {
+        const supabase = await createClient();
 
-    // 1. Check if page is published
-    const { data: page } = await supabase
-        .from('landing_pages')
-        .select('*')
-        .eq('slug', slug)
-        .eq('status', 'published')
-        .single();
+        // 1. Check if page is published
+        const { data: page, error: pageError } = await supabase
+            .from('landing_pages')
+            .select('*')
+            .eq('slug', slug)
+            .eq('status', 'published')
+            .single();
 
-    if (!page) return null;
+        if (pageError) {
+            // PGRST116 means 0 rows, which is expected if not published yet.
+            if (pageError.code !== 'PGRST116') {
+                console.error(`Error fetching landing page '${slug}':`, pageError);
+            }
+            return null;
+        }
 
-    // 2. Get sections
-    const { data: sections } = await supabase
-        .from('landing_sections')
-        .select('*')
-        .eq('page_id', page.id)
-        .order('order', { ascending: true });
+        if (!page) return null;
 
-    // Convert array to object map for easy consumption
-    const contentMap: Record<string, any> = {};
-    sections?.forEach(s => {
-        contentMap[s.key] = s.content;
-    });
+        // 2. Get sections
+        const { data: sections, error: sectionsError } = await supabase
+            .from('landing_sections')
+            .select('*')
+            .eq('page_id', page.id)
+            .order('order', { ascending: true });
 
-    return contentMap;
+        if (sectionsError) {
+            console.error("Error fetching sections:", sectionsError);
+            return null; // Return null on section error to fallback to defaults
+        }
+
+        // Convert array to object map for easy consumption
+        const contentMap: Record<string, any> = {};
+        sections?.forEach(s => {
+            contentMap[s.key] = s.content;
+        });
+
+        return contentMap;
+    } catch (error) {
+        console.error("CRITICAL ERROR in getPublishedContent:", error);
+        return null; // Fail gracefully
+    }
 }
 
 export async function uploadAsset(formData: FormData) {
