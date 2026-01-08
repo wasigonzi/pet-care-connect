@@ -16,8 +16,20 @@ import {
   Microscope,
   Scissors
 } from "lucide-react";
+import { getPublishedContent } from "./dashboard/admin/landing/actions";
+import { defaultContent } from "@/lib/defaults";
 
-export default function Home() {
+export default async function Home() {
+  // Fetch dynamic content
+  const dbContent = await getPublishedContent('home');
+
+  // Merge defaults with DB content
+  const content = {
+    hero: { ...defaultContent.hero, ...dbContent?.hero },
+    services: { ...defaultContent.services, ...dbContent?.services },
+    contact: { ...defaultContent.contact, ...dbContent?.contact }
+  };
+
   return (
     <div className="flex flex-col min-h-screen font-sans bg-slate-50">
       {/* Navigation */}
@@ -61,24 +73,23 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              Abierto Hoy hasta las 8:00 PM
+              Abierto Hoy hasta las {content.contact.hours.split("pm")[0]?.split("-")[1] || "8:00 PM"}
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6 max-w-4xl mx-auto">
-              Cuidado Veterinario de <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-violet-500">Excelencia y Corazón</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6 max-w-4xl mx-auto whitespace-pre-line">
+              {content.hero.title}
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-10">
-              Somos una clínica dedicada al bienestar integral de tus mascotas. Tecnología médica avanzada con el trato cálido que tu familia merece.
+              {content.hero.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/dashboard/appointments/new">
                 <Button size="lg" className="h-14 px-10 bg-primary hover:bg-primary/90 text-white rounded-full text-lg shadow-xl shadow-primary/25 transition-all hover:scale-105">
-                  Agendar Consulta
+                  {content.hero.cta_primary}
                 </Button>
               </Link>
               <Link href="#services">
                 <Button variant="outline" size="lg" className="h-14 px-10 border-2 border-gray-200 hover:border-primary hover:text-primary rounded-full text-lg bg-white">
-                  Nuestros Servicios
+                  {content.hero.cta_secondary}
                 </Button>
               </Link>
             </div>
@@ -109,9 +120,9 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-primary font-bold tracking-wide uppercase text-sm">Servicios Integrales</span>
-              <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-5xl">Todo para la salud de tu mascota</h2>
+              <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-5xl">{content.services.title}</h2>
               <p className="mt-4 text-xl text-gray-600">
-                Desde medicina preventiva hasta procedimientos quirúrgicos avanzados.
+                {content.services.subtitle}
               </p>
             </div>
 
@@ -195,7 +206,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-lg">Dirección</h4>
-                      <p className="text-slate-400">Av. Principal 123, Colonia Centro</p>
+                      <p className="text-slate-400">{content.contact.address}</p>
                     </div>
                   </div>
 
@@ -205,7 +216,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-lg">Teléfono</h4>
-                      <p className="text-slate-400">(555) 123-4567</p>
+                      <p className="text-slate-400">{content.contact.phone}</p>
                     </div>
                   </div>
 
@@ -215,7 +226,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-lg">Horario</h4>
-                      <p className="text-slate-400">Lun-Vie: 9am - 8pm | Sab: 9am - 3pm</p>
+                      <p className="text-slate-400">{content.contact.hours}</p>
                     </div>
                   </div>
                 </div>
@@ -242,7 +253,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/dashboard/appointments/new">
                     <Button size="lg" className="bg-primary hover:bg-primary/90 text-white border-none rounded-full px-10 h-14 text-lg font-bold shadow-lg shadow-primary/20">
-                      Reservar Cita
+                      {content.hero.cta_primary}
                     </Button>
                   </Link>
                   <Link href="#contact">

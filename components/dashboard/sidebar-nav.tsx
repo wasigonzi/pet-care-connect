@@ -168,6 +168,11 @@ const navGroups: NavGroup[] = [
                 href: "/dashboard/audit",
                 icon: FileSearch,
             },
+            {
+                title: "Landing CMS",
+                href: "/dashboard/admin/landing",
+                icon: LayoutTemplate,
+            },
         ],
     },
 ];
