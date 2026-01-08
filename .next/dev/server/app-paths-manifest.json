@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "/_not-found/page": "app/_not-found/page.js",
   "/dashboard/appointments/page": "app/dashboard/appointments/page.js",
   "/dashboard/audit/page": "app/dashboard/audit/page.js",
@@ -24,5 +25,7 @@
   "/dashboard/vaccinations/page": "app/dashboard/vaccinations/page.js",
   "/dashboard/wellness-plans/page": "app/dashboard/wellness-plans/page.js",
   "/login/page": "app/login/page.js",
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
   "/page": "app/page.js"
 }

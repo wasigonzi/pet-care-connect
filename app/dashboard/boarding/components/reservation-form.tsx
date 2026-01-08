@@ -32,8 +32,8 @@ const formSchema = z.object({
     client_id: z.string().uuid(),
     patient_id: z.string().uuid(),
     unit_id: z.string().uuid(),
-    start_date: z.string().min(1, "Start date is required"),
-    end_date: z.string().min(1, "End date is required"),
+    start_date: z.string().min(1, "La fecha de inicio es requerida"),
+    end_date: z.string().min(1, "La fecha de fin es requerida"),
     notes: z.string().optional(),
 });
 

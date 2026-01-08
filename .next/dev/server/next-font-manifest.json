@@ -1,5 +1,6 @@
 {
   "app": {
+<<<<<<< HEAD
     "[project]/app/_not-found/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
@@ -75,6 +76,8 @@
     "[project]/app/login/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
     "[project]/app/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ]

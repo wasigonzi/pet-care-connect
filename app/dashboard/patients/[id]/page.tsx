@@ -18,6 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { format, differenceInYears, differenceInMonths } from "date-fns";
+import { es } from "date-fns/locale";
 
 export default async function PatientDetailsPage({
     params,
@@ -28,7 +29,7 @@ export default async function PatientDetailsPage({
     const patient = await getPatient(id);
 
     if (!patient) {
-        return <div>Patient not found</div>;
+        return <div>Paciente no encontrado</div>;
     }
 
     const ageYears = patient.date_of_birth ? differenceInYears(new Date(), new Date(patient.date_of_birth)) : 0;
@@ -93,7 +94,7 @@ export default async function PatientDetailsPage({
                             {ageYears}a {ageMonths}m
                         </div>
                         <p className="text-xs text-muted-foreground">
-                            Nacido {patient.date_of_birth ? format(new Date(patient.date_of_birth), "MMM d, yyyy") : "-"}
+                            Nacido {patient.date_of_birth ? format(new Date(patient.date_of_birth), "MMM d, yyyy", { locale: es }) : "-"}
                         </p>
                     </CardContent>
                 </Card>
@@ -146,7 +147,7 @@ export default async function PatientDetailsPage({
                                             <div className="flex items-center justify-between">
                                                 <h4 className="font-semibold">{record.diagnosis || "Consulta"}</h4>
                                                 <span className="text-xs text-muted-foreground">
-                                                    {format(new Date(record.date), "PPP")}
+                                                    {format(new Date(record.date), "PPP", { locale: es })}
                                                 </span>
                                             </div>
                                             <p className="text-sm text-muted-foreground mt-1">{record.treatment}</p>
@@ -178,7 +179,7 @@ export default async function PatientDetailsPage({
                                                     <div>
                                                         <p className="font-medium">{vac.vaccine_name}</p>
                                                         <p className="text-xs text-muted-foreground">
-                                                            Aplicada: {format(new Date(vac.administered_at), "MMM d, yyyy")}
+                                                            Aplicada: {format(new Date(vac.administered_at), "MMM d, yyyy", { locale: es })}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -187,7 +188,7 @@ export default async function PatientDetailsPage({
                                                         <div className="flex flex-col items-end">
                                                             <span className="text-xs text-muted-foreground">Próx. Dosis</span>
                                                             <span className={isDue ? "text-red-600 font-bold" : "font-medium"}>
-                                                                {format(new Date(vac.next_due_at), "MMM d, yyyy")}
+                                                                {format(new Date(vac.next_due_at), "MMM d, yyyy", { locale: es })}
                                                             </span>
                                                         </div>
                                                     ) : (
@@ -216,7 +217,7 @@ export default async function PatientDetailsPage({
                                     patient.appointments?.map((appt: any) => (
                                         <div key={appt.id} className="flex items-center justify-between p-3 border-b last:border-0">
                                             <div className="flex flex-col">
-                                                <span className="font-medium">{format(new Date(appt.start_time), "MMM d, yyyy h:mm a")}</span>
+                                                <span className="font-medium">{format(new Date(appt.start_time), "MMM d, yyyy h:mm a", { locale: es })}</span>
                                                 <span className="text-sm text-muted-foreground">{appt.appointment_type}</span>
                                             </div>
                                             <Badge variant={appt.status === 'completed' ? 'default' : 'outline'}>

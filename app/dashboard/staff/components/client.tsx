@@ -12,6 +12,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import { Button } from "@/components/ui/button";
 import { Edit, User } from "lucide-react";
 import { StaffDialog } from "./staff-dialog";
@@ -84,12 +85,15 @@ export function StaffClient({ data }: StaffClientProps) {
                                                 user.role === "vet" ? "bg-emerald-600 text-white" : ""
                                         }
                                     >
-                                        {user.role}
+                                        {user.role === 'admin' ? 'Admin' :
+                                            user.role === 'vet' ? 'Veterinario' :
+                                                user.role === 'nurse' ? 'Enfermero/a' :
+                                                    user.role === 'receptionist' ? 'Recepcionista' : user.role}
                                     </Badge>
                                 </TableCell>
                                 <TableCell>
                                     {user.created_at
-                                        ? format(new Date(user.created_at), "MMM d, yyyy")
+                                        ? format(new Date(user.created_at), "MMM d, yyyy", { locale: es })
                                         : "-"}
                                 </TableCell>
                                 <TableCell className="text-right">

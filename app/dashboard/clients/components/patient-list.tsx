@@ -35,13 +35,13 @@ export function PatientList({
         <Card>
             <CardHeader className="flex flex-row items-center justify-between">
                 <div>
-                    <CardTitle>Pets / Patients</CardTitle>
+                    <CardTitle>Mascotas / Pacientes</CardTitle>
                     <CardDescription>
-                        Manage pets belonging to this client.
+                        Administrar mascotas de este cliente.
                     </CardDescription>
                 </div>
                 <Button size="sm" onClick={() => setOpen(true)}>
-                    <Plus className="mr-2 h-4 w-4" /> Add Pet
+                    <Plus className="mr-2 h-4 w-4" /> Agregar Mascota
                 </Button>
             </CardHeader>
             <CardContent>
@@ -52,7 +52,7 @@ export function PatientList({
                 />
                 <div className="space-y-4">
                     {patients.length === 0 ? (
-                        <div className="text-sm text-muted-foreground">No pets found.</div>
+                        <div className="text-sm text-muted-foreground">No se encontraron mascotas.</div>
                     ) : (
                         patients.map((patient) => (
                             <div
@@ -66,13 +66,13 @@ export function PatientList({
                                     <div>
                                         <p className="font-medium">{patient.name}</p>
                                         <p className="text-sm text-muted-foreground">
-                                            {patient.species} - {patient.breed || "Unknown Mix"} (
+                                            {patient.species} - {patient.breed || "Mezcla desconocida"} (
                                             {patient.gender})
                                         </p>
                                     </div>
                                 </div>
                                 <Button variant="outline" size="sm">
-                                    View Record
+                                    Ver Ficha
                                 </Button>
                             </div>
                         ))

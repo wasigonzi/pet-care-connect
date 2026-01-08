@@ -25,11 +25,11 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
-    name: z.string().min(1, "Name is required"),
-    category: z.string().min(1, "Category is required"),
+    name: z.string().min(1, "El nombre es requerido"),
+    category: z.string().min(1, "La categoría es requerida"),
     sku: z.string().optional(),
-    quantity: z.string().min(1, "Quantity is required"),
-    unit: z.string().min(1, "Unit is required"),
+    quantity: z.string().min(1, "La cantidad es requerida"),
+    unit: z.string().min(1, "La unidad es requerida"),
     reorder_level: z.string().optional(),
     cost_price: z.string().optional(),
     selling_price: z.string().optional(),

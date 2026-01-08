@@ -18,9 +18,9 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
-    first_name: z.string().min(1, "First name is required"),
-    last_name: z.string().min(1, "Last name is required"),
-    email: z.string().email().optional().or(z.literal("")),
+    first_name: z.string().min(1, "El nombre es requerido"),
+    last_name: z.string().min(1, "El apellido es requerido"),
+    email: z.string().email("Email inválido").optional().or(z.literal("")),
     phone: z.string().optional(),
     address: z.string().optional(),
     city: z.string().optional(),
@@ -58,7 +58,7 @@ export function ClientForm() {
                 router.push("/dashboard/clients");
             }
         } catch (error) {
-            toast.error("Algo salió mal");
+            toast.error("Ocurrió un error");
         }
     }
 

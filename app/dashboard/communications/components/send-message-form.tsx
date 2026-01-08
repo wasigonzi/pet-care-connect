@@ -32,7 +32,7 @@ const formSchema = z.object({
     client_id: z.string().uuid(),
     type: z.enum(["email", "sms", "notification"]),
     subject: z.string().optional(),
-    content: z.string().min(1, "Content is required"),
+    content: z.string().min(1, "El contenido es requerido"),
 });
 
 type CommunicationFormValues = z.infer<typeof formSchema>;

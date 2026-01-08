@@ -33,8 +33,8 @@ const formSchema = z.object({
     patient_id: z.string({ required_error: "El paciente es requerido" }).uuid(),
     date: z.string().min(1, "La fecha es requerida"),
     start_time: z.string().min(1, "La hora de inicio es requerida"),
-    duration: z.string(), // "15", "30", "60"
-    appointment_type: z.string().min(1),
+    duration: z.string().min(1, "La duración es requerida"), // "15", "30", "60"
+    appointment_type: z.string().min(1, "El tipo de cita es requerido"),
     reason: z.string().optional(),
     notes: z.string().optional(),
 });

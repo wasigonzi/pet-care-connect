@@ -26,7 +26,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
-    title: z.string().min(1, "Title is required"),
+    title: z.string().min(1, "El título es requerido"),
     description: z.string().optional(),
     assigned_to: z.string().optional(),
     due_date: z.string().optional(),

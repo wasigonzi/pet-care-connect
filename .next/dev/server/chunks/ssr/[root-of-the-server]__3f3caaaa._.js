@@ -172,7 +172,11 @@ function Home() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     href: "#features",
                                     className: "text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors",
+<<<<<<< HEAD
                                     children: "Características"
+=======
+                                    children: "Features"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
                                     lineNumber: 40,
@@ -181,7 +185,11 @@ function Home() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     href: "#tech",
                                     className: "text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors",
+<<<<<<< HEAD
                                     children: "Tecnología"
+=======
+                                    children: "Tech Stack"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
                                     lineNumber: 41,
@@ -199,7 +207,11 @@ function Home() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     href: "#pricing",
                                     className: "text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors",
+<<<<<<< HEAD
                                     children: "Precios"
+=======
+                                    children: "Pricing"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
                                     lineNumber: 43,
@@ -219,7 +231,11 @@ function Home() {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
                                         variant: "ghost",
                                         className: "text-gray-600 hover:text-emerald-600 hover:bg-emerald-50",
+<<<<<<< HEAD
                                         children: "Iniciar Sesión"
+=======
+                                        children: "Log In"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
                                         lineNumber: 48,
@@ -234,7 +250,11 @@ function Home() {
                                     href: "/login",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
                                         className: "bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-6 shadow-lg shadow-emerald-200",
+<<<<<<< HEAD
                                         children: "Comenzar"
+=======
+                                        children: "Get Started"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
                                         lineNumber: 53,
@@ -304,7 +324,11 @@ function Home() {
                                                 lineNumber: 67,
                                                 columnNumber: 15
                                             }, this),
+<<<<<<< HEAD
                                             "Listo para Producción: Versión 1.0.0 MTY"
+=======
+                                            "Production Ready: Version 1.0.0 Live"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/page.tsx",
@@ -314,6 +338,7 @@ function Home() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                         className: "text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6 max-w-4xl mx-auto",
                                         children: [
+<<<<<<< HEAD
                                             "El Sistema Operativo Moderno para ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/app/page.tsx",
@@ -323,6 +348,17 @@ function Home() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500",
                                                 children: "Clínicas Veterinarias"
+=======
+                                            "The Modern OS for ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                                fileName: "[project]/app/page.tsx",
+                                                lineNumber: 74,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500",
+                                                children: "Veterinary Clinics"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             }, void 0, false, {
                                                 fileName: "[project]/app/page.tsx",
                                                 lineNumber: 75,
@@ -336,7 +372,11 @@ function Home() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-10",
+<<<<<<< HEAD
                                         children: "Una plataforma SaaS integral diseñada para optimizar operaciones, mejorar la atención al paciente y automatizar tareas administrativas."
+=======
+                                        children: "A comprehensive, single-tenant SaaS platform designed to streamline operations, enhance patient care, and automate administrative tasks."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
                                         lineNumber: 77,
@@ -350,7 +390,11 @@ function Home() {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
                                                     size: "lg",
                                                     className: "h-14 px-10 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-lg shadow-xl shadow-emerald-200 transition-all hover:scale-105",
+<<<<<<< HEAD
                                                     children: "Ver Demo"
+=======
+                                                    children: "Launch Demo"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 82,
@@ -368,7 +412,11 @@ function Home() {
                                                     variant: "outline",
                                                     size: "lg",
                                                     className: "h-14 px-10 border-2 border-gray-200 hover:border-emerald-600 hover:text-emerald-600 rounded-full text-lg bg-white",
+<<<<<<< HEAD
                                                     children: "Ver Documentación"
+=======
+                                                    children: "View Documentation"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 87,
@@ -400,7 +448,11 @@ function Home() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "text-sm text-gray-500 font-medium",
+<<<<<<< HEAD
                                                         children: "Módulos Funcionales"
+=======
+                                                        children: "Functional Modules"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/page.tsx",
                                                         lineNumber: 96,
@@ -424,7 +476,11 @@ function Home() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "text-sm text-gray-500 font-medium",
+<<<<<<< HEAD
                                                         children: "Uptime del Sistema"
+=======
+                                                        children: "System Uptime"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/page.tsx",
                                                         lineNumber: 100,
@@ -472,7 +528,11 @@ function Home() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "text-sm text-gray-500 font-medium",
+<<<<<<< HEAD
                                                         children: "Última Tecnología"
+=======
+                                                        children: "Latest Tech"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/page.tsx",
                                                         lineNumber: 108,
@@ -513,7 +573,11 @@ function Home() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "text-emerald-600 font-bold tracking-wide uppercase text-sm",
+<<<<<<< HEAD
                                             children: "Capacidades de la Plataforma"
+=======
+                                            children: "Platform Capabilities"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 118,
@@ -521,7 +585,11 @@ function Home() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             className: "mt-2 text-3xl font-bold text-gray-900 md:text-5xl",
+<<<<<<< HEAD
                                             children: "Todo lo que necesitas para tu práctica"
+=======
+                                            children: "Everything you need to run your practice"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 119,
@@ -529,7 +597,11 @@ function Home() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "mt-4 text-xl text-gray-600",
+<<<<<<< HEAD
                                             children: "Desde registros de pacientes hasta facturación, inventario y análisis: lo tenemos cubierto."
+=======
+                                            children: "From patient records to billing, inventory, and analytics - we've got it covered."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 120,
@@ -546,85 +618,145 @@ function Home() {
                                     children: [
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__["BarChart3"],
+<<<<<<< HEAD
                                             title: "Dashboard y Analíticas",
                                             desc: "Métricas en tiempo real, volumen de citas, seguimiento de ingresos e información operativa.",
+=======
+                                            title: "Dashboard & Analytics",
+                                            desc: "Real-time metrics, appointment volume, revenue tracking, and operational insights.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-blue-600",
                                             bg: "bg-blue-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"],
+<<<<<<< HEAD
                                             title: "Gestión de Clientes y Pacientes",
                                             desc: "Perfiles completos, hogares con múltiples mascotas, historial médico y búsqueda avanzada.",
+=======
+                                            title: "Client & Patient Mgmt",
+                                            desc: "Comprehensive profiles, multi-pet households, medical history, and advanced search.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-indigo-600",
                                             bg: "bg-indigo-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__["Calendar"],
+<<<<<<< HEAD
                                             title: "Agenda Inteligente",
                                             desc: "Calendario arrastrar y soltar, detección de conflictos, recordatorios automáticos y visitas recurrentes.",
+=======
+                                            title: "Smart Scheduling",
+                                            desc: "Drag-and-drop calendar, conflict detection, automated reminders, and recurring visits.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-purple-600",
                                             bg: "bg-purple-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"],
+<<<<<<< HEAD
                                             title: "Registros Clínicos",
                                             desc: "Plantillas SOAP, gestión de recetas, adjuntos digitales y planes de tratamiento.",
+=======
+                                            title: "Clinical Records",
+                                            desc: "SOAP templates, prescription management, digital attachments, and treatment plans.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-emerald-600",
                                             bg: "bg-emerald-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$package$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Package$3e$__["Package"],
+<<<<<<< HEAD
                                             title: "Control de Inventario",
                                             desc: "Seguimiento de stock, alertas de stock bajo, gestión de proveedores y monitoreo de caducidad.",
+=======
+                                            title: "Inventory Control",
+                                            desc: "Stock tracking, low stock alerts, supplier management, and expiration monitoring.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-orange-600",
                                             bg: "bg-orange-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__["CreditCard"],
+<<<<<<< HEAD
                                             title: "Facturación y Finanzas",
                                             desc: "Facturación automatizada, presupuestos, procesamiento de pagos e informes financieros.",
+=======
+                                            title: "Billing & Finance",
+                                            desc: "Automated invoicing, estimates, payment processing, and financial reporting.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-green-600",
                                             bg: "bg-green-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$syringe$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Syringe$3e$__["Syringe"],
+<<<<<<< HEAD
                                             title: "Vacunación",
                                             desc: "Seguimiento de inmunización, recordatorios de vencimiento, gestión de protocolos y cumplimiento.",
+=======
+                                            title: "Vaccinations",
+                                            desc: "Immunization tracking, due date reminders, protocol management, and compliance.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-red-600",
                                             bg: "bg-red-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquare$3e$__["MessageSquare"],
+<<<<<<< HEAD
                                             title: "Centro de Comunicación",
                                             desc: "Integración de Email/SMS, plantillas, registro de llamadas y flujos de trabajo automatizados.",
+=======
+                                            title: "Communication Center",
+                                            desc: "Email/SMS integration, templates, call logging, and automated workflows.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-teal-600",
                                             bg: "bg-teal-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"],
+<<<<<<< HEAD
                                             title: "Hospitalización",
                                             desc: "Gestión de unidades, reservas, check-in/out y monitoreo médico.",
+=======
+                                            title: "Boarding & Hospital",
+                                            desc: "Unit management, reservations, check-in/out, and medical monitoring.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-pink-600",
                                             bg: "bg-pink-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"],
+<<<<<<< HEAD
                                             title: "Tiempo y Asistencia",
                                             desc: "Entrada/salida del personal, horarios, seguimiento de horas extras e integración de nómina.",
+=======
+                                            title: "Time & Attendance",
+                                            desc: "Staff clock-in/out, scheduling, overtime tracking, and payroll integration.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-cyan-600",
                                             bg: "bg-cyan-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__["ShieldCheck"],
+<<<<<<< HEAD
                                             title: "Admin y Seguridad",
                                             desc: "Acceso basado en roles (RBAC), registros de auditoría, copias de seguridad y configuración de la clínica.",
+=======
+                                            title: "Admin & Security",
+                                            desc: "Role-based access (RBAC), audit logging, backups, and clinic configuration.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-slate-600",
                                             bg: "bg-slate-50"
                                         },
                                         {
                                             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"],
+<<<<<<< HEAD
                                             title: "Gestión de Tareas",
                                             desc: "Asignación de tareas al personal, niveles de prioridad, fechas de vencimiento y seguimiento del progreso.",
+=======
+                                            title: "Task Management",
+                                            desc: "Staff task assignment, priority levels, due dates, and progress tracking.",
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             color: "text-yellow-600",
                                             bg: "bg-yellow-50"
                                         }
@@ -695,7 +827,11 @@ function Home() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "text-emerald-600 font-bold tracking-wide uppercase text-sm",
+<<<<<<< HEAD
                                                 children: "Bajo el Capó"
+=======
+                                                children: "Under the Hood"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             }, void 0, false, {
                                                 fileName: "[project]/app/page.tsx",
                                                 lineNumber: 157,
@@ -703,7 +839,11 @@ function Home() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                                 className: "mt-2 text-3xl font-bold text-gray-900 md:text-5xl mb-6",
+<<<<<<< HEAD
                                                 children: "Arquitectura Técnica Moderna"
+=======
+                                                children: "Modern Technical Architecture"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             }, void 0, false, {
                                                 fileName: "[project]/app/page.tsx",
                                                 lineNumber: 158,
@@ -711,7 +851,11 @@ function Home() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-lg text-gray-600 mb-8 leading-relaxed",
+<<<<<<< HEAD
                                                 children: "Construido con las últimas y más robustas tecnologías para garantizar rendimiento, seguridad y escalabilidad para su negocio."
+=======
+                                                children: "Built with the latest, most robust technologies to ensure performance, security, and scalability for your business."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             }, void 0, false, {
                                                 fileName: "[project]/app/page.tsx",
                                                 lineNumber: 159,
@@ -727,6 +871,7 @@ function Home() {
                                                     },
                                                     {
                                                         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Server$3e$__["Server"],
+<<<<<<< HEAD
                                                         title: "Infraestructura Backend",
                                                         desc: "Supabase (PostgreSQL 15), Edge Functions, Seguridad RLS"
                                                     },
@@ -739,6 +884,20 @@ function Home() {
                                                         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Lock$3e$__["Lock"],
                                                         title: "Seguridad Primero",
                                                         desc: "Encriptación AES-256, Autorización RBAC, Auditoría"
+=======
+                                                        title: "Backend Infrastructure",
+                                                        desc: "Supabase (PostgreSQL 15), Edge Functions, RLS Security"
+                                                    },
+                                                    {
+                                                        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"],
+                                                        title: "Data Management",
+                                                        desc: "Real-time subscriptions, Automated Backups, S3 Storage"
+                                                    },
+                                                    {
+                                                        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Lock$3e$__["Lock"],
+                                                        title: "Security First",
+                                                        desc: "AES-256 Encryption, RBAC Authorization, Audit Trails"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                     }
                                                 ].map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "flex gap-4 items-start",
@@ -1160,7 +1319,11 @@ function Home() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "text-emerald-400 font-bold tracking-wide uppercase text-sm",
+<<<<<<< HEAD
                                             children: "Experiencia de Usuario"
+=======
+                                            children: "User Experience"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 218,
@@ -1168,7 +1331,11 @@ function Home() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             className: "mt-2 text-3xl font-bold md:text-4xl",
+<<<<<<< HEAD
                                             children: "Diseñado para personas, no solo datos"
+=======
+                                            children: "Designed for people, not just data"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 219,
@@ -1203,7 +1370,11 @@ function Home() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-slate-400 text-sm",
+<<<<<<< HEAD
                                                     children: "Diseño visual moderno con profundidad y claridad."
+=======
+                                                    children: "Modern visual design with depth and clarity."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 225,
@@ -1227,7 +1398,11 @@ function Home() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     className: "font-bold text-lg mb-2",
+<<<<<<< HEAD
                                                     children: "Totalmente Responsivo"
+=======
+                                                    children: "Fully Responsive"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 229,
@@ -1235,7 +1410,11 @@ function Home() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-slate-400 text-sm",
+<<<<<<< HEAD
                                                     children: "Experiencia fluida en Móvil, Tablet y Escritorio."
+=======
+                                                    children: "Seamless experience on Mobile, Tablet, and Desktop."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 230,
@@ -1259,7 +1438,11 @@ function Home() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     className: "font-bold text-lg mb-2",
+<<<<<<< HEAD
                                                     children: "Interacciones Instantáneas"
+=======
+                                                    children: "Instant Interactions"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 234,
@@ -1267,7 +1450,11 @@ function Home() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-slate-400 text-sm",
+<<<<<<< HEAD
                                                     children: "Actualizaciones en tiempo real sin recargas de página."
+=======
+                                                    children: "Real-time updates without page reloads."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 235,
@@ -1291,7 +1478,11 @@ function Home() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     className: "font-bold text-lg mb-2",
+<<<<<<< HEAD
                                                     children: "Accesibilidad Primero"
+=======
+                                                    children: "Accessibility First"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 239,
@@ -1299,7 +1490,11 @@ function Home() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-slate-400 text-sm",
+<<<<<<< HEAD
                                                     children: "Cumple con WCAG 2.1 AA para todos los usuarios."
+=======
+                                                    children: "WCAG 2.1 AA compliant for all users."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 240,
@@ -1339,7 +1534,11 @@ function Home() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider",
+<<<<<<< HEAD
                                             children: "Estado de Desarrollo"
+=======
+                                            children: "Development Status"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 250,
@@ -1347,7 +1546,11 @@ function Home() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             className: "mt-4 text-3xl font-bold text-gray-900",
+<<<<<<< HEAD
                                             children: "Roadmap de Implementación"
+=======
+                                            children: "Implementation Roadmap"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 251,
@@ -1355,7 +1558,11 @@ function Home() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-gray-500 mt-4 max-w-2xl mx-auto",
+<<<<<<< HEAD
                                             children: "Nuestro viaje para construir la plataforma veterinaria más completa."
+=======
+                                            children: "Our journey to building the most complete veterinary platform."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 252,
@@ -1371,6 +1578,7 @@ function Home() {
                                     className: "grid md:grid-cols-2 lg:grid-cols-4 gap-8",
                                     children: [
                                         {
+<<<<<<< HEAD
                                             phase: "Fase 1",
                                             title: "Cimientos",
                                             status: "Completado",
@@ -1379,10 +1587,21 @@ function Home() {
                                                 "Dashboard y Métricas",
                                                 "DB Clientes/Pacientes",
                                                 "Reportes Básicos"
+=======
+                                            phase: "Phase 1",
+                                            title: "Core Foundation",
+                                            status: "Completed",
+                                            items: [
+                                                "User Auth & Security",
+                                                "Dashboard & Metrics",
+                                                "Client/Patient DB",
+                                                "Basic Reporting"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             ],
                                             color: "emerald"
                                         },
                                         {
+<<<<<<< HEAD
                                             phase: "Fase 2",
                                             title: "Ops Clínicas",
                                             status: "Completado",
@@ -1391,10 +1610,21 @@ function Home() {
                                                 "Gestión de Recetas",
                                                 "Seguimiento Vacunas",
                                                 "Sistema Facturación"
+=======
+                                            phase: "Phase 2",
+                                            title: "Clinical Ops",
+                                            status: "Completed",
+                                            items: [
+                                                "SOAP Records",
+                                                "Prescription Mgmt",
+                                                "Vaccination Tracking",
+                                                "Billing System"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             ],
                                             color: "emerald"
                                         },
                                         {
+<<<<<<< HEAD
                                             phase: "Fase 3",
                                             title: "Funciones Avanzadas",
                                             status: "Completado",
@@ -1403,10 +1633,21 @@ function Home() {
                                                 "Gestión de Tareas",
                                                 "Control de Tiempo",
                                                 "Logs de Auditoría"
+=======
+                                            phase: "Phase 3",
+                                            title: "Advanced Features",
+                                            status: "Completed",
+                                            items: [
+                                                "Boarding & Hospital",
+                                                "Task Management",
+                                                "Time Tracking",
+                                                "Audit Logging"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             ],
                                             color: "emerald"
                                         },
                                         {
+<<<<<<< HEAD
                                             phase: "Fase 4",
                                             title: "Mejoras Futuras",
                                             status: "Planeado",
@@ -1415,14 +1656,31 @@ function Home() {
                                                 "Diagnóstico IA",
                                                 "Telemedicina",
                                                 "Multi-idioma"
+=======
+                                            phase: "Phase 4",
+                                            title: "Future Enhancements",
+                                            status: "Planned",
+                                            items: [
+                                                "Mobile Native Apps",
+                                                "AI Diagnostics",
+                                                "Telemedicine",
+                                                "Multi-language"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             ],
                                             color: "blue"
                                         }
                                     ].map((plan, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+<<<<<<< HEAD
                                             className: `relative p-8 rounded-3xl border-2 ${plan.status === 'Completado' ? 'border-emerald-100 bg-emerald-50/30' : 'border-gray-100 bg-white'} `,
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: `text-xs font-bold uppercase tracking-wider mb-2 ${plan.status === 'Completado' ? 'text-emerald-600' : 'text-blue-600'}`,
+=======
+                                            className: `relative p-8 rounded-3xl border-2 ${plan.status === 'Completed' ? 'border-emerald-100 bg-emerald-50/30' : 'border-gray-100 bg-white'} `,
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `text-xs font-bold uppercase tracking-wider mb-2 ${plan.status === 'Completed' ? 'text-emerald-600' : 'text-blue-600'}`,
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                     children: plan.phase
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
@@ -1442,18 +1700,30 @@ function Home() {
                                                     children: plan.items.map((item, j)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             className: "flex items-center gap-2 text-sm text-gray-600",
                                                             children: [
+<<<<<<< HEAD
                                                                 plan.status === 'Completado' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
+=======
+                                                                plan.status === 'Completed' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                                     className: "w-4 h-4 text-emerald-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/page.tsx",
                                                                     lineNumber: 268,
+<<<<<<< HEAD
                                                                     columnNumber: 57
+=======
+                                                                    columnNumber: 56
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "w-4 h-4 rounded-full border border-gray-300"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/page.tsx",
                                                                     lineNumber: 268,
+<<<<<<< HEAD
                                                                     columnNumber: 113
+=======
+                                                                    columnNumber: 112
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                                 }, this),
                                                                 item
                                                             ]
@@ -1468,7 +1738,11 @@ function Home() {
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+<<<<<<< HEAD
                                                     className: `inline-block px-3 py-1 rounded-full text-xs font-bold ${plan.status === 'Completado' ? 'bg-emerald-200 text-emerald-800' : 'bg-blue-100 text-blue-800'}`,
+=======
+                                                    className: `inline-block px-3 py-1 rounded-full text-xs font-bold ${plan.status === 'Completed' ? 'bg-emerald-200 text-emerald-800' : 'bg-blue-100 text-blue-800'}`,
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                     children: plan.status
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
@@ -1523,7 +1797,11 @@ function Home() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                                 className: "text-3xl md:text-5xl font-bold mb-6 tracking-tight",
+<<<<<<< HEAD
                                                 children: "¿Listo para transformar tu clínica?"
+=======
+                                                children: "Ready to transform your clinic?"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             }, void 0, false, {
                                                 fileName: "[project]/app/page.tsx",
                                                 lineNumber: 291,
@@ -1531,7 +1809,11 @@ function Home() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-gray-300 mb-10 max-w-2xl mx-auto text-lg",
+<<<<<<< HEAD
                                                 children: "Únete a las prácticas veterinarias con visión de futuro que están reduciendo costos administrativos en un 25% y aumentando ingresos en un 15% con Pet Care Connect."
+=======
+                                                children: "Join forward-thinking veterinary practices that are reducing admin costs by 25% and increasing revenue by 15% with Pet Care Connect."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                             }, void 0, false, {
                                                 fileName: "[project]/app/page.tsx",
                                                 lineNumber: 292,
@@ -1545,7 +1827,11 @@ function Home() {
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
                                                             size: "lg",
                                                             className: "bg-emerald-500 hover:bg-emerald-600 text-white border-none rounded-full px-10 h-14 text-lg font-bold shadow-lg shadow-emerald-500/20",
+<<<<<<< HEAD
                                                             children: "Prueba Gratis"
+=======
+                                                            children: "Start Free Trial"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/page.tsx",
                                                             lineNumber: 295,
@@ -1562,7 +1848,11 @@ function Home() {
                                                             size: "lg",
                                                             variant: "outline",
                                                             className: "bg-transparent border-2 border-gray-700 text-white hover:bg-gray-800 hover:text-white rounded-full px-10 h-14 text-lg font-bold",
+<<<<<<< HEAD
                                                             children: "Contactar Ventas"
+=======
+                                                            children: "Contact Sales"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/page.tsx",
                                                             lineNumber: 300,
@@ -1649,7 +1939,11 @@ function Home() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     href: "#",
                                     className: "hover:text-emerald-600 transition-colors",
+<<<<<<< HEAD
                                     children: "Documentación"
+=======
+                                    children: "Documentation"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
                                     lineNumber: 322,
@@ -1658,7 +1952,11 @@ function Home() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     href: "#",
                                     className: "hover:text-emerald-600 transition-colors",
+<<<<<<< HEAD
                                     children: "Soporte"
+=======
+                                    children: "Support"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
                                     lineNumber: 323,
@@ -1667,7 +1965,11 @@ function Home() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     href: "#",
                                     className: "hover:text-emerald-600 transition-colors",
+<<<<<<< HEAD
                                     children: "Privacidad"
+=======
+                                    children: "Privacy Policy"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
                                     lineNumber: 324,
@@ -1676,7 +1978,11 @@ function Home() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     href: "#",
                                     className: "hover:text-emerald-600 transition-colors",
+<<<<<<< HEAD
                                     children: "Términos"
+=======
+                                    children: "Terms of Service"
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
                                     lineNumber: 325,
@@ -1689,7 +1995,11 @@ function Home() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+<<<<<<< HEAD
                             children: "© 2024 Pet Care Connect. Licencia MIT."
+=======
+                            children: "© 2024 Pet Care Connect. MIT License."
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
                         }, void 0, false, {
                             fileName: "[project]/app/page.tsx",
                             lineNumber: 327,

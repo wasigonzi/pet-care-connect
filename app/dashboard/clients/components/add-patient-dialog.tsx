@@ -43,9 +43,9 @@ export function AddPatientDialog({
         setLoading(false);
 
         if (result?.error) {
-            toast.error("Failed to add patient");
+            toast.error("Error al agregar paciente");
         } else {
-            toast.success("Patient added successfully");
+            toast.success("Paciente agregado exitosamente");
             onOpenChange(false);
         }
     }
@@ -54,60 +54,60 @@ export function AddPatientDialog({
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>Add New Patient</DialogTitle>
+                    <DialogTitle>Agregar Nuevo Paciente</DialogTitle>
                     <DialogDescription>
-                        Add a new pet to this client's profile.
+                        Agregue una nueva mascota al perfil de este cliente.
                     </DialogDescription>
                 </DialogHeader>
                 <form onSubmit={onSubmit}>
                     <div className="grid gap-4 py-4">
                         <div className="grid grid-cols-4 items-center gap-4">
                             <Label htmlFor="name" className="text-right">
-                                Name
+                                Nombre
                             </Label>
                             <Input id="name" name="name" className="col-span-3" required />
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <Label htmlFor="species" className="text-right">
-                                Species
+                                Especie
                             </Label>
                             <Select name="species" defaultValue="Dog">
                                 <SelectTrigger className="col-span-3">
-                                    <SelectValue placeholder="Select species" />
+                                    <SelectValue placeholder="Seleccionar especie" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    <SelectItem value="Dog">Dog</SelectItem>
-                                    <SelectItem value="Cat">Cat</SelectItem>
-                                    <SelectItem value="Bird">Bird</SelectItem>
-                                    <SelectItem value="Other">Other</SelectItem>
+                                    <SelectItem value="Dog">Perro</SelectItem>
+                                    <SelectItem value="Cat">Gato</SelectItem>
+                                    <SelectItem value="Bird">Ave</SelectItem>
+                                    <SelectItem value="Other">Otro</SelectItem>
                                 </SelectContent>
                             </Select>
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <Label htmlFor="breed" className="text-right">
-                                Breed
+                                Raza
                             </Label>
                             <Input id="breed" name="breed" className="col-span-3" />
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <Label htmlFor="gender" className="text-right">
-                                Gender
+                                Género
                             </Label>
                             <Select name="gender" defaultValue="Unknown">
                                 <SelectTrigger className="col-span-3">
-                                    <SelectValue placeholder="Select gender" />
+                                    <SelectValue placeholder="Seleccionar género" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    <SelectItem value="Male">Male</SelectItem>
-                                    <SelectItem value="Female">Female</SelectItem>
-                                    <SelectItem value="Unknown">Unknown</SelectItem>
+                                    <SelectItem value="Male">Macho</SelectItem>
+                                    <SelectItem value="Female">Hembra</SelectItem>
+                                    <SelectItem value="Unknown">Desconocido</SelectItem>
                                 </SelectContent>
                             </Select>
                         </div>
                     </div>
                     <DialogFooter>
                         <Button type="submit" disabled={loading}>
-                            {loading ? "Adding..." : "Add Patient"}
+                            {loading ? "Agregando..." : "Agregar Paciente"}
                         </Button>
                     </DialogFooter>
                 </form>

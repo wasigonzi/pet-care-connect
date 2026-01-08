@@ -13,6 +13,7 @@ import { CheckCircle2, XCircle, Bell, Trash2 } from "lucide-react";
 import { updateReminderStatus, deleteReminder } from "../actions";
 import { toast } from "sonner";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import { Badge } from "@/components/ui/badge";
 
 interface RemindersClientProps {
@@ -64,7 +65,7 @@ export function RemindersClient({ data }: RemindersClientProps) {
                             <TableRow key={reminder.id}>
                                 <TableCell>
                                     <span className={new Date(reminder.due_date) < new Date() && reminder.status === 'pending' ? "text-red-500 font-bold" : ""}>
-                                        {format(new Date(reminder.due_date), "MMM d, yyyy")}
+                                        {format(new Date(reminder.due_date), "MMM d, yyyy", { locale: es })}
                                     </span>
                                 </TableCell>
                                 <TableCell className="font-medium">
@@ -82,14 +83,20 @@ export function RemindersClient({ data }: RemindersClientProps) {
                                     </div>
                                 </TableCell>
                                 <TableCell>
-                                    <Badge variant="outline">{reminder.type}</Badge>
+                                    <Badge variant="outline">
+                                        {reminder.type === 'vaccination' ? 'Vacunación' :
+                                            reminder.type === 'appointment' ? 'Cita' :
+                                                reminder.type === 'follow-up' ? 'Seguimiento' : reminder.type}
+                                    </Badge>
                                 </TableCell>
                                 <TableCell>
                                     <Badge variant={
                                         reminder.status === 'completed' ? 'default' :
                                             reminder.status === 'pending' ? 'secondary' : 'outline'
                                     }>
-                                        {reminder.status}
+                                        {reminder.status === 'completed' ? 'Completado' :
+                                            reminder.status === 'pending' ? 'Pendiente' :
+                                                reminder.status === 'dismissed' ? 'Descartado' : reminder.status}
                                     </Badge>
                                 </TableCell>
                                 <TableCell className="text-right">
@@ -97,7 +104,7 @@ export function RemindersClient({ data }: RemindersClientProps) {
                                         <Button
                                             variant="ghost"
                                             size="icon"
-                                            title="Complete"
+                                            title="Completar"
                                             onClick={() => handleStatus(reminder.id, 'completed')}
                                             disabled={reminder.status === 'completed'}
                                         >
@@ -106,7 +113,7 @@ export function RemindersClient({ data }: RemindersClientProps) {
                                         <Button
                                             variant="ghost"
                                             size="icon"
-                                            title="Dismiss"
+                                            title="Descartar"
                                             onClick={() => handleStatus(reminder.id, 'dismissed')}
                                             disabled={reminder.status === 'dismissed'}
                                         >

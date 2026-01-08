@@ -153,6 +153,7 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+<<<<<<< HEAD
 // Validate ../../../app/dashboard/estimates/new/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/dashboard/estimates/new">> = Specific
@@ -162,6 +163,8 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
 // Validate ../../../app/dashboard/estimates/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/dashboard/estimates">> = Specific
@@ -198,6 +201,7 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+<<<<<<< HEAD
 // Validate ../../../app/dashboard/patients/[id]/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/dashboard/patients/[id]">> = Specific
@@ -216,6 +220,8 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
 // Validate ../../../app/dashboard/permissions/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/dashboard/permissions">> = Specific
@@ -279,6 +285,7 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+<<<<<<< HEAD
 // Validate ../../../app/dashboard/suppliers/new/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/dashboard/suppliers/new">> = Specific
@@ -288,6 +295,8 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
 // Validate ../../../app/dashboard/suppliers/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/dashboard/suppliers">> = Specific

@@ -43,16 +43,16 @@ export default async function ClientPage({
                 <div className="col-span-3">
                     <Card>
                         <CardHeader>
-                            <CardTitle>Client Information</CardTitle>
+                            <CardTitle>Información del Cliente</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
                             <div className="flex items-center space-x-2 text-sm">
                                 <Mail className="h-4 w-4 text-muted-foreground" />
-                                <span>{client.email || "No email"}</span>
+                                <span>{client.email || "Sin email"}</span>
                             </div>
                             <div className="flex items-center space-x-2 text-sm">
                                 <Phone className="h-4 w-4 text-muted-foreground" />
-                                <span>{client.phone || "No phone"}</span>
+                                <span>{client.phone || "Sin teléfono"}</span>
                             </div>
                             <div className="flex items-center space-x-2 text-sm">
                                 <MapPin className="h-4 w-4 text-muted-foreground" />

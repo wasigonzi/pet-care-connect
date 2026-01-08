@@ -11,6 +11,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import { Badge } from "@/components/ui/badge";
 
 export default async function VaccinationsPage() {
@@ -65,11 +66,11 @@ export default async function VaccinationsPage() {
                                             </div>
                                         </TableCell>
                                         <TableCell>
-                                            {format(new Date(v.administered_at), "MMM d, yyyy")}
+                                            {format(new Date(v.administered_at), "MMM d, yyyy", { locale: es })}
                                         </TableCell>
                                         <TableCell>
                                             {v.next_due_at
-                                                ? format(new Date(v.next_due_at), "MMM d, yyyy")
+                                                ? format(new Date(v.next_due_at), "MMM d, yyyy", { locale: es })
                                                 : "-"}
                                         </TableCell>
                                         <TableCell>

@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";
+import { es } from "date-fns/locale";
 
 export default async function BoardingPage() {
     const reservations = await getReservations();
@@ -39,9 +40,17 @@ export default async function BoardingPage() {
                             <Home className="h-4 w-4 text-muted-foreground" />
                         </CardHeader>
                         <CardContent>
-                            <div className="text-2xl font-bold capitalize">{unit.type}</div>
+                            <div className="text-2xl font-bold capitalize">
+                                {unit.type === 'suite' ? 'Suite' :
+                                    unit.type === 'cage' ? 'Jaula' :
+                                        unit.type === 'run' ? 'Corral' : unit.type}
+                            </div>
                             <p className="text-xs text-muted-foreground capitalize">
-                                {unit.size} · {unit.status}
+                                {unit.size} · {
+                                    unit.status === 'available' ? 'Disponible' :
+                                        unit.status === 'occupied' ? 'Ocupado' :
+                                            unit.status === 'maintenance' ? 'Mantenimiento' : unit.status
+                                }
                             </p>
                         </CardContent>
                     </Card>
@@ -63,7 +72,7 @@ export default async function BoardingPage() {
                                     <div>
                                         <p className="font-semibold">{res.patients?.name} ({res.patients?.species})</p>
                                         <p className="text-sm text-muted-foreground">
-                                            {format(new Date(res.start_date), "MMM d")} - {format(new Date(res.end_date), "MMM d, yyyy")}
+                                            {format(new Date(res.start_date), "MMM d", { locale: es })} - {format(new Date(res.end_date), "MMM d, yyyy", { locale: es })}
                                         </p>
                                     </div>
                                 </div>
@@ -73,7 +82,11 @@ export default async function BoardingPage() {
                                         <p className="text-xs text-muted-foreground">{res.patients?.clients?.last_name}</p>
                                     </div>
                                     <Badge variant={res.status === 'confirmed' ? 'default' : 'outline'}>
-                                        {res.status}
+                                        {res.status === 'confirmed' ? 'Confirmada' :
+                                            res.status === 'pending' ? 'Pendiente' :
+                                                res.status === 'checked_in' ? 'Registrado' :
+                                                    res.status === 'checked_out' ? 'Salida' :
+                                                        res.status === 'cancelled' ? 'Cancelada' : res.status}
                                     </Badge>
                                 </div>
                             </CardContent>

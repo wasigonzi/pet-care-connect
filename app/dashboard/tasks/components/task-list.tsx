@@ -4,6 +4,7 @@ import { updateTaskStatusAction } from "../actions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { toast } from "sonner";
@@ -37,13 +38,16 @@ export function TaskList({ tasks }: { tasks: any[] }) {
                                 task.priority === 'urgent' ? 'destructive' :
                                     task.priority === 'high' ? 'default' : 'secondary'
                             } className="text-[10px] px-1 py-0 h-5">
-                                {task.priority}
+                                {task.priority === 'urgent' ? 'Urgente' :
+                                    task.priority === 'high' ? 'Alta' :
+                                        task.priority === 'medium' ? 'Media' :
+                                            task.priority === 'low' ? 'Baja' : task.priority}
                             </Badge>
                         </div>
                         <p className="text-xs text-muted-foreground line-clamp-2">{task.description}</p>
                         <div className="flex items-center justify-between pt-2">
                             <div className="text-xs text-muted-foreground">
-                                {task.due_date ? format(new Date(task.due_date), "MMM d") : "Sin fecha"}
+                                {task.due_date ? format(new Date(task.due_date), "MMM d", { locale: es }) : "Sin fecha"}
                             </div>
                             <div className="flex gap-1">
                                 {task.status === 'pending' && (

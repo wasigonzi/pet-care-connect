@@ -1972,6 +1972,7 @@ body {
   background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
 }
 
+<<<<<<< HEAD
 .bg-violet-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(124 58 237 / var(--tw-bg-opacity, 1));
@@ -1985,6 +1986,8 @@ body {
   background-color: hsl(var(--card) / .4);
 }
 
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
 .bg-\[radial-gradient\(\#e5e7eb_1px\,transparent_1px\)\] {
   background-image: radial-gradient(#e5e7eb 1px, #0000 1px);
 }
@@ -2469,11 +2472,14 @@ body {
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
 
+<<<<<<< HEAD
 .text-blue-700 {
   --tw-text-opacity: 1;
   color: rgb(29 78 216 / var(--tw-text-opacity, 1));
 }
 
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
 .text-blue-800 {
   --tw-text-opacity: 1;
   color: rgb(30 64 175 / var(--tw-text-opacity, 1));
@@ -2606,11 +2612,14 @@ body {
   color: rgb(219 39 119 / var(--tw-text-opacity, 1));
 }
 
+<<<<<<< HEAD
 .text-pink-700 {
   --tw-text-opacity: 1;
   color: rgb(190 24 93 / var(--tw-text-opacity, 1));
 }
 
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
 .text-popover-foreground {
   color: hsl(var(--popover-foreground));
 }
@@ -2706,6 +2715,7 @@ body {
   color: rgb(202 138 4 / var(--tw-text-opacity, 1));
 }
 
+<<<<<<< HEAD
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity, 1));
@@ -2725,6 +2735,8 @@ body {
   color: rgb(168 85 247 / var(--tw-text-opacity, 1));
 }
 
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
@@ -3268,10 +3280,13 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+<<<<<<< HEAD
 .hover\:text-destructive:hover {
   color: hsl(var(--destructive));
 }
 
+=======
+>>>>>>> 441e8fb8aca97ea5d79b43777eb6632c2732aa69
 .hover\:underline:hover {
   text-decoration-line: underline;
 }

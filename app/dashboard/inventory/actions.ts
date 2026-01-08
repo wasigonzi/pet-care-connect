@@ -5,11 +5,11 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 const inventorySchema = z.object({
-    name: z.string().min(1, "Name is required"),
-    category: z.string().min(1, "Category is required"),
+    name: z.string().min(1, "El nombre es requerido"),
+    category: z.string().min(1, "La categoría es requerida"),
     sku: z.string().optional(),
     quantity: z.string().transform((val) => parseInt(val, 10)),
-    unit: z.string().min(1, "Unit is required"),
+    unit: z.string().min(1, "La unidad es requerida"),
     reorder_level: z.string().transform((val) => parseInt(val, 10)).optional(),
     cost_price: z.string().transform((val) => parseFloat(val)).optional(),
     selling_price: z.string().transform((val) => parseFloat(val)).optional(),

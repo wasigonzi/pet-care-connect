@@ -6,13 +6,13 @@ import { z } from "zod";
 import { redirect } from "next/navigation";
 
 const supplierSchema = z.object({
-    name: z.string().min(1, "Name is required"),
+    name: z.string().min(1, "El nombre es requerido"),
     contact_name: z.string().optional(),
-    email: z.string().email("Invalid email").optional().or(z.literal("")),
+    email: z.string().email("Email inválido").optional().or(z.literal("")),
     phone: z.string().optional(),
     address: z.string().optional(),
     tax_id: z.string().optional(),
-    website: z.string().url("Invalid URL").optional().or(z.literal("")),
+    website: z.string().url("URL inválida").optional().or(z.literal("")),
     notes: z.string().optional(),
 });
 

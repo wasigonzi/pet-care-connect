@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import { EstimateActions } from "./components/estimate-actions";
 
 export default async function EstimatesPage() {
@@ -61,10 +62,10 @@ export default async function EstimatesPage() {
                                         </div>
                                     </TableCell>
                                     <TableCell>
-                                        {format(new Date(Est.created_at), "MMM d, yyyy")}
+                                        {format(new Date(Est.created_at), "MMM d, yyyy", { locale: es })}
                                     </TableCell>
                                     <TableCell>
-                                        {format(new Date(Est.valid_until), "MMM d, yyyy")}
+                                        {format(new Date(Est.valid_until), "MMM d, yyyy", { locale: es })}
                                     </TableCell>
                                     <TableCell className="font-medium">
                                         ${Est.total_amount?.toFixed(2)}
@@ -75,7 +76,10 @@ export default async function EstimatesPage() {
                                                 Est.status === 'declined' ? 'destructive' :
                                                     'secondary'
                                         }>
-                                            {Est.status}
+                                            {Est.status === 'accepted' ? 'Aceptado' :
+                                                Est.status === 'declined' ? 'Rechazado' :
+                                                    Est.status === 'draft' ? 'Borrador' :
+                                                        Est.status === 'sent' ? 'Enviado' : Est.status}
                                         </Badge>
                                     </TableCell>
                                     <TableCell className="text-right">

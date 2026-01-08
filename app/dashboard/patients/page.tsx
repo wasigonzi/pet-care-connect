@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 
 export default async function PatientsPage({
     searchParams,
@@ -118,7 +119,7 @@ export default async function PatientsPage({
                                         )}
                                     </TableCell>
                                     <TableCell>
-                                        {patient.date_of_birth ? format(new Date(patient.date_of_birth), "MMM d, yyyy") : "-"}
+                                        {patient.date_of_birth ? format(new Date(patient.date_of_birth), "MMM d, yyyy", { locale: es }) : "-"}
                                     </TableCell>
                                     <TableCell className="text-right">
                                         {patient.weight ? `${patient.weight} kg` : "-"}

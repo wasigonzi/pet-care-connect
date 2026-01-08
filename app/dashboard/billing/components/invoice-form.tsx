@@ -30,16 +30,16 @@ import { Plus, Trash } from "lucide-react";
 
 // Client-side schema including items
 const invoiceItemSchema = z.object({
-    description: z.string().min(1, "Description required"),
-    quantity: z.coerce.number().min(1, "Min 1"),
-    unit_price: z.coerce.number().min(0, "Min 0"),
+    description: z.string().min(1, "Descripción requerida"),
+    quantity: z.coerce.number().min(1, "Mín 1"),
+    unit_price: z.coerce.number().min(0, "Mín 0"),
 });
 
 const formSchema = z.object({
     client_id: z.string().uuid(),
     status: z.enum(["draft", "issued", "paid", "void", "overdue"]),
-    due_date: z.string().min(1),
-    items: z.array(invoiceItemSchema).min(1, "At least one item required"),
+    due_date: z.string().min(1, "Fecha requerida"),
+    items: z.array(invoiceItemSchema).min(1, "Al menos un ítem es requerido"),
     notes: z.string().optional(),
 });
 
