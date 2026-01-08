@@ -1,0 +1,35 @@
+{
+  "node": {
+    "005020307dc9687e03d37e009e553a4a162ddf7eb3": {
+      "workers": {
+        "app/dashboard/staff/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/staff/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/staff/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getStaff",
+          "filename": "app/dashboard/staff/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/staff/page": "rsc"
+      },
+      "exportedName": "getStaff",
+      "filename": "app/dashboard/staff/actions.ts"
+    },
+    "60eb1ae0761488b6ecd9798fba3053348d0efa86e5": {
+      "workers": {
+        "app/dashboard/staff/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/staff/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/staff/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateStaffRole",
+          "filename": "app/dashboard/staff/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/staff/page": "action-browser"
+      },
+      "exportedName": "updateStaffRole",
+      "filename": "app/dashboard/staff/actions.ts"
+    }
+  },
+  "edge": {}
+}

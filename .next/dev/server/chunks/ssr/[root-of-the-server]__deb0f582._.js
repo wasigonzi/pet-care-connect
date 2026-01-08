@@ -231,7 +231,7 @@ async function AppointmentsPage({ searchParams }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                         className: "text-3xl font-bold tracking-tight",
-                        children: "Appointments"
+                        children: "Citas"
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/appointments/page.tsx",
                         lineNumber: 30,
@@ -246,7 +246,7 @@ async function AppointmentsPage({ searchParams }) {
                                 className: "mr-2",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     href: `?date=${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$addDays$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["addDays"])(today, -7), 'yyyy-MM-dd')}`,
-                                    children: "Previous Week"
+                                    children: "Semana Anterior"
                                 }, void 0, false, {
                                     fileName: "[project]/app/dashboard/appointments/page.tsx",
                                     lineNumber: 33,
@@ -263,7 +263,7 @@ async function AppointmentsPage({ searchParams }) {
                                 className: "mr-2",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     href: `?date=${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$addDays$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["addDays"])(today, 7), 'yyyy-MM-dd')}`,
-                                    children: "Next Week"
+                                    children: "Siguiente Semana"
                                 }, void 0, false, {
                                     fileName: "[project]/app/dashboard/appointments/page.tsx",
                                     lineNumber: 36,
@@ -286,7 +286,7 @@ async function AppointmentsPage({ searchParams }) {
                                             lineNumber: 40,
                                             columnNumber: 29
                                         }, this),
-                                        " New Appointment"
+                                        " Nueva Cita"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/dashboard/appointments/page.tsx",

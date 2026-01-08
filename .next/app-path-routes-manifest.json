@@ -18,6 +18,7 @@
   "/dashboard/inventory/new/page": "/dashboard/inventory/new",
   "/dashboard/inventory/page": "/dashboard/inventory",
   "/dashboard/page": "/dashboard",
+  "/dashboard/patients/page": "/dashboard/patients",
   "/dashboard/permissions/page": "/dashboard/permissions",
   "/dashboard/records/new/page": "/dashboard/records/new",
   "/dashboard/records/page": "/dashboard/records",

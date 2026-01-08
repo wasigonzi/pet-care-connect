@@ -1,0 +1,20 @@
+{
+  "node": {
+    "008f5fcc5afc3c9822fef6862db9b7568d56161594": {
+      "workers": {
+        "app/dashboard/wellness-plans/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/wellness-plans/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/wellness-plans/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getWellnessPlans",
+          "filename": "app/dashboard/wellness-plans/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/wellness-plans/page": "rsc"
+      },
+      "exportedName": "getWellnessPlans",
+      "filename": "app/dashboard/wellness-plans/actions.ts"
+    }
+  },
+  "edge": {}
+}

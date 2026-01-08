@@ -18,6 +18,7 @@
   "/dashboard/inventory/new/page": "app/dashboard/inventory/new/page.js",
   "/dashboard/inventory/page": "app/dashboard/inventory/page.js",
   "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/patients/page": "app/dashboard/patients/page.js",
   "/dashboard/permissions/page": "app/dashboard/permissions/page.js",
   "/dashboard/records/new/page": "app/dashboard/records/new/page.js",
   "/dashboard/records/page": "app/dashboard/records/page.js",

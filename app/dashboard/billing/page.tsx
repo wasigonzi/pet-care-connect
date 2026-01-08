@@ -19,10 +19,10 @@ export default async function BillingPage() {
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Billing & Invoices</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Facturación</h2>
                 <Button asChild>
                     <Link href="/dashboard/billing/new">
-                        <Plus className="mr-2 h-4 w-4" /> Create Invoice
+                        <Plus className="mr-2 h-4 w-4" /> Crear Factura
                     </Link>
                 </Button>
             </div>
@@ -31,20 +31,20 @@ export default async function BillingPage() {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead>Invoice #</TableHead>
-                            <TableHead>Client</TableHead>
-                            <TableHead>Issue Date</TableHead>
-                            <TableHead>Due Date</TableHead>
-                            <TableHead>Amount</TableHead>
-                            <TableHead>Status</TableHead>
-                            <TableHead className="text-right">Actions</TableHead>
+                            <TableHead>Factura #</TableHead>
+                            <TableHead>Cliente</TableHead>
+                            <TableHead>Fecha Emisión</TableHead>
+                            <TableHead>Fecha Vencimiento</TableHead>
+                            <TableHead>Monto</TableHead>
+                            <TableHead>Estado</TableHead>
+                            <TableHead className="text-right">Acciones</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {invoices?.length === 0 ? (
                             <TableRow>
                                 <TableCell colSpan={7} className="h-24 text-center">
-                                    No invoices found.
+                                    No se encontraron facturas.
                                 </TableCell>
                             </TableRow>
                         ) : (
@@ -76,7 +76,10 @@ export default async function BillingPage() {
                                                 inv.status === 'overdue' ? 'destructive' :
                                                     inv.status === 'draft' ? 'secondary' : 'outline'
                                         } className={inv.status === 'paid' ? 'bg-green-600' : ''}>
-                                            {inv.status.charAt(0).toUpperCase() + inv.status.slice(1)}
+                                            {inv.status === 'paid' ? 'Pagado' :
+                                                inv.status === 'overdue' ? 'Vencido' :
+                                                    inv.status === 'draft' ? 'Borrador' :
+                                                        inv.status}
                                         </Badge>
                                     </TableCell>
                                     <TableCell className="text-right">

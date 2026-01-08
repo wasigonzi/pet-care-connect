@@ -1,0 +1,35 @@
+{
+  "node": {
+    "00dd63ae1e1ba13263e16d265c97d03558e5634973": {
+      "workers": {
+        "app/dashboard/templates/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/templates/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/templates/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getTemplates",
+          "filename": "app/dashboard/templates/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/templates/page": "rsc"
+      },
+      "exportedName": "getTemplates",
+      "filename": "app/dashboard/templates/actions.ts"
+    },
+    "40ae3f502d318ed9697e7a6f0d3d07a8527d123759": {
+      "workers": {
+        "app/dashboard/templates/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/templates/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/templates/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getTemplate",
+          "filename": "app/dashboard/templates/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/templates/page": "rsc"
+      },
+      "exportedName": "getTemplate",
+      "filename": "app/dashboard/templates/actions.ts"
+    }
+  },
+  "edge": {}
+}

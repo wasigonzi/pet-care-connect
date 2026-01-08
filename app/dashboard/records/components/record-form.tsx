@@ -31,7 +31,7 @@ import { useRouter } from "next/navigation";
 const formSchema = z.object({
     client_id: z.string().uuid(), // Helper to filter patients
     patient_id: z.string().uuid(),
-    date: z.string().min(1, "Date is required"),
+    date: z.string().min(1, "La fecha es requerida"),
     subjective: z.string().optional(),
     objective: z.string().optional(),
     assessment: z.string().optional(),
@@ -92,9 +92,9 @@ export function RecordForm() {
         const result = await createRecordAction(null, formData);
 
         if (result?.error) {
-            toast.error(typeof result.error === 'string' ? result.error : "Failed to create record");
+            toast.error(typeof result.error === 'string' ? result.error : "Error al crear registro");
         } else {
-            toast.success("Clinical record created successfully");
+            toast.success("Historial clínico creado exitosamente");
             router.push("/dashboard/records");
         }
     }
@@ -108,11 +108,11 @@ export function RecordForm() {
                         name="client_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Client</FormLabel>
+                                <FormLabel>Cliente</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select client" />
+                                            <SelectValue placeholder="Seleccionar cliente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -132,7 +132,7 @@ export function RecordForm() {
                         name="patient_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Patient</FormLabel>
+                                <FormLabel>Paciente</FormLabel>
                                 <Select
                                     onValueChange={field.onChange}
                                     defaultValue={field.value}
@@ -140,7 +140,7 @@ export function RecordForm() {
                                 >
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select patient" />
+                                            <SelectValue placeholder="Seleccionar paciente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -162,7 +162,7 @@ export function RecordForm() {
                     name="date"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Date</FormLabel>
+                            <FormLabel>Fecha</FormLabel>
                             <FormControl>
                                 <Input type="date" {...field} />
                             </FormControl>
@@ -172,16 +172,16 @@ export function RecordForm() {
                 />
 
                 <div className="space-y-4 rounded-lg border p-4 bg-muted/20">
-                    <h3 className="font-semibold text-lg">SOAP Note</h3>
+                    <h3 className="font-semibold text-lg">Nota SOAP</h3>
                     <div className="grid grid-cols-2 gap-4">
                         <FormField
                             control={form.control}
                             name="subjective"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Subjective</FormLabel>
+                                    <FormLabel>Subjetivo (Subjective)</FormLabel>
                                     <FormControl>
-                                        <Textarea placeholder="Owner reports..." className="min-h-[100px]" {...field} />
+                                        <Textarea placeholder="Reporte del dueño..." className="min-h-[100px]" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -192,9 +192,9 @@ export function RecordForm() {
                             name="objective"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Objective</FormLabel>
+                                    <FormLabel>Objetivo (Objective)</FormLabel>
                                     <FormControl>
-                                        <Textarea placeholder="Vitals, Exam findings..." className="min-h-[100px]" {...field} />
+                                        <Textarea placeholder="Signos vitales, hallazgos..." className="min-h-[100px]" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -205,9 +205,9 @@ export function RecordForm() {
                             name="assessment"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Assessment</FormLabel>
+                                    <FormLabel>Evaluación (Assessment)</FormLabel>
                                     <FormControl>
-                                        <Textarea placeholder="Analysis..." className="min-h-[100px]" {...field} />
+                                        <Textarea placeholder="Análisis..." className="min-h-[100px]" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -220,7 +220,7 @@ export function RecordForm() {
                                 <FormItem>
                                     <FormLabel>Plan</FormLabel>
                                     <FormControl>
-                                        <Textarea placeholder="Treatment, Meds..." className="min-h-[100px]" {...field} />
+                                        <Textarea placeholder="Tratamiento, Medicamentos..." className="min-h-[100px]" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -235,9 +235,9 @@ export function RecordForm() {
                         name="diagnosis"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Diagnosis</FormLabel>
+                                <FormLabel>Diagnóstico</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Primary Diagnosis" {...field} />
+                                    <Input placeholder="Diagnóstico primario" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -248,9 +248,9 @@ export function RecordForm() {
                         name="treatment"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Treatment / Meds</FormLabel>
+                                <FormLabel>Tratamiento / Meds</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Prescription summary" {...field} />
+                                    <Input placeholder="Resumen de prescripción" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -260,9 +260,9 @@ export function RecordForm() {
 
                 <div className="flex justify-end gap-4">
                     <Button type="button" variant="outline" onClick={() => router.back()}>
-                        Cancel
+                        Cancelar
                     </Button>
-                    <Button type="submit">Save Record</Button>
+                    <Button type="submit">Guardar Registro</Button>
                 </div>
             </form>
         </Form>

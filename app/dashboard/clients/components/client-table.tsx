@@ -27,16 +27,16 @@ export function ClientTable({ clients }: { clients: Client[] }) {
             <Table>
                 <TableHeader>
                     <TableRow>
-                        <TableHead>Name</TableHead>
-                        <TableHead>Contact</TableHead>
-                        <TableHead className="text-right">Actions</TableHead>
+                        <TableHead>Nombre</TableHead>
+                        <TableHead>Contacto</TableHead>
+                        <TableHead className="text-right">Acciones</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
                     {clients.length === 0 ? (
                         <TableRow>
                             <TableCell colSpan={3} className="h-24 text-center">
-                                No clients found.
+                                No se encontraron clientes.
                             </TableCell>
                         </TableRow>
                     ) : (

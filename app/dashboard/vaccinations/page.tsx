@@ -19,10 +19,10 @@ export default async function VaccinationsPage() {
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Vaccinations</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Vacunación</h2>
                 <Button asChild>
                     <Link href="/dashboard/vaccinations/new">
-                        <Plus className="mr-2 h-4 w-4" /> Log Vaccination
+                        <Plus className="mr-2 h-4 w-4" /> Registrar Vacuna
                     </Link>
                 </Button>
             </div>
@@ -31,23 +31,23 @@ export default async function VaccinationsPage() {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead>Patient</TableHead>
-                            <TableHead>Vaccine</TableHead>
-                            <TableHead>Administered</TableHead>
-                            <TableHead>Next Due</TableHead>
-                            <TableHead>Status</TableHead>
+                            <TableHead>Paciente</TableHead>
+                            <TableHead>Vacuna</TableHead>
+                            <TableHead>Administrada</TableHead>
+                            <TableHead>Próx. Dosis</TableHead>
+                            <TableHead>Estado</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {vaccinations?.length === 0 ? (
                             <TableRow>
                                 <TableCell colSpan={5} className="h-24 text-center">
-                                    No vaccination records found.
+                                    No hay registros de vacunación.
                                 </TableCell>
                             </TableRow>
                         ) : (
                             vaccinations?.map((v) => {
-                                const isOverdue = v.date_next_due && new Date(v.date_next_due) < new Date();
+                                const isOverdue = v.next_due_at && new Date(v.next_due_at) < new Date();
                                 return (
                                     <TableRow key={v.id}>
                                         <TableCell>
@@ -65,18 +65,18 @@ export default async function VaccinationsPage() {
                                             </div>
                                         </TableCell>
                                         <TableCell>
-                                            {format(new Date(v.date_administered), "MMM d, yyyy")}
+                                            {format(new Date(v.administered_at), "MMM d, yyyy")}
                                         </TableCell>
                                         <TableCell>
-                                            {v.date_next_due
-                                                ? format(new Date(v.date_next_due), "MMM d, yyyy")
+                                            {v.next_due_at
+                                                ? format(new Date(v.next_due_at), "MMM d, yyyy")
                                                 : "-"}
                                         </TableCell>
                                         <TableCell>
                                             {isOverdue ? (
-                                                <Badge variant="destructive">Overdue</Badge>
+                                                <Badge variant="destructive">Vencida</Badge>
                                             ) : (
-                                                <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">Valid</Badge>
+                                                <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">Vigente</Badge>
                                             )}
                                         </TableCell>
                                     </TableRow>

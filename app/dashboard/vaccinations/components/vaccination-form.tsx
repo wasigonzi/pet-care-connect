@@ -3,6 +3,7 @@
 import { createVaccinationAction } from "../actions";
 import { getClients } from "@/app/dashboard/clients/actions";
 import { getPatientsByClientId } from "@/app/dashboard/patients/actions";
+import { getInventory } from "@/app/dashboard/inventory/actions";
 import { Button } from "@/components/ui/button";
 import {
     Form,
@@ -26,13 +27,14 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { Syringe } from "lucide-react";
 
 const formSchema = z.object({
     client_id: z.string().uuid(),
     patient_id: z.string().uuid(),
     vaccine_name: z.string().min(1, "Vaccine name is required"),
-    date_administered: z.string().min(1, "Date is required"),
-    date_next_due: z.string().optional(),
+    administered_at: z.string().min(1, "Date is required"),
+    next_due_at: z.string().optional(),
 });
 
 type VaccinationFormValues = z.infer<typeof formSchema>;
@@ -41,29 +43,20 @@ export function VaccinationForm() {
     const router = useRouter();
     const [clients, setClients] = useState<any[]>([]);
     const [patients, setPatients] = useState<any[]>([]);
-    const [loadingClients, setLoadingClients] = useState(true);
+    const [inventory, setInventory] = useState<any[]>([]);
 
     const form = useForm<VaccinationFormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            date_administered: new Date().toISOString().split("T")[0],
+            administered_at: new Date().toISOString().split("T")[0],
         },
     });
 
     const selectedClientId = form.watch("client_id");
 
     useEffect(() => {
-        async function loadClients() {
-            try {
-                const data = await getClients("");
-                setClients(data || []);
-            } catch (e) {
-                console.error(e);
-            } finally {
-                setLoadingClients(false);
-            }
-        }
-        loadClients();
+        getClients("").then(setClients);
+        getInventory().then(setInventory);
     }, []);
 
     useEffect(() => {
@@ -87,12 +80,19 @@ export function VaccinationForm() {
         const result = await createVaccinationAction(null, formData);
 
         if (result?.error) {
-            toast.error(typeof result.error === 'string' ? result.error : "Failed to log vaccination");
+            toast.error(typeof result.error === 'string' ? result.error : "Error al registrar vacunación");
         } else {
-            toast.success("Vaccination logged successfully");
+            toast.success("Vacunación registrada exitosamente");
             router.push("/dashboard/vaccinations");
         }
     }
+
+    const handleInventorySelect = (itemId: string) => {
+        const item = inventory.find(i => i.id === itemId);
+        if (item) {
+            form.setValue("vaccine_name", item.name);
+        }
+    };
 
     return (
         <Form {...form}>
@@ -103,11 +103,11 @@ export function VaccinationForm() {
                         name="client_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Client</FormLabel>
+                                <FormLabel>Cliente</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select client" />
+                                            <SelectValue placeholder="Seleccionar cliente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -127,7 +127,7 @@ export function VaccinationForm() {
                         name="patient_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Patient</FormLabel>
+                                <FormLabel>Paciente</FormLabel>
                                 <Select
                                     onValueChange={field.onChange}
                                     defaultValue={field.value}
@@ -135,7 +135,7 @@ export function VaccinationForm() {
                                 >
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select patient" />
+                                            <SelectValue placeholder="Seleccionar paciente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -152,27 +152,50 @@ export function VaccinationForm() {
                     />
                 </div>
 
-                <FormField
-                    control={form.control}
-                    name="vaccine_name"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Vaccine Name</FormLabel>
-                            <FormControl>
-                                <Input placeholder="e.g. Rabies, DHPP" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                <div className="space-y-2">
+                    <FormLabel>Detalles de Vacuna</FormLabel>
+                    <div className="flex gap-2">
+                        <div className="flex-1">
+                            <FormField
+                                control={form.control}
+                                name="vaccine_name"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormControl>
+                                            <Input placeholder="Nombre de Vacuna (ej. Rabia)" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+                        <div className="w-[200px]">
+                            <Select onValueChange={handleInventorySelect}>
+                                <SelectTrigger>
+                                    <SelectValue placeholder="Stock..." />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {inventory.map((item) => (
+                                        <SelectItem key={item.id} value={item.id}>
+                                            {item.name}
+                                        </SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </div>
+                    <p className="text-[0.8rem] text-muted-foreground">
+                        Seleccionar del stock asegura que el inventario se deduzca correctamente.
+                    </p>
+                </div>
 
                 <div className="grid grid-cols-2 gap-4">
                     <FormField
                         control={form.control}
-                        name="date_administered"
+                        name="administered_at"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Date Administered</FormLabel>
+                                <FormLabel>Fecha de Administración</FormLabel>
                                 <FormControl>
                                     <Input type="date" {...field} />
                                 </FormControl>
@@ -182,10 +205,10 @@ export function VaccinationForm() {
                     />
                     <FormField
                         control={form.control}
-                        name="date_next_due"
+                        name="next_due_at"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Next Due Date</FormLabel>
+                                <FormLabel>Próxima Dosis</FormLabel>
                                 <FormControl>
                                     <Input type="date" {...field} />
                                 </FormControl>
@@ -197,9 +220,9 @@ export function VaccinationForm() {
 
                 <div className="flex justify-end gap-4">
                     <Button type="button" variant="outline" onClick={() => router.back()}>
-                        Cancel
+                        Cancelar
                     </Button>
-                    <Button type="submit">Log Vaccination</Button>
+                    <Button type="submit">Registrar Vacuna</Button>
                 </div>
             </form>
         </Form>

@@ -31,8 +31,8 @@ import { useRouter } from "next/navigation";
 const formSchema = z.object({
     client_id: z.string().uuid(),
     patient_id: z.string().uuid(),
-    date: z.string().min(1, "Date is required"),
-    start_time: z.string().min(1, "Start time is required"),
+    date: z.string().min(1, "La fecha es requerida"),
+    start_time: z.string().min(1, "La hora de inicio es requerida"),
     duration: z.string(), // "15", "30", "60"
     appointment_type: z.string().min(1),
     reason: z.string().optional(),
@@ -104,9 +104,9 @@ export function NewAppointmentForm() {
         const result = await createAppointmentAction(null, formData);
 
         if (result?.error) {
-            toast.error(typeof result.error === 'string' ? result.error : "Failed to book appointment");
+            toast.error(typeof result.error === 'string' ? result.error : "Error al agendar cita");
         } else {
-            toast.success("Appointment booked successfully");
+            toast.success("Cita agendada exitosamente");
             router.push("/dashboard/appointments");
         }
     }
@@ -120,11 +120,11 @@ export function NewAppointmentForm() {
                         name="client_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Client</FormLabel>
+                                <FormLabel>Cliente</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select a client" />
+                                            <SelectValue placeholder="Seleccionar cliente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -144,7 +144,7 @@ export function NewAppointmentForm() {
                         name="patient_id"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Patient</FormLabel>
+                                <FormLabel>Paciente</FormLabel>
                                 <Select
                                     onValueChange={field.onChange}
                                     defaultValue={field.value}
@@ -152,7 +152,7 @@ export function NewAppointmentForm() {
                                 >
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Select a patient" />
+                                            <SelectValue placeholder="Seleccionar paciente" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -175,7 +175,7 @@ export function NewAppointmentForm() {
                         name="date"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Date</FormLabel>
+                                <FormLabel>Fecha</FormLabel>
                                 <FormControl>
                                     <Input type="date" {...field} />
                                 </FormControl>
@@ -188,7 +188,7 @@ export function NewAppointmentForm() {
                         name="start_time"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Time</FormLabel>
+                                <FormLabel>Hora</FormLabel>
                                 <FormControl>
                                     <Input type="time" {...field} />
                                 </FormControl>
@@ -201,18 +201,18 @@ export function NewAppointmentForm() {
                         name="duration"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Duration (min)</FormLabel>
+                                <FormLabel>Duración (min)</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Duration" />
+                                            <SelectValue placeholder="Duración" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        <SelectItem value="15">15 mins</SelectItem>
-                                        <SelectItem value="30">30 mins</SelectItem>
-                                        <SelectItem value="45">45 mins</SelectItem>
-                                        <SelectItem value="60">1 Hour</SelectItem>
+                                        <SelectItem value="15">15 min</SelectItem>
+                                        <SelectItem value="30">30 min</SelectItem>
+                                        <SelectItem value="45">45 min</SelectItem>
+                                        <SelectItem value="60">1 Hora</SelectItem>
                                     </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -226,19 +226,19 @@ export function NewAppointmentForm() {
                     name="appointment_type"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Type</FormLabel>
+                            <FormLabel>Tipo</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
                                     <SelectTrigger>
-                                        <SelectValue placeholder="Type" />
+                                        <SelectValue placeholder="Tipo" />
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    <SelectItem value="Consultation">Consultation</SelectItem>
-                                    <SelectItem value="Vaccination">Vaccination</SelectItem>
-                                    <SelectItem value="Surgery">Surgery</SelectItem>
-                                    <SelectItem value="Follow-up">Follow-up</SelectItem>
-                                    <SelectItem value="Grooming">Grooming</SelectItem>
+                                    <SelectItem value="Consultation">Consulta</SelectItem>
+                                    <SelectItem value="Vaccination">Vacunación</SelectItem>
+                                    <SelectItem value="Surgery">Cirugía</SelectItem>
+                                    <SelectItem value="Follow-up">Seguimiento</SelectItem>
+                                    <SelectItem value="Grooming">Peluquería</SelectItem>
                                 </SelectContent>
                             </Select>
                             <FormMessage />
@@ -251,9 +251,9 @@ export function NewAppointmentForm() {
                     name="reason"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Reason / Notes</FormLabel>
+                            <FormLabel>Motivo / Notas</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Reason for visit..." {...field} />
+                                <Textarea placeholder="Motivo de la visita..." {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -262,9 +262,9 @@ export function NewAppointmentForm() {
 
                 <div className="flex justify-end gap-4">
                     <Button type="button" variant="outline" onClick={() => router.back()}>
-                        Cancel
+                        Cancelar
                     </Button>
-                    <Button type="submit">Book Appointment</Button>
+                    <Button type="submit">Agendar Cita</Button>
                 </div>
             </form>
         </Form>

@@ -1,0 +1,50 @@
+{
+  "node": {
+    "409b82f1d1bf8dd02c099fc087f6947dcb479badd6": {
+      "workers": {
+        "app/dashboard/patients/page": {
+          "moduleId": 2930,
+          "async": false,
+          "exportedName": "getPatientsByClientId",
+          "filename": "app/dashboard/patients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/patients/page": "rsc"
+      },
+      "exportedName": "getPatientsByClientId",
+      "filename": "app/dashboard/patients/actions.ts"
+    },
+    "40a370455ac5c0d7ae41d4d590db6a3f764e98983f": {
+      "workers": {
+        "app/dashboard/patients/page": {
+          "moduleId": 2930,
+          "async": false,
+          "exportedName": "getPatients",
+          "filename": "app/dashboard/patients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/patients/page": "rsc"
+      },
+      "exportedName": "getPatients",
+      "filename": "app/dashboard/patients/actions.ts"
+    },
+    "6001c3ef6109686f120920012de0f8bbd27653e2d0": {
+      "workers": {
+        "app/dashboard/patients/page": {
+          "moduleId": 2930,
+          "async": false,
+          "exportedName": "createPatientAction",
+          "filename": "app/dashboard/patients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/patients/page": "rsc"
+      },
+      "exportedName": "createPatientAction",
+      "filename": "app/dashboard/patients/actions.ts"
+    }
+  },
+  "edge": {}
+}

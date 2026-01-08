@@ -15,6 +15,21 @@
       "exportedName": "getPatientsByClientId",
       "filename": "app/dashboard/patients/actions.ts"
     },
+    "40a370455ac5c0d7ae41d4d590db6a3f764e98983f": {
+      "workers": {
+        "app/dashboard/clients/[id]/page": {
+          "moduleId": 16166,
+          "async": false,
+          "exportedName": "getPatients",
+          "filename": "app/dashboard/patients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/clients/[id]/page": "rsc"
+      },
+      "exportedName": "getPatients",
+      "filename": "app/dashboard/patients/actions.ts"
+    },
     "6001c3ef6109686f120920012de0f8bbd27653e2d0": {
       "workers": {
         "app/dashboard/clients/[id]/page": {

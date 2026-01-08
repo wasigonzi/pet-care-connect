@@ -11,17 +11,17 @@ export default async function RecordsPage() {
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Medical Records</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Registros Médicos</h2>
                 <Button asChild>
                     <Link href="/dashboard/records/new">
-                        <Plus className="mr-2 h-4 w-4" /> New Record
+                        <Plus className="mr-2 h-4 w-4" /> Nuevo Registro
                     </Link>
                 </Button>
             </div>
 
             <div className="grid gap-4">
                 {records?.length === 0 ? (
-                    <p className="text-muted-foreground">No records found.</p>
+                    <p className="text-muted-foreground">No se encontraron registros.</p>
                 ) : (
                     records?.map((record) => (
                         <Card key={record.id}>

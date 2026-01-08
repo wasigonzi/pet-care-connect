@@ -1,0 +1,20 @@
+{
+  "node": {
+    "0049d32a7378ac148bf33076713fda2b7e8cd90d17": {
+      "workers": {
+        "app/dashboard/communications/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/communications/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/communications/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getCommunications",
+          "filename": "app/dashboard/communications/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/communications/page": "rsc"
+      },
+      "exportedName": "getCommunications",
+      "filename": "app/dashboard/communications/actions.ts"
+    }
+  },
+  "edge": {}
+}

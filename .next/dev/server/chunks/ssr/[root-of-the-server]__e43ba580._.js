@@ -195,7 +195,7 @@ async function ClientsPage({ searchParams }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-2xl font-bold tracking-tight",
-                                children: "Clients"
+                                children: "Clientes"
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/clients/page.tsx",
                                 lineNumber: 21,
@@ -203,7 +203,7 @@ async function ClientsPage({ searchParams }) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-muted-foreground",
-                                children: "Manage your veterinary clinic's clients and their pets."
+                                children: "Gestiona los clientes de la clínica y sus mascotas."
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/clients/page.tsx",
                                 lineNumber: 22,
@@ -229,7 +229,7 @@ async function ClientsPage({ searchParams }) {
                                         lineNumber: 29,
                                         columnNumber: 29
                                     }, this),
-                                    " Add Client"
+                                    " Agregar Cliente"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/clients/page.tsx",
@@ -257,7 +257,7 @@ async function ClientsPage({ searchParams }) {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                     className: "flex-1 max-w-sm",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Input"], {
-                        placeholder: "Search clients...",
+                        placeholder: "Buscar clientes...",
                         name: "q",
                         defaultValue: query
                     }, void 0, false, {

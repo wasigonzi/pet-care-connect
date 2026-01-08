@@ -1,0 +1,50 @@
+{
+  "node": {
+    "40d67deac5033a030b3df3dd9728651a1437d52cb4": {
+      "workers": {
+        "app/dashboard/estimates/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/estimates/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/estimates/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/clients/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/dashboard/inventory/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createEstimateAction",
+          "filename": "app/dashboard/estimates/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/estimates/new/page": "action-browser"
+      },
+      "exportedName": "createEstimateAction",
+      "filename": "app/dashboard/estimates/actions.ts"
+    },
+    "40d0d472624612d55c68bf6385f185d6c1027dd376": {
+      "workers": {
+        "app/dashboard/estimates/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/estimates/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/estimates/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/clients/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/dashboard/inventory/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getClients",
+          "filename": "app/dashboard/clients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/estimates/new/page": "action-browser"
+      },
+      "exportedName": "getClients",
+      "filename": "app/dashboard/clients/actions.ts"
+    },
+    "003468fb9efe2a28a82e037853c85de51ff9fad3fd": {
+      "workers": {
+        "app/dashboard/estimates/new/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/estimates/new/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/estimates/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/dashboard/clients/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/app/dashboard/inventory/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getInventory",
+          "filename": "app/dashboard/inventory/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/estimates/new/page": "action-browser"
+      },
+      "exportedName": "getInventory",
+      "filename": "app/dashboard/inventory/actions.ts"
+    }
+  },
+  "edge": {}
+}

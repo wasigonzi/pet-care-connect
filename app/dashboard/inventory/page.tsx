@@ -18,10 +18,10 @@ export default async function InventoryPage() {
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Inventory</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Inventario</h2>
                 <Button asChild>
                     <Link href="/dashboard/inventory/new">
-                        <Plus className="mr-2 h-4 w-4" /> Add Item
+                        <Plus className="mr-2 h-4 w-4" /> Agregar Ítem
                     </Link>
                 </Button>
             </div>
@@ -31,18 +31,18 @@ export default async function InventoryPage() {
                     <TableHeader>
                         <TableRow>
                             <TableHead>SKU</TableHead>
-                            <TableHead>Name</TableHead>
-                            <TableHead>Category</TableHead>
+                            <TableHead>Nombre</TableHead>
+                            <TableHead>Categoría</TableHead>
                             <TableHead>Stock</TableHead>
-                            <TableHead>Price</TableHead>
-                            <TableHead>Status</TableHead>
+                            <TableHead>Precio</TableHead>
+                            <TableHead>Estado</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {inventory?.length === 0 ? (
                             <TableRow>
                                 <TableCell colSpan={6} className="h-24 text-center">
-                                    No inventory items found.
+                                    No se encontraron ítems de inventario.
                                 </TableCell>
                             </TableRow>
                         ) : (
@@ -66,9 +66,9 @@ export default async function InventoryPage() {
                                         </TableCell>
                                         <TableCell>
                                             {isLowStock ? (
-                                                <Badge variant="destructive">Low Stock</Badge>
+                                                <Badge variant="destructive">Stock Bajo</Badge>
                                             ) : (
-                                                <Badge variant="secondary">In Stock</Badge>
+                                                <Badge variant="secondary">En Stock</Badge>
                                             )}
                                         </TableCell>
                                     </TableRow>

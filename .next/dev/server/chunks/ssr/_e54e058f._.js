@@ -1,0 +1,123 @@
+module.exports = [
+"[project]/app/dashboard/patients/actions.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/* __next_internal_action_entry_do_not_use__ [{"400e6d04e3f002824db3fe39ecf6a358f45fdb1120":"getPatientsByClientId","40a7c9c90d5996535d2f390feffa3abd89271dc97e":"getPatients","60f81c6f85c7ed0b8b403daf1e3081f62a60789cf6":"createPatientAction"},"",""] */ __turbopack_context__.s([
+    "createPatientAction",
+    ()=>createPatientAction,
+    "getPatients",
+    ()=>getPatients,
+    "getPatientsByClientId",
+    ()=>getPatientsByClientId
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$server$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/supabase/server.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/cache.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__ = __turbopack_context__.i("[project]/node_modules/zod/v3/external.js [app-rsc] (ecmascript) <export * as z>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
+;
+;
+;
+;
+const patientSchema = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].object({
+    name: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().min(1, "Name is required"),
+    species: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().min(1, "Species is required"),
+    breed: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional(),
+    gender: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].enum([
+        "Male",
+        "Female",
+        "Unknown"
+    ]),
+    date_of_birth: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional(),
+    weight: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional(),
+    client_id: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().uuid()
+});
+async function getPatientsByClientId(clientId) {
+    const supabase = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$server$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createClient"])();
+    const { data, error } = await supabase.from("patients").select("*").eq("client_id", clientId).order("created_at", {
+        ascending: false
+    });
+    if (error) throw new Error(error.message);
+    return data;
+}
+async function getPatients(query) {
+    const supabase = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$server$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createClient"])();
+    let queryBuilder = supabase.from("patients").select("*, clients(first_name, last_name, email)").order("created_at", {
+        ascending: false
+    });
+    if (query) {
+        queryBuilder = queryBuilder.ilike("name", `%${query}%`);
+    }
+    const { data, error } = await queryBuilder;
+    if (error) throw new Error(error.message);
+    return data;
+}
+async function createPatientAction(prevState, formData) {
+    const rawData = {
+        name: formData.get("name"),
+        species: formData.get("species"),
+        breed: formData.get("breed"),
+        gender: formData.get("gender"),
+        date_of_birth: formData.get("date_of_birth") || null,
+        weight: formData.get("weight") || null,
+        client_id: formData.get("client_id")
+    };
+    // weight conversion for schema (validation expects numbers but form gives strings)
+    // For validation we check the basic structure
+    const validated = patientSchema.safeParse(rawData);
+    if (!validated.success) {
+        return {
+            error: validated.error.flatten().fieldErrors
+        };
+    }
+    const supabase = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$server$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createClient"])();
+    const { error } = await supabase.from("patients").insert({
+        ...validated.data,
+        weight: rawData.weight ? parseFloat(rawData.weight) : null
+    });
+    if (error) {
+        return {
+            error: error.message
+        };
+    }
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])(`/dashboard/clients/${rawData.client_id}`);
+    return {
+        success: true
+    };
+}
+;
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
+    getPatientsByClientId,
+    getPatients,
+    createPatientAction
+]);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPatientsByClientId, "400e6d04e3f002824db3fe39ecf6a358f45fdb1120", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPatients, "40a7c9c90d5996535d2f390feffa3abd89271dc97e", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createPatientAction, "60f81c6f85c7ed0b8b403daf1e3081f62a60789cf6", null);
+}),
+"[project]/.next-internal/server/app/dashboard/patients/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/patients/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$patients$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/dashboard/patients/actions.ts [app-rsc] (ecmascript)");
+;
+;
+;
+}),
+"[project]/.next-internal/server/app/dashboard/patients/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/patients/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "400e6d04e3f002824db3fe39ecf6a358f45fdb1120",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$patients$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPatientsByClientId"],
+    "40a7c9c90d5996535d2f390feffa3abd89271dc97e",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$patients$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPatients"],
+    "60f81c6f85c7ed0b8b403daf1e3081f62a60789cf6",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$patients$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createPatientAction"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f2e$next$2d$internal$2f$server$2f$app$2f$dashboard$2f$patients$2f$page$2f$actions$2e$js__$7b$__ACTIONS_MODULE0__$3d3e$__$225b$project$5d2f$app$2f$dashboard$2f$patients$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$server__actions__loader$2c$__ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i('[project]/.next-internal/server/app/dashboard/patients/page/actions.js { ACTIONS_MODULE0 => "[project]/app/dashboard/patients/actions.ts [app-rsc] (ecmascript)" } [app-rsc] (server actions loader, ecmascript) <locals>');
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$patients$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/dashboard/patients/actions.ts [app-rsc] (ecmascript)");
+}),
+];
+
+//# sourceMappingURL=_e54e058f._.js.map

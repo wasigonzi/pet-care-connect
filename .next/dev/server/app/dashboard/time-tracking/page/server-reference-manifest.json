@@ -1,0 +1,65 @@
+{
+  "node": {
+    "000a229a51a0392b8bb9156c8263faa49564d7bce6": {
+      "workers": {
+        "app/dashboard/time-tracking/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/time-tracking/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/time-tracking/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getTimeEntries",
+          "filename": "app/dashboard/time-tracking/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/time-tracking/page": "rsc"
+      },
+      "exportedName": "getTimeEntries",
+      "filename": "app/dashboard/time-tracking/actions.ts"
+    },
+    "0081c412ac932f20abfa5f1e0eed5ce70e18d7e877": {
+      "workers": {
+        "app/dashboard/time-tracking/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/time-tracking/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/time-tracking/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "clockInAction",
+          "filename": "app/dashboard/time-tracking/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/time-tracking/page": "action-browser"
+      },
+      "exportedName": "clockInAction",
+      "filename": "app/dashboard/time-tracking/actions.ts"
+    },
+    "00a19fbaf6e02b19327bfabd72b2748820f29286bc": {
+      "workers": {
+        "app/dashboard/time-tracking/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/time-tracking/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/time-tracking/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getLastEntry",
+          "filename": "app/dashboard/time-tracking/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/time-tracking/page": "rsc"
+      },
+      "exportedName": "getLastEntry",
+      "filename": "app/dashboard/time-tracking/actions.ts"
+    },
+    "400eea14a38aa1b8f08d96b2d4c872f0ce7516dd56": {
+      "workers": {
+        "app/dashboard/time-tracking/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/time-tracking/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/time-tracking/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "clockOutAction",
+          "filename": "app/dashboard/time-tracking/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/time-tracking/page": "action-browser"
+      },
+      "exportedName": "clockOutAction",
+      "filename": "app/dashboard/time-tracking/actions.ts"
+    }
+  },
+  "edge": {}
+}

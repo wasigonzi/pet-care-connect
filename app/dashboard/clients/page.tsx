@@ -18,15 +18,15 @@ export default async function ClientsPage({
         <div className="h-full flex-1 flex-col space-y-8 p-8 flex">
             <div className="flex items-center justify-between space-y-2">
                 <div>
-                    <h2 className="text-2xl font-bold tracking-tight">Clients</h2>
+                    <h2 className="text-2xl font-bold tracking-tight">Clientes</h2>
                     <p className="text-muted-foreground">
-                        Manage your veterinary clinic's clients and their pets.
+                        Gestiona los clientes de la clínica y sus mascotas.
                     </p>
                 </div>
                 <div className="flex items-center space-x-2">
                     <Button asChild>
                         <Link href="/dashboard/clients/new">
-                            <Plus className="mr-2 h-4 w-4" /> Add Client
+                            <Plus className="mr-2 h-4 w-4" /> Agregar Cliente
                         </Link>
                     </Button>
                 </div>
@@ -34,7 +34,7 @@ export default async function ClientsPage({
 
             <div className="flex items-center space-x-2">
                 <form className="flex-1 max-w-sm">
-                    <Input placeholder="Search clients..." name="q" defaultValue={query} />
+                    <Input placeholder="Buscar clientes..." name="q" defaultValue={query} />
                 </form>
             </div>
 

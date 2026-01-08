@@ -1,5 +1,20 @@
 {
   "node": {
+    "002ae9f0ee6821c3c2d5cc9d2ed66a9436a459df0b": {
+      "workers": {
+        "app/dashboard/page": {
+          "moduleId": 32591,
+          "async": false,
+          "exportedName": "getDashboardMetrics",
+          "filename": "app/dashboard/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/page": "rsc"
+      },
+      "filename": "app/dashboard/actions.ts",
+      "exportedName": "getDashboardMetrics"
+    },
     "00686f9e6ea400c22c23e5b67a9706dac3f9d40ca2": {
       "workers": {
         "app/dashboard/admin/page": {
@@ -174,6 +189,12 @@
           "exportedName": "getPatientsByClientId",
           "filename": "app/dashboard/patients/actions.ts"
         },
+        "app/dashboard/patients/page": {
+          "moduleId": 2930,
+          "async": false,
+          "exportedName": "getPatientsByClientId",
+          "filename": "app/dashboard/patients/actions.ts"
+        },
         "app/dashboard/records/new/page": {
           "moduleId": 75391,
           "async": false,
@@ -191,6 +212,7 @@
         "app/dashboard/appointments/new/page": "action-browser",
         "app/dashboard/boarding/new/page": "action-browser",
         "app/dashboard/clients/[id]/page": "rsc",
+        "app/dashboard/patients/page": "rsc",
         "app/dashboard/records/new/page": "action-browser",
         "app/dashboard/vaccinations/new/page": "action-browser"
       },
@@ -315,6 +337,28 @@
       "filename": "app/dashboard/clients/actions.ts",
       "exportedName": "createClientAction"
     },
+    "40a370455ac5c0d7ae41d4d590db6a3f764e98983f": {
+      "workers": {
+        "app/dashboard/clients/[id]/page": {
+          "moduleId": 16166,
+          "async": false,
+          "exportedName": "getPatients",
+          "filename": "app/dashboard/patients/actions.ts"
+        },
+        "app/dashboard/patients/page": {
+          "moduleId": 2930,
+          "async": false,
+          "exportedName": "getPatients",
+          "filename": "app/dashboard/patients/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/clients/[id]/page": "rsc",
+        "app/dashboard/patients/page": "rsc"
+      },
+      "filename": "app/dashboard/patients/actions.ts",
+      "exportedName": "getPatients"
+    },
     "6001c3ef6109686f120920012de0f8bbd27653e2d0": {
       "workers": {
         "app/dashboard/clients/[id]/page": {
@@ -322,10 +366,17 @@
           "async": false,
           "exportedName": "createPatientAction",
           "filename": "app/dashboard/patients/actions.ts"
+        },
+        "app/dashboard/patients/page": {
+          "moduleId": 2930,
+          "async": false,
+          "exportedName": "createPatientAction",
+          "filename": "app/dashboard/patients/actions.ts"
         }
       },
       "layer": {
-        "app/dashboard/clients/[id]/page": "action-browser"
+        "app/dashboard/clients/[id]/page": "action-browser",
+        "app/dashboard/patients/page": "rsc"
       },
       "filename": "app/dashboard/patients/actions.ts",
       "exportedName": "createPatientAction"
@@ -529,6 +580,66 @@
       },
       "filename": "app/dashboard/tasks/actions.ts",
       "exportedName": "updateTaskStatusAction"
+    },
+    "0005864296e81a89c8ffbe98327d1bba489b05b189": {
+      "workers": {
+        "app/dashboard/time-tracking/page": {
+          "moduleId": 46963,
+          "async": false,
+          "exportedName": "getLastEntry",
+          "filename": "app/dashboard/time-tracking/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/time-tracking/page": "rsc"
+      },
+      "filename": "app/dashboard/time-tracking/actions.ts",
+      "exportedName": "getLastEntry"
+    },
+    "00ae394afd1fbfceddc9fb094ea5ac08c22a4df1ae": {
+      "workers": {
+        "app/dashboard/time-tracking/page": {
+          "moduleId": 46963,
+          "async": false,
+          "exportedName": "clockInAction",
+          "filename": "app/dashboard/time-tracking/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/time-tracking/page": "action-browser"
+      },
+      "filename": "app/dashboard/time-tracking/actions.ts",
+      "exportedName": "clockInAction"
+    },
+    "00b7f4c175c713d83577a784413511c2a8124605db": {
+      "workers": {
+        "app/dashboard/time-tracking/page": {
+          "moduleId": 46963,
+          "async": false,
+          "exportedName": "getTimeEntries",
+          "filename": "app/dashboard/time-tracking/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/time-tracking/page": "rsc"
+      },
+      "filename": "app/dashboard/time-tracking/actions.ts",
+      "exportedName": "getTimeEntries"
+    },
+    "4079dab437ebc2c42fa2c1bdedb32cdae37cc88ff8": {
+      "workers": {
+        "app/dashboard/time-tracking/page": {
+          "moduleId": 46963,
+          "async": false,
+          "exportedName": "clockOutAction",
+          "filename": "app/dashboard/time-tracking/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/time-tracking/page": "action-browser"
+      },
+      "filename": "app/dashboard/time-tracking/actions.ts",
+      "exportedName": "clockOutAction"
     },
     "0045b3ff0b13036bab5c1129e9492786d6a1a33c86": {
       "workers": {

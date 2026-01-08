@@ -26,6 +26,22 @@ export async function getPatientsByClientId(clientId: string) {
     return data;
 }
 
+export async function getPatients(query?: string) {
+    const supabase = await createClient();
+    let queryBuilder = supabase
+        .from("patients")
+        .select("*, clients(first_name, last_name, email)")
+        .order("created_at", { ascending: false });
+
+    if (query) {
+        queryBuilder = queryBuilder.ilike("name", `%${query}%`);
+    }
+
+    const { data, error } = await queryBuilder;
+    if (error) throw new Error(error.message);
+    return data;
+}
+
 export async function createPatientAction(prevState: any, formData: FormData) {
     const rawData = {
         name: formData.get("name"),

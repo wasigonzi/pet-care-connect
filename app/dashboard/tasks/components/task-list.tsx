@@ -15,15 +15,15 @@ export function TaskList({ tasks }: { tasks: any[] }) {
     const handleStatusChange = async (taskId: string, newStatus: string) => {
         try {
             await updateTaskStatusAction(taskId, newStatus);
-            toast.success("Task updated");
+            toast.success("Tarea actualizada");
             // Optimistic update via router refresh or local state could be added here
         } catch (e) {
-            toast.error("Failed to update task");
+            toast.error("Error al actualizar tarea");
         }
     };
 
     if (tasks.length === 0) {
-        return <div className="text-sm text-muted-foreground p-2">No tasks in this column.</div>;
+        return <div className="text-sm text-muted-foreground p-2">No hay tareas en esta columna.</div>;
     }
 
     return (
@@ -43,7 +43,7 @@ export function TaskList({ tasks }: { tasks: any[] }) {
                         <p className="text-xs text-muted-foreground line-clamp-2">{task.description}</p>
                         <div className="flex items-center justify-between pt-2">
                             <div className="text-xs text-muted-foreground">
-                                {task.due_date ? format(new Date(task.due_date), "MMM d") : "No date"}
+                                {task.due_date ? format(new Date(task.due_date), "MMM d") : "Sin fecha"}
                             </div>
                             <div className="flex gap-1">
                                 {task.status === 'pending' && (

@@ -1,0 +1,65 @@
+{
+  "node": {
+    "0066dd92a09aa0e2d5daec9b97d2aa3f1a6000e606": {
+      "workers": {
+        "app/dashboard/suppliers/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/suppliers/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/suppliers/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getSuppliers",
+          "filename": "app/dashboard/suppliers/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/suppliers/page": "rsc"
+      },
+      "exportedName": "getSuppliers",
+      "filename": "app/dashboard/suppliers/actions.ts"
+    },
+    "4078e3f31b7251481a60c1c23a1077a4dd856c1c6e": {
+      "workers": {
+        "app/dashboard/suppliers/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/suppliers/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/suppliers/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getSupplier",
+          "filename": "app/dashboard/suppliers/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/suppliers/page": "rsc"
+      },
+      "exportedName": "getSupplier",
+      "filename": "app/dashboard/suppliers/actions.ts"
+    },
+    "40a47f181de349ca6e4e70c53473f1eaa6c9dbb569": {
+      "workers": {
+        "app/dashboard/suppliers/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/suppliers/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/suppliers/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteSupplierAction",
+          "filename": "app/dashboard/suppliers/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/suppliers/page": "action-browser"
+      },
+      "exportedName": "deleteSupplierAction",
+      "filename": "app/dashboard/suppliers/actions.ts"
+    },
+    "40af9fc551b6b8549a93300caebb87507db54ed2cf": {
+      "workers": {
+        "app/dashboard/suppliers/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/suppliers/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/dashboard/suppliers/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createSupplierAction",
+          "filename": "app/dashboard/suppliers/actions.ts"
+        }
+      },
+      "layer": {
+        "app/dashboard/suppliers/page": "rsc"
+      },
+      "exportedName": "createSupplierAction",
+      "filename": "app/dashboard/suppliers/actions.ts"
+    }
+  },
+  "edge": {}
+}

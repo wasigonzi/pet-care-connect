@@ -146,6 +146,12 @@
       "namedRegex": "^/dashboard/inventory/new(?:/)?$"
     },
     {
+      "page": "/dashboard/patients",
+      "regex": "^/dashboard/patients(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/patients(?:/)?$"
+    },
+    {
       "page": "/dashboard/permissions",
       "regex": "^/dashboard/permissions(?:/)?$",
       "routeKeys": {},

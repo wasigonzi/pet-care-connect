@@ -7,8 +7,8 @@ import { z } from "zod";
 const vaccinationSchema = z.object({
     patient_id: z.string().uuid(),
     vaccine_name: z.string().min(1, "Vaccine name is required"),
-    date_administered: z.string().min(1, "Date administered is required"),
-    date_next_due: z.string().optional(),
+    administered_at: z.string().min(1, "Date administered is required"),
+    next_due_at: z.string().optional(),
 });
 
 export async function getVaccinations() {
@@ -26,7 +26,7 @@ export async function getVaccinations() {
         )
       )
     `)
-        .order("date_administered", { ascending: false });
+        .order("administered_at", { ascending: false });
 
     if (error) {
         throw new Error(error.message);
@@ -39,8 +39,8 @@ export async function createVaccinationAction(prevState: any, formData: FormData
     const rawData = {
         patient_id: formData.get("patient_id"),
         vaccine_name: formData.get("vaccine_name"),
-        date_administered: formData.get("date_administered"),
-        date_next_due: formData.get("date_next_due") || null,
+        administered_at: formData.get("administered_at"),
+        next_due_at: formData.get("next_due_at") || null,
     };
 
     const validated = vaccinationSchema.safeParse(rawData);

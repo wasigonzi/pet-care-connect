@@ -21,10 +21,10 @@ export default async function BoardingPage() {
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Boarding</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Hospedaje</h2>
                 <Button asChild>
                     <Link href="/dashboard/boarding/new">
-                        <Plus className="mr-2 h-4 w-4" /> New Reservation
+                        <Plus className="mr-2 h-4 w-4" /> Nueva Reservación
                     </Link>
                 </Button>
             </div>
@@ -49,9 +49,9 @@ export default async function BoardingPage() {
             </div>
 
             <div className="space-y-4">
-                <h3 className="text-xl font-semibold">Reservations</h3>
+                <h3 className="text-xl font-semibold">Reservaciones</h3>
                 {reservations?.length === 0 ? (
-                    <p className="text-muted-foreground">No reservations found.</p>
+                    <p className="text-muted-foreground">No se encontraron reservaciones.</p>
                 ) : (
                     reservations?.map((res) => (
                         <Card key={res.id}>

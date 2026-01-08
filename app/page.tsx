@@ -37,21 +37,21 @@ export default function Home() {
           </div>
 
           <nav className="hidden lg:flex items-center gap-8">
-            <Link href="#features" className="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Features</Link>
-            <Link href="#tech" className="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Tech Stack</Link>
+            <Link href="#features" className="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Características</Link>
+            <Link href="#tech" className="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Tecnología</Link>
             <Link href="#roadmap" className="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Roadmap</Link>
-            <Link href="#pricing" className="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Pricing</Link>
+            <Link href="#pricing" className="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Precios</Link>
           </nav>
 
           <div className="flex items-center gap-4">
             <Link href="/login">
               <Button variant="ghost" className="text-gray-600 hover:text-emerald-600 hover:bg-emerald-50">
-                Log In
+                Iniciar Sesión
               </Button>
             </Link>
             <Link href="/login">
               <Button className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-6 shadow-lg shadow-emerald-200">
-                Get Started
+                Comenzar
               </Button>
             </Link>
           </div>
@@ -68,24 +68,24 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              Production Ready: Version 1.0.0 Live
+              Listo para Producción: Versión 1.0.0 MTY
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6 max-w-4xl mx-auto">
-              The Modern OS for <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">Veterinary Clinics</span>
+              El Sistema Operativo Moderno para <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">Clínicas Veterinarias</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-10">
-              A comprehensive, single-tenant SaaS platform designed to streamline operations, enhance patient care, and automate administrative tasks.
+              Una plataforma SaaS integral diseñada para optimizar operaciones, mejorar la atención al paciente y automatizar tareas administrativas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/dashboard">
                 <Button size="lg" className="h-14 px-10 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-lg shadow-xl shadow-emerald-200 transition-all hover:scale-105">
-                  Launch Demo
+                  Ver Demo
                 </Button>
               </Link>
               <Link href="https://github.com/wasigonzi/pet-care-connect" target="_blank">
                 <Button variant="outline" size="lg" className="h-14 px-10 border-2 border-gray-200 hover:border-emerald-600 hover:text-emerald-600 rounded-full text-lg bg-white">
-                  View Documentation
+                  Ver Documentación
                 </Button>
               </Link>
             </div>
@@ -93,11 +93,11 @@ export default function Home() {
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center divide-x divide-gray-200">
               <div>
                 <div className="text-3xl font-bold text-gray-900">25+</div>
-                <div className="text-sm text-gray-500 font-medium">Functional Modules</div>
+                <div className="text-sm text-gray-500 font-medium">Módulos Funcionales</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-gray-900">99.9%</div>
-                <div className="text-sm text-gray-500 font-medium">System Uptime</div>
+                <div className="text-sm text-gray-500 font-medium">Uptime del Sistema</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-gray-900">100%</div>
@@ -105,7 +105,7 @@ export default function Home() {
               </div>
               <div>
                 <div className="text-3xl font-bold text-gray-900">Next.js 15</div>
-                <div className="text-sm text-gray-500 font-medium">Latest Tech</div>
+                <div className="text-sm text-gray-500 font-medium">Última Tecnología</div>
               </div>
             </div>
           </div>
@@ -115,27 +115,27 @@ export default function Home() {
         <section id="features" className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-emerald-600 font-bold tracking-wide uppercase text-sm">Platform Capabilities</span>
-              <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-5xl">Everything you need to run your practice</h2>
+              <span className="text-emerald-600 font-bold tracking-wide uppercase text-sm">Capacidades de la Plataforma</span>
+              <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-5xl">Todo lo que necesitas para tu práctica</h2>
               <p className="mt-4 text-xl text-gray-600">
-                From patient records to billing, inventory, and analytics - we&apos;ve got it covered.
+                Desde registros de pacientes hasta facturación, inventario y análisis: lo tenemos cubierto.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: BarChart3, title: "Dashboard & Analytics", desc: "Real-time metrics, appointment volume, revenue tracking, and operational insights.", color: "text-blue-600", bg: "bg-blue-50" },
-                { icon: Users, title: "Client & Patient Mgmt", desc: "Comprehensive profiles, multi-pet households, medical history, and advanced search.", color: "text-indigo-600", bg: "bg-indigo-50" },
-                { icon: Calendar, title: "Smart Scheduling", desc: "Drag-and-drop calendar, conflict detection, automated reminders, and recurring visits.", color: "text-purple-600", bg: "bg-purple-50" },
-                { icon: FileText, title: "Clinical Records", desc: "SOAP templates, prescription management, digital attachments, and treatment plans.", color: "text-emerald-600", bg: "bg-emerald-50" },
-                { icon: Package, title: "Inventory Control", desc: "Stock tracking, low stock alerts, supplier management, and expiration monitoring.", color: "text-orange-600", bg: "bg-orange-50" },
-                { icon: CreditCard, title: "Billing & Finance", desc: "Automated invoicing, estimates, payment processing, and financial reporting.", color: "text-green-600", bg: "bg-green-50" },
-                { icon: Syringe, title: "Vaccinations", desc: "Immunization tracking, due date reminders, protocol management, and compliance.", color: "text-red-600", bg: "bg-red-50" },
-                { icon: MessageSquare, title: "Communication Center", desc: "Email/SMS integration, templates, call logging, and automated workflows.", color: "text-teal-600", bg: "bg-teal-50" },
-                { icon: HomeIcon, title: "Boarding & Hospital", desc: "Unit management, reservations, check-in/out, and medical monitoring.", color: "text-pink-600", bg: "bg-pink-50" },
-                { icon: Clock, title: "Time & Attendance", desc: "Staff clock-in/out, scheduling, overtime tracking, and payroll integration.", color: "text-cyan-600", bg: "bg-cyan-50" },
-                { icon: ShieldCheck, title: "Admin & Security", desc: "Role-based access (RBAC), audit logging, backups, and clinic configuration.", color: "text-slate-600", bg: "bg-slate-50" },
-                { icon: CheckCircle2, title: "Task Management", desc: "Staff task assignment, priority levels, due dates, and progress tracking.", color: "text-yellow-600", bg: "bg-yellow-50" },
+                { icon: BarChart3, title: "Dashboard y Analíticas", desc: "Métricas en tiempo real, volumen de citas, seguimiento de ingresos e información operativa.", color: "text-blue-600", bg: "bg-blue-50" },
+                { icon: Users, title: "Gestión de Clientes y Pacientes", desc: "Perfiles completos, hogares con múltiples mascotas, historial médico y búsqueda avanzada.", color: "text-indigo-600", bg: "bg-indigo-50" },
+                { icon: Calendar, title: "Agenda Inteligente", desc: "Calendario arrastrar y soltar, detección de conflictos, recordatorios automáticos y visitas recurrentes.", color: "text-purple-600", bg: "bg-purple-50" },
+                { icon: FileText, title: "Registros Clínicos", desc: "Plantillas SOAP, gestión de recetas, adjuntos digitales y planes de tratamiento.", color: "text-emerald-600", bg: "bg-emerald-50" },
+                { icon: Package, title: "Control de Inventario", desc: "Seguimiento de stock, alertas de stock bajo, gestión de proveedores y monitoreo de caducidad.", color: "text-orange-600", bg: "bg-orange-50" },
+                { icon: CreditCard, title: "Facturación y Finanzas", desc: "Facturación automatizada, presupuestos, procesamiento de pagos e informes financieros.", color: "text-green-600", bg: "bg-green-50" },
+                { icon: Syringe, title: "Vacunación", desc: "Seguimiento de inmunización, recordatorios de vencimiento, gestión de protocolos y cumplimiento.", color: "text-red-600", bg: "bg-red-50" },
+                { icon: MessageSquare, title: "Centro de Comunicación", desc: "Integración de Email/SMS, plantillas, registro de llamadas y flujos de trabajo automatizados.", color: "text-teal-600", bg: "bg-teal-50" },
+                { icon: HomeIcon, title: "Hospitalización", desc: "Gestión de unidades, reservas, check-in/out y monitoreo médico.", color: "text-pink-600", bg: "bg-pink-50" },
+                { icon: Clock, title: "Tiempo y Asistencia", desc: "Entrada/salida del personal, horarios, seguimiento de horas extras e integración de nómina.", color: "text-cyan-600", bg: "bg-cyan-50" },
+                { icon: ShieldCheck, title: "Admin y Seguridad", desc: "Acceso basado en roles (RBAC), registros de auditoría, copias de seguridad y configuración de la clínica.", color: "text-slate-600", bg: "bg-slate-50" },
+                { icon: CheckCircle2, title: "Gestión de Tareas", desc: "Asignación de tareas al personal, niveles de prioridad, fechas de vencimiento y seguimiento del progreso.", color: "text-yellow-600", bg: "bg-yellow-50" },
               ].map((feature, idx) => (
                 <div key={idx} className="group p-8 bg-white rounded-3xl border border-gray-200 hover:border-emerald-300 hover:shadow-2xl hover:shadow-emerald-100/50 transition-all duration-300">
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${feature.bg} ${feature.color} transition-transform group-hover:scale-110`}>
@@ -154,18 +154,18 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <span className="text-emerald-600 font-bold tracking-wide uppercase text-sm">Under the Hood</span>
-                <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-5xl mb-6">Modern Technical Architecture</h2>
+                <span className="text-emerald-600 font-bold tracking-wide uppercase text-sm">Bajo el Capó</span>
+                <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-5xl mb-6">Arquitectura Técnica Moderna</h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Built with the latest, most robust technologies to ensure performance, security, and scalability for your business.
+                  Construido con las últimas y más robustas tecnologías para garantizar rendimiento, seguridad y escalabilidad para su negocio.
                 </p>
 
                 <div className="space-y-6">
                   {[
                     { icon: Code2, title: "Frontend Stack", desc: "Next.js 16 (App Router), React 19, Tailwind CSS, Radix UI" },
-                    { icon: Server, title: "Backend Infrastructure", desc: "Supabase (PostgreSQL 15), Edge Functions, RLS Security" },
-                    { icon: Database, title: "Data Management", desc: "Real-time subscriptions, Automated Backups, S3 Storage" },
-                    { icon: Lock, title: "Security First", desc: "AES-256 Encryption, RBAC Authorization, Audit Trails" }
+                    { icon: Server, title: "Infraestructura Backend", desc: "Supabase (PostgreSQL 15), Edge Functions, Seguridad RLS" },
+                    { icon: Database, title: "Gestión de Datos", desc: "Suscripciones en tiempo real, Backups Automatizados, Almacenamiento S3" },
+                    { icon: Lock, title: "Seguridad Primero", desc: "Encriptación AES-256, Autorización RBAC, Auditoría" }
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4 items-start">
                       <div className="mt-1 bg-gray-100 p-2 rounded-lg">
@@ -215,29 +215,29 @@ export default function Home() {
         <section className="py-24 bg-slate-900 text-white">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <div className="mb-16">
-              <span className="text-emerald-400 font-bold tracking-wide uppercase text-sm">User Experience</span>
-              <h2 className="mt-2 text-3xl font-bold md:text-4xl">Designed for people, not just data</h2>
+              <span className="text-emerald-400 font-bold tracking-wide uppercase text-sm">Experiencia de Usuario</span>
+              <h2 className="mt-2 text-3xl font-bold md:text-4xl">Diseñado para personas, no solo datos</h2>
             </div>
             <div className="grid md:grid-cols-4 gap-8">
               <div className="p-6 rounded-2xl bg-slate-800 border border-slate-700">
                 <Layout className="w-10 h-10 text-emerald-400 mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">Glassmorphism UI</h3>
-                <p className="text-slate-400 text-sm">Modern visual design with depth and clarity.</p>
+                <p className="text-slate-400 text-sm">Diseño visual moderno con profundidad y claridad.</p>
               </div>
               <div className="p-6 rounded-2xl bg-slate-800 border border-slate-700">
                 <Smartphone className="w-10 h-10 text-emerald-400 mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">Fully Responsive</h3>
-                <p className="text-slate-400 text-sm">Seamless experience on Mobile, Tablet, and Desktop.</p>
+                <h3 className="font-bold text-lg mb-2">Totalmente Responsivo</h3>
+                <p className="text-slate-400 text-sm">Experiencia fluida en Móvil, Tablet y Escritorio.</p>
               </div>
               <div className="p-6 rounded-2xl bg-slate-800 border border-slate-700">
                 <Zap className="w-10 h-10 text-emerald-400 mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">Instant Interactions</h3>
-                <p className="text-slate-400 text-sm">Real-time updates without page reloads.</p>
+                <h3 className="font-bold text-lg mb-2">Interacciones Instantáneas</h3>
+                <p className="text-slate-400 text-sm">Actualizaciones en tiempo real sin recargas de página.</p>
               </div>
               <div className="p-6 rounded-2xl bg-slate-800 border border-slate-700">
                 <Globe className="w-10 h-10 text-emerald-400 mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">Accessibility First</h3>
-                <p className="text-slate-400 text-sm">WCAG 2.1 AA compliant for all users.</p>
+                <h3 className="font-bold text-lg mb-2">Accesibilidad Primero</h3>
+                <p className="text-slate-400 text-sm">Cumple con WCAG 2.1 AA para todos los usuarios.</p>
               </div>
             </div>
           </div>
@@ -247,30 +247,30 @@ export default function Home() {
         <section id="roadmap" className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-16">
-              <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Development Status</span>
-              <h2 className="mt-4 text-3xl font-bold text-gray-900">Implementation Roadmap</h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto">Our journey to building the most complete veterinary platform.</p>
+              <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Estado de Desarrollo</span>
+              <h2 className="mt-4 text-3xl font-bold text-gray-900">Roadmap de Implementación</h2>
+              <p className="text-gray-500 mt-4 max-w-2xl mx-auto">Nuestro viaje para construir la plataforma veterinaria más completa.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { phase: "Phase 1", title: "Core Foundation", status: "Completed", items: ["User Auth & Security", "Dashboard & Metrics", "Client/Patient DB", "Basic Reporting"], color: "emerald" },
-                { phase: "Phase 2", title: "Clinical Ops", status: "Completed", items: ["SOAP Records", "Prescription Mgmt", "Vaccination Tracking", "Billing System"], color: "emerald" },
-                { phase: "Phase 3", title: "Advanced Features", status: "Completed", items: ["Boarding & Hospital", "Task Management", "Time Tracking", "Audit Logging"], color: "emerald" },
-                { phase: "Phase 4", title: "Future Enhancements", status: "Planned", items: ["Mobile Native Apps", "AI Diagnostics", "Telemedicine", "Multi-language"], color: "blue" }
+                { phase: "Fase 1", title: "Cimientos", status: "Completado", items: ["Autenticación y Seguridad", "Dashboard y Métricas", "DB Clientes/Pacientes", "Reportes Básicos"], color: "emerald" },
+                { phase: "Fase 2", title: "Ops Clínicas", status: "Completado", items: ["Registros SOAP", "Gestión de Recetas", "Seguimiento Vacunas", "Sistema Facturación"], color: "emerald" },
+                { phase: "Fase 3", title: "Funciones Avanzadas", status: "Completado", items: ["Hospitalización", "Gestión de Tareas", "Control de Tiempo", "Logs de Auditoría"], color: "emerald" },
+                { phase: "Fase 4", title: "Mejoras Futuras", status: "Planeado", items: ["Apps Nativas", "Diagnóstico IA", "Telemedicina", "Multi-idioma"], color: "blue" }
               ].map((plan, i) => (
-                <div key={i} className={`relative p-8 rounded-3xl border-2 ${plan.status === 'Completed' ? 'border-emerald-100 bg-emerald-50/30' : 'border-gray-100 bg-white'} `}>
-                  <div className={`text-xs font-bold uppercase tracking-wider mb-2 ${plan.status === 'Completed' ? 'text-emerald-600' : 'text-blue-600'}`}>{plan.phase}</div>
+                <div key={i} className={`relative p-8 rounded-3xl border-2 ${plan.status === 'Completado' ? 'border-emerald-100 bg-emerald-50/30' : 'border-gray-100 bg-white'} `}>
+                  <div className={`text-xs font-bold uppercase tracking-wider mb-2 ${plan.status === 'Completado' ? 'text-emerald-600' : 'text-blue-600'}`}>{plan.phase}</div>
                   <h3 className="font-bold text-xl text-gray-900 mb-4">{plan.title}</h3>
                   <ul className="space-y-3 mb-6">
                     {plan.items.map((item, j) => (
                       <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
-                        {plan.status === 'Completed' ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <div className="w-4 h-4 rounded-full border border-gray-300"></div>}
+                        {plan.status === 'Completado' ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <div className="w-4 h-4 rounded-full border border-gray-300"></div>}
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${plan.status === 'Completed' ? 'bg-emerald-200 text-emerald-800' : 'bg-blue-100 text-blue-800'}`}>
+                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${plan.status === 'Completado' ? 'bg-emerald-200 text-emerald-800' : 'bg-blue-100 text-blue-800'}`}>
                     {plan.status}
                   </span>
                 </div>
@@ -288,17 +288,17 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-500 rounded-full blur-[100px] opacity-20"></div>
 
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready to transform your clinic?</h2>
-                <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-lg">Join forward-thinking veterinary practices that are reducing admin costs by 25% and increasing revenue by 15% with Pet Care Connect.</p>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">¿Listo para transformar tu clínica?</h2>
+                <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-lg">Únete a las prácticas veterinarias con visión de futuro que están reduciendo costos administrativos en un 25% y aumentando ingresos en un 15% con Pet Care Connect.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/login">
                     <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white border-none rounded-full px-10 h-14 text-lg font-bold shadow-lg shadow-emerald-500/20">
-                      Start Free Trial
+                      Prueba Gratis
                     </Button>
                   </Link>
                   <Link href="#contact">
                     <Button size="lg" variant="outline" className="bg-transparent border-2 border-gray-700 text-white hover:bg-gray-800 hover:text-white rounded-full px-10 h-14 text-lg font-bold">
-                      Contact Sales
+                      Contactar Ventas
                     </Button>
                   </Link>
                 </div>
@@ -319,12 +319,12 @@ export default function Home() {
             <span className="text-lg font-bold text-gray-900">Pet Care Connect</span>
           </div>
           <div className="flex gap-8">
-            <Link href="#" className="hover:text-emerald-600 transition-colors">Documentation</Link>
-            <Link href="#" className="hover:text-emerald-600 transition-colors">Support</Link>
-            <Link href="#" className="hover:text-emerald-600 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-emerald-600 transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-emerald-600 transition-colors">Documentación</Link>
+            <Link href="#" className="hover:text-emerald-600 transition-colors">Soporte</Link>
+            <Link href="#" className="hover:text-emerald-600 transition-colors">Privacidad</Link>
+            <Link href="#" className="hover:text-emerald-600 transition-colors">Términos</Link>
           </div>
-          <p>© 2024 Pet Care Connect. MIT License.</p>
+          <p>© 2024 Pet Care Connect. Licencia MIT.</p>
         </div>
       </footer>
     </div>

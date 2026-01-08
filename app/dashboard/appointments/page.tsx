@@ -27,17 +27,17 @@ export default async function AppointmentsPage({
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Appointments</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Citas</h2>
                 <div className="flex items-center space-x-2">
                     <Button variant="outline" asChild className="mr-2">
-                        <Link href={`?date=${format(addDays(today, -7), 'yyyy-MM-dd')}`}>Previous Week</Link>
+                        <Link href={`?date=${format(addDays(today, -7), 'yyyy-MM-dd')}`}>Semana Anterior</Link>
                     </Button>
                     <Button variant="outline" asChild className="mr-2">
-                        <Link href={`?date=${format(addDays(today, 7), 'yyyy-MM-dd')}`}>Next Week</Link>
+                        <Link href={`?date=${format(addDays(today, 7), 'yyyy-MM-dd')}`}>Siguiente Semana</Link>
                     </Button>
                     <Button asChild>
                         <Link href="/dashboard/appointments/new">
-                            <Plus className="mr-2 h-4 w-4" /> New Appointment
+                            <Plus className="mr-2 h-4 w-4" /> Nueva Cita
                         </Link>
                     </Button>
                 </div>

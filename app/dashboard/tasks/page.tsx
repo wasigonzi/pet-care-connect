@@ -18,10 +18,10 @@ export default async function TasksPage() {
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Tasks</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Tareas</h2>
                 <Button asChild>
                     <Link href="/dashboard/tasks/new">
-                        <Plus className="mr-2 h-4 w-4" /> Create Task
+                        <Plus className="mr-2 h-4 w-4" /> Crear Tarea
                     </Link>
                 </Button>
             </div>
@@ -30,7 +30,7 @@ export default async function TasksPage() {
                 <Card>
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
-                            <Circle className="h-5 w-5 text-slate-500" /> To Do
+                            <Circle className="h-5 w-5 text-slate-500" /> Por Hacer
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -40,7 +40,7 @@ export default async function TasksPage() {
                 <Card>
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
-                            <Clock className="h-5 w-5 text-blue-500" /> In Progress
+                            <Clock className="h-5 w-5 text-blue-500" /> En Progreso
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -50,7 +50,7 @@ export default async function TasksPage() {
                 <Card>
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
-                            <CheckCircle className="h-5 w-5 text-green-500" /> Completed
+                            <CheckCircle className="h-5 w-5 text-green-500" /> Completado
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
