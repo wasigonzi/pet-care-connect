@@ -10,11 +10,30 @@ import { hexToHsl } from "@/lib/utils-colors";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Pet Care Connect",
-    description: "Veterinary Practice Management System",
+    title: "Pet Care Connect - Sistema de Gestión Veterinaria",
+    description: "Sistema integral de gestión para clínicas veterinarias. Administra pacientes, citas, historiales médicos, facturación y comunicación con clientes de manera eficiente y segura.",
+    keywords: "veterinaria, clínica veterinaria, gestión veterinaria, mascotas, animales, citas veterinarias, historial médico, vacunas, tratamientos",
+    authors: [{ name: "Pet Care Connect" }],
+    creator: "Pet Care Connect",
+    publisher: "Pet Care Connect",
+    robots: "index, follow",
+    openGraph: {
+        title: "Pet Care Connect - Sistema de Gestión Veterinaria",
+        description: "Sistema integral de gestión para clínicas veterinarias. Administra pacientes, citas, historiales médicos y más.",
+        type: "website",
+        locale: "es_ES",
+        siteName: "Pet Care Connect"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Pet Care Connect - Sistema de Gestión Veterinaria",
+        description: "Sistema integral de gestión para clínicas veterinarias. Administra pacientes, citas, historiales médicos y más."
+    },
     icons: {
         icon: "/favicon.ico",
-    }
+        apple: "/apple-touch-icon.png"
+    },
+    manifest: "/manifest.json"
 };
 
 export default async function RootLayout({
@@ -49,7 +68,12 @@ export default async function RootLayout({
     }
 
     return (
-        <html lang="en">
+        <html lang="es">
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="theme-color" content="#8b5cf6" />
+                <link rel="canonical" href="https://petcareconnect.com" />
+            </head>
             <body
                 className={inter.className}
                 suppressHydrationWarning

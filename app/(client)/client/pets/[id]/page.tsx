@@ -7,7 +7,8 @@ import Link from "next/link";
 import { ArrowLeft, Edit, Trash2, Calendar, FileText, Syringe } from "lucide-react";
 import { DeletePetButton } from "./delete-button";
 
-export default async function PetDetailsPage({ params }: { params: { id: string } }) {
+export default async function PetDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
     await requireClient();
     const clientRecord = await getClientRecord();
     const supabase = await createClient();
@@ -15,7 +16,7 @@ export default async function PetDetailsPage({ params }: { params: { id: string 
     const { data: pet, error } = await supabase
         .from("patients")
         .select("*")
-        .eq("id", params.id)
+        .eq("id", id)
         .eq("client_id", clientRecord?.id)
         .single();
 

@@ -51,10 +51,11 @@ async function getAppointmentDetails(appointmentId: string, userId: string) {
 export default async function AppointmentDetailPage({
     params
 }: {
-    params: { id: string }
+    params: Promise<{ id: string }>
 }) {
+    const { id } = await params;
     const profile = await requireClient();
-    const appointment = await getAppointmentDetails(params.id, profile.id);
+    const appointment = await getAppointmentDetails(id, profile.id);
 
     if (!appointment) {
         notFound();
