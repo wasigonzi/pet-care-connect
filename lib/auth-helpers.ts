@@ -53,6 +53,17 @@ export async function getUserProfile(userId?: string): Promise<UserProfile | nul
     }
 
     try {
+        // Use the safe role detection function first
+        const { data: roleResult, error: roleError } = await supabase
+            .rpc('get_user_role_safe', { user_id: userId });
+
+        if (roleError) {
+            console.error('Error fetching role with safe function:', roleError);
+            return null;
+        }
+
+        // If we have a role, try to get the full profile
+        // This should work because the user can access their own profile
         const { data, error } = await supabase
             .from('profiles')
             .select('*')
@@ -60,8 +71,17 @@ export async function getUserProfile(userId?: string): Promise<UserProfile | nul
             .single();
 
         if (error) {
-            console.error('Error fetching profile:', error);
-            return null;
+            console.error('Error fetching full profile:', error);
+            // Return a minimal profile with just the role
+            return {
+                id: userId,
+                role: roleResult || 'client',
+                full_name: null,
+                phone: null,
+                avatar_url: null,
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString()
+            } as UserProfile;
         }
 
         return data as UserProfile;
@@ -76,11 +96,22 @@ export async function getUserProfile(userId?: string): Promise<UserProfile | nul
  */
 export async function hasRole(role: UserRole | UserRole[]): Promise<boolean> {
     try {
-        const profile = await getUserProfile();
-        if (!profile) return false;
+        const supabase = await createClient();
+        const user = await getCurrentUser();
+        if (!user) return false;
 
+        // Use the safe role detection function
+        const { data: roleResult, error: roleError } = await supabase
+            .rpc('get_user_role_safe', { user_id: user.id });
+
+        if (roleError) {
+            console.error('Role check failed:', roleError);
+            return false;
+        }
+
+        const userRole = roleResult || 'client';
         const roles = Array.isArray(role) ? role : [role];
-        return roles.includes(profile.role);
+        return roles.includes(userRole as UserRole);
     } catch (error) {
         console.error('Role check failed:', error);
         return false;
@@ -119,20 +150,34 @@ export async function requireRole(role: UserRole | UserRole[], redirectTo: strin
  * Require client role - redirect to dashboard if staff/admin
  */
 export async function requireClient() {
-    await requireAuth();
+    const user = await requireAuth();
     
     try {
-        const profile = await getUserProfile();
+        const supabase = await createClient();
+        const { data: roleResult, error: roleError } = await supabase
+            .rpc('get_user_role_safe', { user_id: user.id });
 
-        if (!profile) {
+        if (roleError) {
+            console.error('Client requirement check failed:', roleError);
             redirect('/login');
         }
 
-        if (profile.role !== 'client') {
+        const userRole = roleResult || 'client';
+
+        if (userRole !== 'client') {
             redirect('/dashboard');
         }
 
-        return profile;
+        // Return a minimal profile object
+        return {
+            id: user.id,
+            role: userRole as UserRole,
+            full_name: user.email?.split('@')[0] || null,
+            phone: null,
+            avatar_url: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+        } as UserProfile;
     } catch (error) {
         console.error('Client requirement check failed:', error);
         redirect('/login');
@@ -143,20 +188,34 @@ export async function requireClient() {
  * Require staff or admin role - redirect to client portal if client
  */
 export async function requireStaff() {
-    await requireAuth();
+    const user = await requireAuth();
     
     try {
-        const profile = await getUserProfile();
+        const supabase = await createClient();
+        const { data: roleResult, error: roleError } = await supabase
+            .rpc('get_user_role_safe', { user_id: user.id });
 
-        if (!profile) {
+        if (roleError) {
+            console.error('Staff requirement check failed:', roleError);
             redirect('/login');
         }
 
-        if (profile.role === 'client') {
+        const userRole = roleResult || 'client';
+
+        if (userRole === 'client') {
             redirect('/client');
         }
 
-        return profile;
+        // Return a minimal profile object
+        return {
+            id: user.id,
+            role: userRole as UserRole,
+            full_name: user.email?.split('@')[0] || null,
+            phone: null,
+            avatar_url: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+        } as UserProfile;
     } catch (error) {
         console.error('Staff requirement check failed:', error);
         redirect('/login');
@@ -171,6 +230,15 @@ export async function getClientRecord() {
     const user = await getCurrentUser();
 
     if (!user) return null;
+
+    // First verify this is a client user
+    const { data: roleResult, error: roleError } = await supabase
+        .rpc('get_user_role_safe', { user_id: user.id });
+
+    if (roleError || roleResult !== 'client') {
+        console.error('Error verifying client role:', roleError);
+        return null;
+    }
 
     const { data, error } = await supabase
         .from('clients')

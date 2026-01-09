@@ -17,17 +17,27 @@ export default async function HomePage() {
   const { data: { user } } = await supabase.auth.getUser()
 
   if (user) {
-    // Si el usuario está autenticado, redirigir según su rol
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('role')
-      .eq('id', user.id)
-      .single()
+    // Si el usuario está autenticado, redirigir según su rol usando la función segura
+    try {
+      const { data: roleResult, error: roleError } = await supabase
+        .rpc('get_user_role_safe', { user_id: user.id });
 
-    if (profile?.role === 'client') {
-      redirect('/client')
-    } else {
-      redirect('/dashboard')
+      if (roleError) {
+        console.error("Error fetching user role in homepage:", roleError.message);
+        // Fallback seguro
+        redirect('/client');
+      } else {
+        const role = roleResult || 'client';
+        if (['admin', 'vet', 'assistant', 'receptionist'].includes(role)) {
+          redirect('/dashboard');
+        } else {
+          redirect('/client');
+        }
+      }
+    } catch (error) {
+      console.error("Role detection failed in homepage:", error);
+      // Fallback seguro
+      redirect('/client');
     }
   }
 
