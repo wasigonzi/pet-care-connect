@@ -1,0 +1,161 @@
+{
+  "timestamp": "2026-01-09T02:06:35.675Z",
+  "environment": {
+    "status": "pass",
+    "variables": {
+      "NEXT_PUBLIC_SUPABASE_URL": true,
+      "NEXT_PUBLIC_SUPABASE_ANON_KEY": true,
+      "SUPABASE_SERVICE_ROLE_KEY": true
+    },
+    "errors": []
+  },
+  "connectivity": {
+    "status": "pass",
+    "responseTime": 718
+  },
+  "schema": {
+    "status": "fail",
+    "tables": [],
+    "missingTables": [],
+    "missingColumns": [],
+    "missingIndexes": [],
+    "errors": [
+      "Could not find the table 'public.information_schema.tables' in the schema cache"
+    ]
+  },
+  "rls": {
+    "status": "pass",
+    "tables": [],
+    "missingPolicies": [],
+    "weakPolicies": [],
+    "errors": [
+      "Failed to get policies for profiles: Could not find the table 'public.pg_policies' in the schema cache",
+      "Failed to get policies for clients: Could not find the table 'public.pg_policies' in the schema cache",
+      "Failed to get policies for patients: Could not find the table 'public.pg_policies' in the schema cache",
+      "Failed to get policies for appointments: Could not find the table 'public.pg_policies' in the schema cache",
+      "Failed to get policies for invoices: Could not find the table 'public.pg_policies' in the schema cache"
+    ]
+  },
+  "storage": {
+    "status": "fail",
+    "buckets": [
+      {
+        "name": "landing-assets",
+        "public": true,
+        "policies": []
+      }
+    ],
+    "missingBuckets": [
+      "branding-assets",
+      "attachments"
+    ],
+    "testResults": {
+      "landing-assets": true
+    },
+    "errors": []
+  },
+  "auth": {
+    "status": "fail",
+    "profileTableExists": false,
+    "userRoleEnumExists": false,
+    "triggerExists": false,
+    "sampleUserHasProfile": true,
+    "errors": [
+      "profiles table missing",
+      "user_role enum missing",
+      "auth trigger missing"
+    ]
+  },
+  "codeAlignment": {
+    "status": "fail",
+    "expectedTables": [
+      "profiles",
+      "information_schema.tables",
+      "information_schema.columns",
+      "pg_tables",
+      "pg_policies",
+      "information_schema.types",
+      "information_schema.triggers",
+      "table",
+      "clients",
+      "invoices",
+      "patients",
+      "appointments",
+      "tasks",
+      "wellness_plans",
+      "vaccinations",
+      "time_entries",
+      "templates",
+      "suppliers",
+      "inventory_items",
+      "reminders",
+      "medical_records",
+      "communications",
+      "estimates",
+      "estimate_items",
+      "invoice_items",
+      "boarding_units",
+      "boarding_reservations",
+      "audit_logs",
+      "landing_pages",
+      "landing_sections",
+      "content_versions",
+      "landing-assets"
+    ],
+    "expectedColumns": {},
+    "missingInDB": {
+      "tables": [
+        "profiles",
+        "information_schema.tables",
+        "information_schema.columns",
+        "pg_tables",
+        "pg_policies",
+        "information_schema.types",
+        "information_schema.triggers",
+        "table",
+        "clients",
+        "invoices",
+        "patients",
+        "appointments",
+        "tasks",
+        "wellness_plans",
+        "vaccinations",
+        "time_entries",
+        "templates",
+        "suppliers",
+        "inventory_items",
+        "reminders",
+        "medical_records",
+        "communications",
+        "estimates",
+        "estimate_items",
+        "invoice_items",
+        "boarding_units",
+        "boarding_reservations",
+        "audit_logs",
+        "landing_pages",
+        "landing_sections",
+        "content_versions",
+        "landing-assets"
+      ],
+      "columns": []
+    },
+    "unusedInDB": {
+      "tables": [],
+      "columns": []
+    },
+    "errors": []
+  },
+  "summary": {
+    "overallStatus": "fail",
+    "passedChecks": 3,
+    "totalChecks": 7,
+    "criticalIssues": 1,
+    "warningIssues": 3
+  },
+  "recommendations": [
+    "Create missing storage buckets",
+    "Create profiles table for user management"
+  ],
+  "sqlFixes": []
+}

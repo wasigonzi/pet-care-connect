@@ -45,34 +45,51 @@ export async function login(prevState: any, formData: FormData) {
 
     console.log("Authenticated successfully:", user.id);
 
-    // TEMPORARY FIX: Skip profile check due to RLS infinite recursion
-    // TODO: Fix RLS policies in Supabase dashboard
-    console.log("Skipping profile check due to RLS issues, using email-based role detection");
-    
+    // PRODUCTION: Get user role from database using safe function
     let role: string = "client"; // default
     let destination = "/client";
 
-    // Use email-based role detection as temporary workaround
-    if (user.email) {
-        if (user.email.includes("admin@")) {
-            role = "admin";
-            destination = "/dashboard";
-        } else if (user.email.includes("vet@")) {
-            role = "vet";
-            destination = "/dashboard";
-        } else if (user.email.includes("assistant@")) {
-            role = "assistant";
-            destination = "/dashboard";
-        } else if (user.email.includes("receptionist@")) {
-            role = "receptionist";
+    try {
+        // Use the safe role detection function that doesn't cause recursion
+        const { data: roleResult, error: roleError } = await supabase
+            .rpc('get_user_role_safe', { user_id: user.id });
+
+        if (roleError) {
+            console.error("Error fetching user role:", roleError.message);
+            // Fall back to creating a profile if none exists
+            const { error: upsertError } = await supabase
+                .from('profiles')
+                .upsert({
+                    id: user.id,
+                    role: 'client',
+                    full_name: user.email?.split('@')[0] || 'User',
+                    updated_at: new Date().toISOString(),
+                }, { onConflict: 'id' });
+
+            if (upsertError) {
+                console.error("Error creating profile:", upsertError.message);
+            }
+            role = 'client'; // default fallback
+        } else {
+            role = roleResult || 'client';
+        }
+
+        // Determine destination based on role
+        if (['admin', 'vet', 'assistant', 'receptionist'].includes(role)) {
             destination = "/dashboard";
         } else {
-            role = "client";
             destination = "/client";
         }
-    }
 
-    console.log("Email-based role detection:", user.email, "->", role, "-> destination:", destination);
+        console.log("Database role detection:", user.email, "->", role, "-> destination:", destination);
+
+    } catch (error: any) {
+        console.error("Role detection failed:", error.message);
+        // Safe fallback - default to client
+        role = 'client';
+        destination = '/client';
+        console.log("Using fallback role: client");
+    }
 
     console.log("Redirecting to:", destination);
     revalidatePath("/", "layout");

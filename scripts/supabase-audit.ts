@@ -319,7 +319,7 @@ class SupabaseAuditor {
 
     return {
       name: tableName,
-      columns: (columns || []).map(col => ({
+      columns: (columns || []).map((col: any) => ({
         name: col.column_name,
         type: col.data_type,
         nullable: col.is_nullable === 'YES',
@@ -365,7 +365,7 @@ class SupabaseAuditor {
         const tableInfo: RLSTableInfo = {
           name: tableName,
           rlsEnabled: rlsEnabled?.rowsecurity || false,
-          policies: (policies || []).map(p => ({
+          policies: (policies || []).map((p: any) => ({
             name: p.policyname,
             command: p.cmd,
             roles: p.roles ? p.roles.split(',') : [],
@@ -418,7 +418,7 @@ class SupabaseAuditor {
 
       if (error) throw error;
 
-      inventory.buckets = (buckets || []).map(bucket => ({
+      inventory.buckets = (buckets || []).map((bucket: any) => ({
         name: bucket.name,
         public: bucket.public,
         policies: [] // Would need additional query to get policies
@@ -571,7 +571,7 @@ class SupabaseAuditor {
         .select('table_name')
         .eq('table_schema', 'public');
 
-      const actualTableNames = (actualTables || []).map(t => t.table_name);
+      const actualTableNames = (actualTables || []).map((t: any) => t.table_name);
 
       // Find missing tables
       check.missingInDB.tables = check.expectedTables.filter(t => !actualTableNames.includes(t));
@@ -585,7 +585,7 @@ class SupabaseAuditor {
             .eq('table_schema', 'public')
             .eq('table_name', table);
 
-          const actualColNames = (actualCols || []).map(c => c.column_name);
+          const actualColNames = (actualCols || []).map((c: any) => c.column_name);
           const missingCols = expectedCols.filter(c => !actualColNames.includes(c));
           
           missingCols.forEach(col => {

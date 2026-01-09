@@ -52,28 +52,39 @@ export async function getUserProfile(userId?: string): Promise<UserProfile | nul
         userId = user.id;
     }
 
-    const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', userId)
-        .single();
+    try {
+        const { data, error } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('id', userId)
+            .single();
 
-    if (error || !data) {
+        if (error) {
+            console.error('Error fetching profile:', error);
+            return null;
+        }
+
+        return data as UserProfile;
+    } catch (error) {
+        console.error('Profile fetch failed:', error);
         return null;
     }
-
-    return data as UserProfile;
 }
 
 /**
  * Check if user has a specific role
  */
 export async function hasRole(role: UserRole | UserRole[]): Promise<boolean> {
-    const profile = await getUserProfile();
-    if (!profile) return false;
+    try {
+        const profile = await getUserProfile();
+        if (!profile) return false;
 
-    const roles = Array.isArray(role) ? role : [role];
-    return roles.includes(profile.role);
+        const roles = Array.isArray(role) ? role : [role];
+        return roles.includes(profile.role);
+    } catch (error) {
+        console.error('Role check failed:', error);
+        return false;
+    }
 }
 
 /**
@@ -92,9 +103,14 @@ export async function requireAuth() {
  */
 export async function requireRole(role: UserRole | UserRole[], redirectTo: string = '/') {
     await requireAuth();
-    const hasRequiredRole = await hasRole(role);
-
-    if (!hasRequiredRole) {
+    
+    try {
+        const hasRequiredRole = await hasRole(role);
+        if (!hasRequiredRole) {
+            redirect(redirectTo);
+        }
+    } catch (error) {
+        console.error('Role requirement check failed:', error);
         redirect(redirectTo);
     }
 }
@@ -104,17 +120,23 @@ export async function requireRole(role: UserRole | UserRole[], redirectTo: strin
  */
 export async function requireClient() {
     await requireAuth();
-    const profile = await getUserProfile();
+    
+    try {
+        const profile = await getUserProfile();
 
-    if (!profile) {
+        if (!profile) {
+            redirect('/login');
+        }
+
+        if (profile.role !== 'client') {
+            redirect('/dashboard');
+        }
+
+        return profile;
+    } catch (error) {
+        console.error('Client requirement check failed:', error);
         redirect('/login');
     }
-
-    if (profile.role !== 'client') {
-        redirect('/dashboard');
-    }
-
-    return profile;
 }
 
 /**
@@ -122,17 +144,23 @@ export async function requireClient() {
  */
 export async function requireStaff() {
     await requireAuth();
-    const profile = await getUserProfile();
+    
+    try {
+        const profile = await getUserProfile();
 
-    if (!profile) {
+        if (!profile) {
+            redirect('/login');
+        }
+
+        if (profile.role === 'client') {
+            redirect('/client');
+        }
+
+        return profile;
+    } catch (error) {
+        console.error('Staff requirement check failed:', error);
         redirect('/login');
     }
-
-    if (profile.role === 'client') {
-        redirect('/client');
-    }
-
-    return profile;
 }
 
 /**
