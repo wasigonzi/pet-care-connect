@@ -1,7 +1,7 @@
-import {
-
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
+
+import {
     Table,
     TableBody,
     TableCell,
