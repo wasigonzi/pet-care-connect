@@ -55,44 +55,63 @@ export async function getLandingPage(slug: string = 'home') {
 }
 
 export async function saveSection(pageId: string, key: string, content: any, order: number = 0) {
-    const supabase = await createClient();
+    console.log(`[saveSection] Called for key=${key}, pageId=${pageId}`);
+    try {
+        const supabase = await createClient();
 
-    // 1. Check for existing sections with this key
-    const { data: existingSections, error: fetchError } = await supabase
-        .from('landing_sections')
-        .select('id')
-        .eq('page_id', pageId)
-        .eq('key', key)
-        .order('created_at', { ascending: false }); // Get newest first
-
-    if (fetchError) throw new Error(fetchError.message);
-
-    if (existingSections && existingSections.length > 0) {
-        // Update the most recent one
-        const mainId = existingSections[0].id;
-
-        const { error: updateError } = await supabase
+        // 1. Check for existing sections with this key
+        const { data: existingSections, error: fetchError } = await supabase
             .from('landing_sections')
-            .update({ content, "order": order, updated_at: new Date().toISOString() })
-            .eq('id', mainId);
+            .select('id')
+            .eq('page_id', pageId)
+            .eq('key', key)
+            .order('created_at', { ascending: false }); // Get newest first
 
-        if (updateError) throw new Error(updateError.message);
-
-        // Cleanup duplicates if any
-        if (existingSections.length > 1) {
-            const idsToDelete = existingSections.slice(1).map(s => s.id);
-            await supabase.from('landing_sections').delete().in('id', idsToDelete);
+        if (fetchError) {
+            console.error("[saveSection] Fetch Error:", fetchError);
+            throw new Error(fetchError.message);
         }
-    } else {
-        // Insert new
-        const { error: insertError } = await supabase
-            .from('landing_sections')
-            .insert({ page_id: pageId, key, content, "order": order });
 
-        if (insertError) throw new Error(insertError.message);
+        if (existingSections && existingSections.length > 0) {
+            // Update the most recent one
+            const mainId = existingSections[0].id;
+            console.log(`[saveSection] Updating section ${mainId}`);
+
+            const { error: updateError } = await supabase
+                .from('landing_sections')
+                .update({ content, "order": order, updated_at: new Date().toISOString() })
+                .eq('id', mainId);
+
+            if (updateError) {
+                console.error("[saveSection] Update Error:", updateError);
+                throw new Error(updateError.message);
+            }
+
+            // Cleanup duplicates if any
+            if (existingSections.length > 1) {
+                const idsToDelete = existingSections.slice(1).map(s => s.id);
+                console.log(`[saveSection] Cleaning duplicates: ${idsToDelete.join(', ')}`);
+                const { error: delError } = await supabase.from('landing_sections').delete().in('id', idsToDelete);
+                if (delError) console.error("[saveSection] Delete error:", delError);
+            }
+        } else {
+            // Insert new
+            console.log(`[saveSection] Inserting new section for key=${key}`);
+            const { error: insertError } = await supabase
+                .from('landing_sections')
+                .insert({ page_id: pageId, key, content, "order": order });
+
+            if (insertError) {
+                console.error("[saveSection] Insert Error:", insertError);
+                throw new Error(insertError.message);
+            }
+        }
+
+        revalidatePath('/dashboard/admin/landing');
+    } catch (e: any) {
+        console.error("[saveSection] CRITICAL:", e);
+        throw new Error(e.message || "Unknown error saving section");
     }
-
-    revalidatePath('/dashboard/admin/landing');
 }
 
 export async function publishLanding(pageId: string) {

@@ -40,10 +40,13 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
     const handleSave = async (key: string, sectionData: any) => {
         setLoading(true);
         try {
+            console.log(`[CMS Editor] Saving ${key}:`, sectionData);
             await saveSection(pageId, key, sectionData);
-            toast.success(`Sección ${key} guardada`);
-        } catch (error) {
-            toast.error("Error al guardar");
+            toast.success(`Sección ${key} guardada exitosamente`);
+        } catch (error: any) {
+            console.error(`[CMS Editor] Error saving ${key}:`, error);
+            const errorMessage = error?.message || error?.toString() || "Error desconocido al guardar";
+            toast.error(`Error al guardar ${key}: ${errorMessage}`);
         } finally {
             setLoading(false);
         }
@@ -188,6 +191,58 @@ export function CMSEditor({ pageId, initialSections }: CMSEditorProps) {
                                                 />
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Live Preview */}
+                            <div className="grid gap-2">
+                                <Label>Vista Previa del Header</Label>
+                                <div className="border-2 border-dashed border-gray-300 rounded-lg overflow-hidden bg-white">
+                                    {/* Simulated Header */}
+                                    <div
+                                        className="flex items-center justify-between px-6 bg-white/80 backdrop-blur-md border-b border-gray-200"
+                                        style={{
+                                            minHeight: `${(data.branding?.logoHeight || 40) + 32}px`,
+                                            paddingTop: '16px',
+                                            paddingBottom: '16px',
+                                        }}
+                                    >
+                                        {/* Logo Preview */}
+                                        <div className="flex items-center gap-2">
+                                            {data.branding?.logoUrl ? (
+                                                <img
+                                                    src={data.branding.logoUrl}
+                                                    alt="Logo Preview"
+                                                    style={{ height: `${data.branding?.logoHeight || 40}px` }}
+                                                    className="w-auto object-contain"
+                                                />
+                                            ) : (
+                                                <div
+                                                    className="bg-primary/10 rounded-lg flex items-center justify-center"
+                                                    style={{
+                                                        height: `${data.branding?.logoHeight || 40}px`,
+                                                        width: `${data.branding?.logoHeight || 40}px`,
+                                                    }}
+                                                >
+                                                    <ImageIcon className="w-[60%] h-[60%] text-primary" />
+                                                </div>
+                                            )}
+                                            {data.branding?.showLogoText && (
+                                                <span className="font-bold text-xl tracking-tight text-primary">
+                                                    {data.branding?.logoText || 'Logo Text'}
+                                                </span>
+                                            )}
+                                        </div>
+                                        {/* Nav Items Preview */}
+                                        <div className="flex items-center gap-4 text-sm text-gray-600">
+                                            <span>Inicio</span>
+                                            <span>Servicios</span>
+                                            <span>Contacto</span>
+                                        </div>
+                                    </div>
+                                    <div className="p-2 bg-gray-50 text-xs text-center text-muted-foreground">
+                                        Altura del header: {(data.branding?.logoHeight || 40) + 32}px (Logo: {data.branding?.logoHeight || 40}px + Padding: 32px)
                                     </div>
                                 </div>
                             </div>

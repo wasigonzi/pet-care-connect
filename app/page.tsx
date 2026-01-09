@@ -19,6 +19,7 @@ import {
 import { getPublishedContent } from "./dashboard/admin/landing/actions";
 import { defaultContent } from "@/lib/defaults";
 import { SiteBranding } from "@/components/site-branding";
+import { DynamicHeader } from "@/components/dynamic-header";
 
 export default async function Home() {
   // Fetch dynamic content
@@ -36,30 +37,28 @@ export default async function Home() {
   return (
     <div className="flex flex-col min-h-screen font-sans bg-slate-50">
       {/* Navigation */}
-      <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-200">
-        <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
-          <SiteBranding />
+      <DynamicHeader>
+        <SiteBranding />
 
-          <nav className="hidden lg:flex items-center gap-8">
-            <Link href="#services" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Servicios</Link>
-            <Link href="#team" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Equipo</Link>
-            <Link href="#location" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Ubicación</Link>
-          </nav>
+        <nav className="hidden lg:flex items-center gap-8">
+          <Link href="#services" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Servicios</Link>
+          <Link href="#team" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Equipo</Link>
+          <Link href="#location" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Ubicación</Link>
+        </nav>
 
-          <div className="flex items-center gap-4">
-            <Link href="/login">
-              <Button variant="ghost" className="text-gray-600 hover:text-primary hover:bg-violet-50">
-                Portal Clientes
-              </Button>
-            </Link>
-            <Link href="/dashboard/appointments/new">
-              <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 shadow-lg shadow-primary/20">
-                Agendar Cita
-              </Button>
-            </Link>
-          </div>
+        <div className="flex items-center gap-4">
+          <Link href="/login">
+            <Button variant="ghost" className="text-gray-600 hover:text-primary hover:bg-violet-50">
+              Portal Clientes
+            </Button>
+          </Link>
+          <Link href="/dashboard/appointments/new">
+            <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 shadow-lg shadow-primary/20">
+              Agendar Cita
+            </Button>
+          </Link>
         </div>
-      </header>
+      </DynamicHeader>
 
       <main className="flex-1">
         {/* Hero Section */}
