@@ -13,11 +13,18 @@ export default async function DashboardLayout({
 }) {
     const supabase = await createClient();
     console.log("🔹 Dashboard Layout Checking Auth...");
-    const { data: { user } } = await supabase.auth.getUser();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+
+    if (authError) {
+        console.error("❌ Dashboard Auth Error:", authError.message);
+    }
 
     if (!user) {
+        console.warn("⚠️ No user found in Dashboard Layout, redirecting to /login");
         redirect("/login");
     }
+
+    console.log("✅ Dashboard Layout User found:", user.email);
 
     // Fetch branding config for dynamic header sizing
     const dbContent = await getPublishedContent('home');
