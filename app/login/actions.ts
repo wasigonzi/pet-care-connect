@@ -45,55 +45,34 @@ export async function login(prevState: any, formData: FormData) {
 
     console.log("Authenticated successfully:", user.id);
 
-    // Get user profile - Use the authenticated supabase client
-    // Note: we don't strictly need to recreate the client, the same instance should have the session.
-    const { data: profile, error: profileError } = await supabase
-        .from("profiles")
-        .select("role")
-        .eq("id", user.id)
-        .maybeSingle();
-
-    if (profileError) {
-        console.error("Error fetching profile:", profileError.message);
-        // If it's a permission error, we might have an RLS issue
-    }
-
-    // Determine role and destination
-    let role = profile?.role;
+    // TEMPORARY FIX: Skip profile check due to RLS infinite recursion
+    // TODO: Fix RLS policies in Supabase dashboard
+    console.log("Skipping profile check due to RLS issues, using email-based role detection");
+    
+    let role: string = "client"; // default
     let destination = "/client";
 
-    if (!role) {
-        console.log("No profile found or accessible, ensuring profile exists for:", user.id);
-
-        // Attempt to upsert the profile to avoid "duplicate key" issues if it exists but wasn't visible
-        const { data: newProfile, error: upsertError } = await supabase
-            .from("profiles")
-            .upsert({
-                id: user.id,
-                role: "client",
-                full_name: user.email?.split("@")[0] || "User",
-                updated_at: new Date().toISOString(),
-            }, { onConflict: 'id' })
-            .select("role")
-            .maybeSingle();
-
-        if (upsertError) {
-            console.error("Error upserting profile:", upsertError.message);
-            // Even if upsert fails, we try to proceed to a default destination
-            // instead of blocking the user completely if they are already authenticated.
-            console.warn("Proceeding with default client destination despite profile error.");
-        } else if (newProfile) {
-            role = newProfile.role;
-            console.log("Profile ensured successfully, role:", role);
+    // Use email-based role detection as temporary workaround
+    if (user.email) {
+        if (user.email.includes("admin@")) {
+            role = "admin";
+            destination = "/dashboard";
+        } else if (user.email.includes("vet@")) {
+            role = "vet";
+            destination = "/dashboard";
+        } else if (user.email.includes("assistant@")) {
+            role = "assistant";
+            destination = "/dashboard";
+        } else if (user.email.includes("receptionist@")) {
+            role = "receptionist";
+            destination = "/dashboard";
+        } else {
+            role = "client";
+            destination = "/client";
         }
     }
 
-    // Set destination based on verified or default role
-    if (role && ["admin", "vet", "assistant", "receptionist"].includes(role)) {
-        destination = "/dashboard";
-    } else {
-        destination = "/client";
-    }
+    console.log("Email-based role detection:", user.email, "->", role, "-> destination:", destination);
 
     console.log("Redirecting to:", destination);
     revalidatePath("/", "layout");
