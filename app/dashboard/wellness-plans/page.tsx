@@ -11,6 +11,9 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+
 export default async function WellnessPlansPage() {
     const plans = await getWellnessPlans();
 

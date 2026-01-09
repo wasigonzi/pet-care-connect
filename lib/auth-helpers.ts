@@ -53,29 +53,27 @@ export async function getUserProfile(userId?: string): Promise<UserProfile | nul
     }
 
     try {
-        // Use the safe role detection function first
-        const { data: roleResult, error: roleError } = await supabase
-            .rpc('get_user_role_safe', { user_id: userId });
-
-        if (roleError) {
-            console.error('Error fetching role with safe function:', roleError);
-            return null;
-        }
-
-        // If we have a role, try to get the full profile
-        // This should work because the user can access their own profile
+        // Try to get the full profile directly first
         const { data, error } = await supabase
             .from('profiles')
             .select('*')
             .eq('id', userId)
             .single();
 
-        if (error) {
-            console.error('Error fetching full profile:', error);
-            // Return a minimal profile with just the role
+        if (!error && data) {
+            return data as UserProfile;
+        }
+
+        // If direct access fails, try the safe function
+        const { data: roleResult, error: roleError } = await supabase
+            .rpc('get_user_role_safe', { user_id: userId });
+
+        if (roleError) {
+            console.error('Error fetching role with safe function:', roleError);
+            // Return a minimal profile with client role as fallback
             return {
                 id: userId,
-                role: roleResult || 'client',
+                role: 'client',
                 full_name: null,
                 phone: null,
                 avatar_url: null,
@@ -84,10 +82,28 @@ export async function getUserProfile(userId?: string): Promise<UserProfile | nul
             } as UserProfile;
         }
 
-        return data as UserProfile;
+        // Return a minimal profile with the detected role
+        return {
+            id: userId,
+            role: roleResult || 'client',
+            full_name: null,
+            phone: null,
+            avatar_url: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+        } as UserProfile;
     } catch (error) {
         console.error('Profile fetch failed:', error);
-        return null;
+        // Ultimate fallback
+        return {
+            id: userId,
+            role: 'client',
+            full_name: null,
+            phone: null,
+            avatar_url: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+        } as UserProfile;
     }
 }
 
@@ -100,16 +116,33 @@ export async function hasRole(role: UserRole | UserRole[]): Promise<boolean> {
         const user = await getCurrentUser();
         if (!user) return false;
 
-        // Use the safe role detection function
+        // Try the safe role detection function first
         const { data: roleResult, error: roleError } = await supabase
             .rpc('get_user_role_safe', { user_id: user.id });
 
+        let userRole = 'client'; // default fallback
+
         if (roleError) {
-            console.error('Role check failed:', roleError);
-            return false;
+            console.error('Role check with safe function failed:', roleError);
+            // Fallback: try to get role directly from profiles table
+            try {
+                const { data: profile, error: profileError } = await supabase
+                    .from('profiles')
+                    .select('role')
+                    .eq('id', user.id)
+                    .single();
+
+                if (!profileError && profile) {
+                    userRole = profile.role;
+                }
+            } catch (fallbackError) {
+                console.error('Fallback role check failed:', fallbackError);
+                userRole = 'client'; // ultimate fallback
+            }
+        } else {
+            userRole = roleResult || 'client';
         }
 
-        const userRole = roleResult || 'client';
         const roles = Array.isArray(role) ? role : [role];
         return roles.includes(userRole as UserRole);
     } catch (error) {
@@ -154,15 +187,32 @@ export async function requireClient() {
     
     try {
         const supabase = await createClient();
+        let userRole = 'client'; // default
+
+        // Try safe function first
         const { data: roleResult, error: roleError } = await supabase
             .rpc('get_user_role_safe', { user_id: user.id });
 
         if (roleError) {
-            console.error('Client requirement check failed:', roleError);
-            redirect('/login');
-        }
+            console.error('Client requirement check with safe function failed:', roleError);
+            // Fallback: try direct profile access
+            try {
+                const { data: profile, error: profileError } = await supabase
+                    .from('profiles')
+                    .select('role')
+                    .eq('id', user.id)
+                    .single();
 
-        const userRole = roleResult || 'client';
+                if (!profileError && profile) {
+                    userRole = profile.role;
+                }
+            } catch (fallbackError) {
+                console.error('Fallback client check failed:', fallbackError);
+                userRole = 'client'; // safe default
+            }
+        } else {
+            userRole = roleResult || 'client';
+        }
 
         if (userRole !== 'client') {
             redirect('/dashboard');
@@ -180,7 +230,16 @@ export async function requireClient() {
         } as UserProfile;
     } catch (error) {
         console.error('Client requirement check failed:', error);
-        redirect('/login');
+        // Safe fallback - assume client role
+        return {
+            id: user.id,
+            role: 'client' as UserRole,
+            full_name: user.email?.split('@')[0] || null,
+            phone: null,
+            avatar_url: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+        } as UserProfile;
     }
 }
 
@@ -192,15 +251,32 @@ export async function requireStaff() {
     
     try {
         const supabase = await createClient();
+        let userRole = 'client'; // default
+
+        // Try safe function first
         const { data: roleResult, error: roleError } = await supabase
             .rpc('get_user_role_safe', { user_id: user.id });
 
         if (roleError) {
-            console.error('Staff requirement check failed:', roleError);
-            redirect('/login');
-        }
+            console.error('Staff requirement check with safe function failed:', roleError);
+            // Fallback: try direct profile access
+            try {
+                const { data: profile, error: profileError } = await supabase
+                    .from('profiles')
+                    .select('role')
+                    .eq('id', user.id)
+                    .single();
 
-        const userRole = roleResult || 'client';
+                if (!profileError && profile) {
+                    userRole = profile.role;
+                }
+            } catch (fallbackError) {
+                console.error('Fallback staff check failed:', fallbackError);
+                userRole = 'client'; // safe default
+            }
+        } else {
+            userRole = roleResult || 'client';
+        }
 
         if (userRole === 'client') {
             redirect('/client');
@@ -218,7 +294,8 @@ export async function requireStaff() {
         } as UserProfile;
     } catch (error) {
         console.error('Staff requirement check failed:', error);
-        redirect('/login');
+        // Safe fallback - redirect to client
+        redirect('/client');
     }
 }
 

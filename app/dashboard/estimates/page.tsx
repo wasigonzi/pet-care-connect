@@ -1,4 +1,7 @@
 import { getEstimates } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { Button } from "@/components/ui/button";
 import { Plus, Calculator } from "lucide-react";
 import Link from "next/link";

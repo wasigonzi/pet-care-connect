@@ -1,4 +1,7 @@
 import { getInvoices } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { Button } from "@/components/ui/button";
 import { Plus, CreditCard, FileText } from "lucide-react";
 import Link from "next/link";

@@ -1,5 +1,8 @@
 import { RecordForm } from "../components/record-form";
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+
 export default function NewRecordPage() {
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">

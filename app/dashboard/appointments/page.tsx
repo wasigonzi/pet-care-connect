@@ -1,4 +1,7 @@
 import { getAppointments } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { Button } from "@/components/ui/button";
 import { Plus, Calendar as CalendarIcon, Clock } from "lucide-react";
 import Link from "next/link";

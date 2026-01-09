@@ -1,4 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { notFound } from "next/navigation";
 import { getPatientsByClientId } from "@/app/dashboard/patients/actions";
 import { PatientList } from "../components/patient-list";

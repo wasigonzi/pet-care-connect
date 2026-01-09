@@ -1,4 +1,7 @@
 import { LoginForm } from "@/components/auth/login-form";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { SiteBranding } from "@/components/site-branding";
 
 export default function LoginPage() {

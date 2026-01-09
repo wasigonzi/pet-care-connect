@@ -1,4 +1,7 @@
 import { getMyProfile } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { ProfileForm } from "./components/profile-form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

@@ -1,4 +1,7 @@
 import { getDashboardStats } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Dog, Calendar, DollarSign, Package } from "lucide-react";
 import { ReportChart } from "./components/chart";

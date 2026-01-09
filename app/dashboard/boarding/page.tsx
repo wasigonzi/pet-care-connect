@@ -1,4 +1,7 @@
 import { getReservations, getUnits } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { Button } from "@/components/ui/button";
 import { Plus, Home, Calendar } from "lucide-react";
 import Link from "next/link";

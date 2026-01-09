@@ -1,4 +1,7 @@
 import { getDashboardMetrics } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { DollarSign, Users, Calendar, CheckSquare } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 

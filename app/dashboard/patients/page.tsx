@@ -1,5 +1,8 @@
 
 import { getPatients } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { Button } from "@/components/ui/button";
 import { Plus, Dog, Search } from "lucide-react";
 import Link from "next/link";

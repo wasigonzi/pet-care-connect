@@ -1,4 +1,7 @@
 import { requireClient, getClientRecord } from "@/lib/auth-helpers";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { createClient } from "@/lib/supabase/server";
 import NewAppointmentForm from "./new-appointment-form";
 

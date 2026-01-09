@@ -1,4 +1,7 @@
 import { requireStaff } from "@/lib/auth-helpers";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

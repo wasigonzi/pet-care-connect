@@ -1,4 +1,7 @@
 import { getTimeEntries, getLastEntry } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { ClockInButton } from "./components/clock-in-button";
 import {
     Card,

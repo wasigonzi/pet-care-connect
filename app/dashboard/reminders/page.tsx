@@ -1,4 +1,7 @@
 import { getReminders } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { RemindersClient } from "./components/client";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";

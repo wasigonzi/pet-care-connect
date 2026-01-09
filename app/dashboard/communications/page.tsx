@@ -1,4 +1,7 @@
 import { getCommunications } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Plus, MessageSquare, Mail, Phone } from "lucide-react";

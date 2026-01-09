@@ -1,5 +1,8 @@
 import { SendMessageForm } from "../components/send-message-form";
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+
 export default function NewCommunicationPage() {
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">

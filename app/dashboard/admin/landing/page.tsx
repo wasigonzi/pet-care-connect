@@ -1,4 +1,7 @@
 import { getLandingPage } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { CMSEditor } from "./components/cms-editor";
 
 export default async function LandingAdminPage() {

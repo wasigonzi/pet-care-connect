@@ -50,26 +50,44 @@ export async function login(prevState: any, formData: FormData) {
     let destination = "/client";
 
     try {
-        // Use the safe role detection function that doesn't cause recursion
+        // Try the safe role detection function first
         const { data: roleResult, error: roleError } = await supabase
             .rpc('get_user_role_safe', { user_id: user.id });
 
         if (roleError) {
-            console.error("Error fetching user role:", roleError.message);
-            // Fall back to creating a profile if none exists
-            const { error: upsertError } = await supabase
-                .from('profiles')
-                .upsert({
-                    id: user.id,
-                    role: 'client',
-                    full_name: user.email?.split('@')[0] || 'User',
-                    updated_at: new Date().toISOString(),
-                }, { onConflict: 'id' });
+            console.error("Error fetching user role with safe function:", roleError.message);
+            
+            // Fallback: try direct profile access
+            try {
+                const { data: profile, error: profileError } = await supabase
+                    .from('profiles')
+                    .select('role')
+                    .eq('id', user.id)
+                    .single();
 
-            if (upsertError) {
-                console.error("Error creating profile:", upsertError.message);
+                if (profileError) {
+                    console.error("Error fetching profile directly:", profileError.message);
+                    // Create profile if it doesn't exist
+                    const { error: upsertError } = await supabase
+                        .from('profiles')
+                        .upsert({
+                            id: user.id,
+                            role: 'client',
+                            full_name: user.email?.split('@')[0] || 'User',
+                            updated_at: new Date().toISOString(),
+                        }, { onConflict: 'id' });
+
+                    if (upsertError) {
+                        console.error("Error creating profile:", upsertError.message);
+                    }
+                    role = 'client'; // default fallback
+                } else {
+                    role = profile.role || 'client';
+                }
+            } catch (fallbackError) {
+                console.error("Fallback profile access failed:", fallbackError);
+                role = 'client'; // ultimate fallback
             }
-            role = 'client'; // default fallback
         } else {
             role = roleResult || 'client';
         }
@@ -81,14 +99,14 @@ export async function login(prevState: any, formData: FormData) {
             destination = "/client";
         }
 
-        console.log("Database role detection:", user.email, "->", role, "-> destination:", destination);
+        console.log("Role detection result:", user.email, "->", role, "-> destination:", destination);
 
     } catch (error: any) {
-        console.error("Role detection failed:", error.message);
+        console.error("Role detection completely failed:", error.message);
         // Safe fallback - default to client
         role = 'client';
         destination = '/client';
-        console.log("Using fallback role: client");
+        console.log("Using ultimate fallback role: client");
     }
 
     console.log("Redirecting to:", destination);

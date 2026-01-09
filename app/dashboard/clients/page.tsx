@@ -1,4 +1,7 @@
 import { getClients } from "./actions";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { ClientTable } from "./components/client-table";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
