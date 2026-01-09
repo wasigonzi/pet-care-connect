@@ -21,7 +21,7 @@ export async function login(prevState: any, formData: FormData) {
 
     const supabase = await createClient();
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error, data } = await supabase.auth.signInWithPassword({
         email,
         password,
     });
@@ -30,5 +30,32 @@ export async function login(prevState: any, formData: FormData) {
         return { error: error.message };
     }
 
-    redirect("/dashboard");
+    if (!data.user) {
+        return { error: "Authentication failed" };
+    }
+
+    // Get user profile to determine role
+    const { data: profile, error: profileError } = await supabase
+        .from('profiles')
+        .select('role')
+        .eq('id', data.user.id)
+        .single();
+
+    if (profileError || !profile) {
+        // If no profile exists, create one with default client role
+        await supabase.from('profiles').insert({
+            id: data.user.id,
+            role: 'client',
+            full_name: data.user.email?.split('@')[0] || 'User',
+        });
+        redirect("/client");
+    }
+
+    // Redirect based on role
+    if (profile.role === 'client') {
+        redirect("/client");
+    } else {
+        // staff or admin
+        redirect("/dashboard");
+    }
 }

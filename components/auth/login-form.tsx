@@ -14,13 +14,14 @@ import {
 } from "@/components/ui/card";
 import { toast } from "sonner";
 import { useEffect } from "react";
+import Link from "next/link";
 
 function SubmitButton() {
     const { pending } = useFormStatus();
 
     return (
         <Button className="w-full" type="submit" disabled={pending}>
-            {pending ? "Signing in..." : "Sign in"}
+            {pending ? "Iniciando sesión..." : "Iniciar Sesión"}
         </Button>
     );
 }
@@ -49,17 +50,24 @@ export function LoginForm() {
                             id="email"
                             name="email"
                             type="email"
-                            placeholder="m@example.com"
+                            placeholder="tu@email.com"
                             required
                         />
                     </div>
                     <div className="space-y-2">
                         <div className="flex items-center justify-between">
-                            <Label htmlFor="password">Password</Label>
+                            <Label htmlFor="password">Contraseña</Label>
                         </div>
                         <Input id="password" name="password" type="password" required />
                     </div>
                     <SubmitButton />
+
+                    <div className="text-center text-sm">
+                        <span className="text-muted-foreground">¿No tienes cuenta? </span>
+                        <Link href="/auth/register" className="text-primary hover:underline font-medium">
+                            Regístrate aquí
+                        </Link>
+                    </div>
                 </form>
             </CardContent>
             <CardFooter className="flex justify-center text-xs text-muted-foreground">
